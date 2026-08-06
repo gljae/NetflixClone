@@ -15,219 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentProfileName = document.getElementById('currentProfileName');
     const currentMiniAvatar = document.getElementById('currentMiniAvatar');
 
-    // 2. Profile Data & Dynamic Rendering
+    // 2. Profile Data & Dynamic Rendering (Loaded from secret1.js, secret2.js, secret3.js)
     const profileData = {
-        dev: {
-            name: '김건우',
-            avatarClass: 'avatar-dev',
-            emoji: '💻',
-            rowProjectsTitle: '<i class="fa-solid fa-clapperboard" style="color:#E50914;"></i> 지금 뜨는 주요 프로젝트',
-            hero: {
-                badge: '<i class="fa-solid fa-fire"></i> 오늘 대한민국의 TOP 1 개발자',
-                title: '김건우:<br>나의 성장스토리',
-                desc: '아직 초보입니다. 잘 부탁드립니다',
-                bgYoutube: null,
-                bgImage: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80',
-                demoYoutube: 'https://www.youtube.com/embed/L_LUpnjgPso?autoplay=1',
-                heroInfo: {
-                    title: '김건우: 나의 성장스토리',
-                    desc: '아직 초보 개발자이지만 끊임없이 배우고 성장하고 있습니다. 잘 부탁드립니다!',
-                    tags: 'HTML5, CSS3, JavaScript, Flask, Python',
-                    period: '2026',
-                    role: '개발자',
-                    link: 'https://github.com/hasam031',
-                    instagram: 'https://www.instagram.com/rjsdn_0527/',
-                    img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80'
-                }
-            },
-            projects: [
-                {
-                    title: 'GEONWOOFLIX 포트폴리오',
-                    desc: '넷플릭스 UX/UI를 모티브로 한 나만의 반응형 포트폴리오 웹사이트입니다. 다크 모드, CSS 애니메이션, 모달 상호작용을 적용했습니다.',
-                    tags: 'HTML5, CSS3, JavaScript, Flask',
-                    period: '2026.08',
-                    role: '프론트엔드/기획',
-                    link: 'https://github.com/hasam031/GEONWOOFLIX',
-                    img: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=600&q=80',
-                    displayTags: ['Vanilla CSS', 'JS ES6']
-                }
-            ],
-            hobbies: [
-                {
-                    title: '축구',
-                    desc: '해외축구를 주로 봅니다. 레스터시티 팬이고 최애 선수는 제이미 바디입니다.',
-                    tags: 'Tech Trends, Open Source',
-                    period: 'Always',
-                    role: 'Explorer',
-                    img: 'https://i.ytimg.com/vi/4TNfLrRDIOo/maxresdefault.jpg',
-                    displayTags: ['football']
-                },
-                {
-                    title: '음악',
-                    desc: '국힙을 주로 듣습니다. 레이지 장르를 제일 좋아하고 요즘은 식케이가 있는 kc 애들 음악을 자주 듣습니다.',
-                    tags: 'Tech Trends, Open Source',
-                    period: 'Always',
-                    role: 'Explorer',
-                    img: 'https://i.namu.wiki/i/-CkzYFdfrZRhXsd563liOrktAYOfelR9c1TK1568td0Efxc36v8cQiFXhkzR6IWu2iEJ8Z7wJUDWPJ2198juCw.webp',
-                    imgStyle: 'object-position: top center;',
-                    displayTags: ['music']
-                },
-                {
-                    title: '게임',
-                    desc: '축구 시뮬게임인 fm, 서브컬쳐 게임인 붕괴:스타레일, 명조, 액션 rpg인 엘든링, 몬스터 헌터 등을 좋아합니다.',
-                    tags: 'Gaming, UI Experience',
-                    period: 'Hobby',
-                    role: 'Gamer',
-                    img: '/static/img/game_collage.png',
-                    displayTags: ['Hobby']
-                }
-            ]
-        },
-        guest: {
-            name: '시크릿',
-            avatarClass: 'avatar-guest',
-            emoji: '🔒',
-            rowProjectsTitle: '<i class="fa-solid fa-music" style="color:#ffd700;"></i> 🎧 오늘의 추천 플레이리스트',
-            hero: {
-                badge: '<i class="fa-solid fa-lock" style="color:#ffd700;"></i> SECRET SPECIAL CONTENT',
-                title: '시크릿:<br>내맘대로 페이지',
-                desc: '아무 컨텐츠나 막 담습니다.',
-                bgYoutube: 'https://www.youtube.com/embed/oCvA-i9OTyg?autoplay=1&mute=1&loop=1&playlist=oCvA-i9OTyg&controls=0&showinfo=0&rel=0',
-                bgImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80',
-                demoYoutube: 'https://www.youtube.com/embed/oCvA-i9OTyg?autoplay=1',
-                heroInfo: {
-                    title: '시크릿: 내맘대로 페이지',
-                    desc: '아무 컨텐츠나 막 담습니다.',
-                    tags: 'freedom',
-                    period: '2026',
-                    role: 'Specialist',
-                    link: 'https://github.com/gljae/NetflixClone',
-                    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80'
-                }
-            },
-            projects: [
-                {
-                    title: '시크릿 K-HIPHOP 플레이리스트',
-                    desc: '시크릿이 엄선한 최고의 명곡 K-힙합 플레이리스트 모음집입니다. 아래 회차 리스트에서 음악을 감상해 보세요!',
-                    tags: 'K-HipHop, Playlist',
-                    period: '2026',
-                    role: '시크릿 픽',
-                    img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80',
-                    displayTags: ['K-HIPHOP', '시크릿 픽'],
-                    episodes: [
-                        {
-                            num: '1',
-                            title: '식케이(Sik-K), Lil Moshpit - LOV3 (Feat. Bryan Chase, Okasian)',
-                            desc: 'ㄸㄷㅅ ㅂㅇㅈㅇ ㄷ',
-                            youtubeVideo: 'https://www.youtube.com/embed/oCvA-i9OTyg?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/oCvA-i9OTyg/maxresdefault.jpg'
-                        },
-                        {
-                            num: '2',
-                            title: '창모(CHANGMO) - Hyperstar',
-                            desc: '창모의 정규 2집 UGRS의 수록곡, 이 앨범의 최고 뱅어 트랙',
-                            youtubeVideo: 'https://www.youtube.com/embed/bL4KyoQWspM?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/bL4KyoQWspM/maxresdefault.jpg'
-                        },
-                        {
-                            num: '3',
-                            title: 'JUSTHIS(저스디스) - LIT',
-                            desc: '이것까지가 lit.',
-                            youtubeVideo: 'https://www.youtube.com/embed/mZ1IMxgzzPY?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/mZ1IMxgzzPY/hqdefault.jpg'
-                        },
-                        {
-                            num: '4',
-                            title: '키드밀리 - 25 (Feat. YANGHONGWON)',
-                            desc: '정규 2집 BEIGE 레이지 입문 강추 트랙',
-                            youtubeVideo: 'https://www.youtube.com/embed/1JS5Td0MeNE?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/1JS5Td0MeNE/hqdefault.jpg'
-                        },
-                        {
-                            num: '5',
-                            title: '씨잼 - Pokerface (포커페이스)',
-                            desc: '드라이브 할 때 이만한 곡이 없음',
-                            youtubeVideo: 'https://www.youtube.com/embed/yrJSc3NKNfc?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/yrJSc3NKNfc/hqdefault.jpg'
-                        }
-                    ]
-                },
-                {
-                    title: '시크릿 K-POP 플레이리스트',
-                    desc: '세련된 감성과 트렌디한 사운드의 K-POP 대표 추천곡들입니다.',
-                    tags: 'K-POP, Trending',
-                    period: '2026',
-                    role: '시크릿 픽',
-                    img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80',
-                    displayTags: ['K-POP', 'Trending'],
-                    episodes: [
-                        {
-                            num: '1',
-                            title: 'NMIXX(엔믹스) - Papillon',
-                            desc: '엔믹스 팬이라면 모를 수 없는 숨겨진 띵곡.',
-                            youtubeVideo: 'https://www.youtube.com/embed/qQhEwaHszKo?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/qQhEwaHszKo/maxresdefault.jpg'
-                        },
-                        {
-                            num: '2',
-                            title: 'STAYC(스테이씨) - BEBE ',
-                            desc: '재이의 미친 도입부와 시은의 보컬이 돋보이는 곡. <br> 개인적으로 이 곡이 잘 못뜬게 아쉽다.',
-                            youtubeVideo: 'https://www.youtube.com/embed/z-xfGoabprU?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/z-xfGoabprU/maxresdefault.jpg'
-                        },
-                        {
-                            num: '3',
-                            title: 'CORTIS (코르티스) - FaSHioN',
-                            desc: '외국힙합 사운드를 이정도로 k-pop에 완성도 있게 잘 녹여놓은것이 대단하다. <br> 앞으로가 기대되는 아티스트.',
-                            youtubeVideo: 'https://www.youtube.com/embed/42wfEs7oIP8?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/42wfEs7oIP8/maxresdefault.jpg'
-                        }
-                    ]
-                },
-                {
-                    title: '시크릿 J-POP & 애니 OST 플레이리스트',
-                    desc: '특유의 감성과 멜로디라인이 돋보이는 힐링 J-POP 추천곡입니다.',
-                    tags: 'J-POP, Anime OST',
-                    period: '2026',
-                    role: '시크릿 픽',
-                    img: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80',
-                    displayTags: ['J-POP', 'Anime OST'],
-                    episodes: [
-                        {
-                            num: '1',
-                            title: 'King Gnu - 飛行艇(비행정)',
-                            desc: '킹누 특유의 강력한 밴드 사운드가 매력적인 곡.',
-                            youtubeVideo: 'https://www.youtube.com/embed/MSv7NbfbtU8?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/MSv7NbfbtU8/maxresdefault.jpg'
-                        },
-                        {
-                            num: '2',
-                            title: 'KANA-BOON - Silhouette',
-                            desc: '그 시절 우리는 모두 닌자였다.',
-                            youtubeVideo: 'https://www.youtube.com/embed/dlFA0Zq1k2A?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/dlFA0Zq1k2A/maxresdefault.jpg'
-                        },
-                        {
-                            num: '3',
-                            title: 'Vaundy -飛ぶ時(날아오를때)',
-                            desc: '믿고듣는 바운디.',
-                            youtubeVideo: 'https://www.youtube.com/embed/ARj1adoUoEU?autoplay=1',
-                            img: 'https://i.ytimg.com/vi/ARj1adoUoEU/maxresdefault.jpg'
-                        }
-                    ]
-                }
-            ]
-        },
-        si: { name: '김시은', avatarClass: 'avatar-si', emoji: '💻' },
-        nam: { name: '남기제', avatarClass: 'avatar-nam', emoji: '💻' }
+        secret1: window.secret1Data,
+        secret2: window.secret2Data,
+        secret3: window.secret3Data
     };
 
-    let currentHeroInfo = profileData.dev.hero.heroInfo;
-    let currentDemoYoutube = profileData.dev.hero.demoYoutube;
+    let currentHeroInfo = (profileData.secret1 && profileData.secret1.hero) ? profileData.secret1.hero.heroInfo : null;
+    let currentDemoYoutube = (profileData.secret1 && profileData.secret1.hero) ? profileData.secret1.hero.demoYoutube : 'https://www.youtube.com/embed/L_LUpnjgPso?autoplay=1';
 
     function renderProfile(type) {
         const data = profileData[type];
         if (!data || !data.hero) return;
+
+        // Execute active profile JS hook if present
+        if (type === 'secret1' && typeof window.onSecret1Active === 'function') window.onSecret1Active();
+        if (type === 'secret2' && typeof window.onSecret2Active === 'function') window.onSecret2Active();
+        if (type === 'secret3' && typeof window.onSecret3Active === 'function') window.onSecret3Active();
 
         // Save selected profile in localStorage
         localStorage.setItem('selectedProfile', type);
@@ -585,10 +390,12 @@ document.addEventListener('DOMContentLoaded', () => {
         openVideoModal(currentDemoYoutube);
     });
 
-    // Restore last selected profile from localStorage if exists, default to 'dev'
-    const savedProfile = localStorage.getItem('selectedProfile') || 'dev';
+    // Restore last selected profile from localStorage if exists, default to 'secret1'
+    const savedProfile = localStorage.getItem('selectedProfile') || 'secret1';
     if (profileData[savedProfile] && profileData[savedProfile].hero) {
         renderProfile(savedProfile);
+    } else {
+        renderProfile('secret1');
     }
 });
 

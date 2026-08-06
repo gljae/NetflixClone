@@ -124,6 +124,24 @@ body {
 .avatar-nam { background: linear-gradient(135deg, #e50914, #831010); }
 .avatar-si  { background: linear-gradient(135deg, #fbc02d, #f57f17); }
 .avatar-guest { background: linear-gradient(135deg, #00c853, #006064); }
+.avatar-secret1 { 
+    background-image: url('/static/img/KakaoTalk_20260806_185245620.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.avatar-secret2 { 
+    background-image: url('/static/img/KakaoTalk_20260806_185254335.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.avatar-secret3 { 
+    background-image: url('/static/img/KakaoTalk_20260806_185239486.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .profile-name {
     margin-top: 1rem;
