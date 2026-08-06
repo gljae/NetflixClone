@@ -32,7 +32,7 @@ body {
 
 .logo img {
   display: block;
-  height: 28px;
+  height: 44px;
   width: auto;
 }
 
@@ -157,6 +157,7 @@ body {
 @media (max-width: 640px) {
   .email-form { flex-direction: column; }
   .btn-hero { width: 100%; }
+  .logo img { height: 34px; }
 }
 
 /* --------------------------------------------------------- 회원가입 공통 */
