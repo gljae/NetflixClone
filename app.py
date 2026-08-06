@@ -196,8 +196,10 @@ def register_routes(app):
 
     @app.get("/")
     def landing():
+        # 이미 로그인돼 있으면 목적지 판단은 after_login 한 곳에만 둔다.
+        # 여기서 직접 정하면 가입 미완료 계정을 엉뚱한 데로 보내게 된다.
         if current_user.is_authenticated:
-            return redirect(url_for("mypage"))
+            return redirect(url_for("after_login"))
         return render_template("landing.html")
 
     @app.post("/auth/check")
@@ -249,7 +251,7 @@ def register_routes(app):
         홈 화면의 "로그인" 버튼이 여기로 연결된다.
         """
         if current_user.is_authenticated:
-            return redirect(url_for("mypage"))
+            return redirect(url_for("after_login"))
 
         if request.method == "GET":
             return render_template("login.html")
@@ -392,12 +394,13 @@ def register_routes(app):
     def after_login():
         """로그인 직후 어디로 보낼지 한 곳에서 정한다.
 
-        가입을 끝내지 않은 계정이면 멈췄던 단계로 돌려보낸다.
+        가입을 끝내지 않은 계정이면 멈췄던 단계로 돌려보내고,
+        끝난 계정은 프로필 선택 화면으로 보낸다 — 실제 넷플릭스와 같은 순서다.
         """
         user = current_user
         if not user.is_signup_complete:
             return redirect(url_for("signup_plan"))
-        return redirect(url_for("mypage"))
+        return redirect(url_for("profile"))
 
     @app.get("/mypage")
     @login_required
