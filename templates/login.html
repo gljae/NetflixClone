@@ -86,31 +86,64 @@
       background: rgba(25, 135, 84, 0.92);
     }
 
+    .field-group {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .field-group.has-error {
+      margin-bottom: 8px;
+    }
+
     .field {
       width: 100%;
-      height: 50px;
-      margin-bottom: 16px;
-      padding: 16px 20px;
+      height: 56px;
+      padding: 22px 20px 6px;
       border: 1px solid #8c8c8c;
       border-radius: 4px;
       color: #fff;
-      background: #333;
+      background: #372c39;
       font-size: 16px;
       outline: none;
     }
 
-    .field::placeholder {
-      color: #8c8c8c;
-    }
-
     .field:focus {
-      border-color: #fff;
-      background: #333;
+      border: 2px solid #fff;
+      padding: 21px 19px 5px 19px;
     }
 
     .field.field-error {
-      margin-bottom: 8px;
       border-color: #e50914;
+    }
+
+    /* 브라우저 자동완성이 강제로 밝은 배경을 입히는 걸 막는다 */
+    .field:-webkit-autofill,
+    .field:-webkit-autofill:hover,
+    .field:-webkit-autofill:focus {
+      -webkit-text-fill-color: #fff;
+      -webkit-box-shadow: 0 0 0px 1000px #372c39 inset;
+      box-shadow: 0 0 0px 1000px #372c39 inset;
+      caret-color: #fff;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    .field-label {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8c8c8c;
+      font-size: 16px;
+      pointer-events: none;
+      transition: top 0.15s ease, font-size 0.15s ease, color 0.15s ease;
+    }
+
+    .field:focus + .field-label,
+    .field:not(:placeholder-shown) + .field-label {
+      top: 14px;
+      transform: translateY(0);
+      font-size: 12px;
+      color: #b3b3b3;
     }
 
     .field-error-message {
@@ -254,7 +287,10 @@
       {% endwith %}
 
       <form method="post" action="{{ url_for('login', next=request.args.get('next')) }}" novalidate>
-        <input class="field{{ ' field-error' if email_error else '' }}" type="email" name="email" value="{{ email or '' }}" placeholder="이메일 주소" autocomplete="email" autofocus>
+        <div class="field-group{{ ' has-error' if email_error else '' }}">
+          <input class="field{{ ' field-error' if email_error else '' }}" type="email" name="email" id="email" value="{{ email or '' }}" placeholder=" " autocomplete="email" autofocus>
+          <label class="field-label" for="email">이메일 주소</label>
+        </div>
         {% if email_error %}
           <p class="field-error-message">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
