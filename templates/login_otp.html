@@ -312,16 +312,12 @@
         <button class="submit" type="submit">로그인</button>
       </form>
 
-      {% if cooldown and cooldown > 0 %}
-        <p class="hint">코드를 못 받으셨나요? 스팸/정크 폴더를 확인해주세요. {{ cooldown }}초 후에 다시 받을 수 있어요.</p>
-      {% else %}
-        <form method="post" action="{{ url_for('login_resend') }}">
-          <p class="hint">
-            코드를 못 받으셨나요? 스팸/정크 폴더를 확인하거나
-            <button type="submit" class="link-button">코드를 다시 받으세요</button>.
-          </p>
-        </form>
-      {% endif %}
+      <form method="post" action="{{ url_for('login_resend') }}">
+        <p class="hint">
+          코드를 못 받으셨나요? 스팸/정크 폴더를 확인하거나 코드를
+          <button type="submit" class="link-button">다시 받으세요</button>.
+        </p>
+      </form>
 
       <a class="support" href="#">고객 지원</a>
     </section>
