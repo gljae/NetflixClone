@@ -76,7 +76,7 @@
 {% block body %}
 <div class="hero">
   <header class="hero-header">
-    <span class="logo">NETFLIX</span>
+    <span class="logo"><img src="{{ url_for('static', filename='img/netflix-logo.png') }}" alt="NETFLIX"></span>
 
     <a class="btn-login" href="{{ url_for('login') }}">로그인</a>
   </header>

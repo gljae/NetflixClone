@@ -21,11 +21,19 @@ body {
 .page-light { background: var(--bg-light); color: var(--ink); }
 
 .logo {
+  display: inline-block;
   color: var(--red);
   font-size: 26px;
   font-weight: 800;
   letter-spacing: 1px;
   text-decoration: none;
+  line-height: 0;
+}
+
+.logo img {
+  display: block;
+  height: 28px;
+  width: auto;
 }
 
 /* ------------------------------------------------------------------ 랜딩 */
