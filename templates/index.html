@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NETFLIX</title>
+
+  <!-- ┌────────────────────────────────────────────────────────────┐
+       │ [붙여넣기 1/3]  인트로 스타일                              │
+       │ 메인 HTML 의 <head> 에 이 줄만 추가하면 된다.              │
+       └────────────────────────────────────────────────────────────┘ -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/intro.css') }}">
+
+  <!-- 아래는 데모용 메인 페이지 스타일. 합칠 때는 통째로 지우면 된다. -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #141414;
+      color: #fff;
+      font-family: "Pretendard", "Malgun Gothic", -apple-system, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .demo-header {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; gap: 28px;
+      padding: 18px 44px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.85), transparent);
+    }
+    .demo-logo { color: #e50914; font-size: 26px; font-weight: 800; letter-spacing: 1px; }
+    .demo-nav { display: flex; gap: 20px; font-size: 14px; color: #cfcfcf; }
+    .demo-hero { padding: 70px 44px 40px; max-width: 620px; }
+    .demo-hero h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.1; margin-bottom: 16px; }
+    .demo-hero p { color: #b3b3b3; line-height: 1.6; margin-bottom: 24px; }
+    .demo-btn {
+      padding: 12px 28px; border: 0; border-radius: 4px;
+      background: #e50914; color: #fff; font: inherit; font-weight: 700; cursor: pointer;
+    }
+    .demo-row { padding: 0 44px 60px; }
+    .demo-row h2 { font-size: 18px; margin-bottom: 14px; color: #e5e5e5; }
+    .demo-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .demo-card {
+      aspect-ratio: 16 / 9; border-radius: 6px;
+      background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+      display: grid; place-items: center; color: #6b6b6b; font-size: 13px;
+    }
+    /* 인트로가 끝난 뒤 메인이 부드럽게 올라오는 연출 (선택) */
+    .demo-page { opacity: 0; transform: translateY(14px); }
+    .demo-page.revealed {
+      opacity: 1; transform: none;
+      transition: opacity 700ms ease, transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ┌────────────────────────────────────────────────────────────┐
+       │ [붙여넣기 2/3]  인트로 오버레이                            │
+       │ 메인 HTML 의 <body> 맨 위에 이 블록을 그대로 복사한다.     │
+       │                                                            │
+       │ 옵션 (data 속성):                                          │
+       │   data-once="session" → 세션당 한 번만 재생                │
+       │   data-next="/home"   → 끝나면 그 주소로 이동 (스플래시용)  │
+       └────────────────────────────────────────────────────────────┘ -->
+  <div id="nfx-intro" data-once="off" data-next="">
+    <div class="nfx-flash"></div>
+
+    <div class="nfx-stage">
+      <div class="nfx-burst">
+        <svg class="nfx-n" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid meet" aria-label="Netflix">
+          <defs>
+            <!-- userSpaceOnUse 라서 조각마다 잘리지 않고 N 전체에 하나의 그라디언트가 걸린다 -->
+            <linearGradient id="nfx-bar" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="400">
+              <stop offset="0%"   stop-color="#c8070f"/>
+              <stop offset="100%" stop-color="#7d040a"/>
+            </linearGradient>
+            <linearGradient id="nfx-diag" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="400">
+              <stop offset="0%"   stop-color="#ff2a36"/>
+              <stop offset="45%"  stop-color="#e50914"/>
+              <stop offset="100%" stop-color="#9c060d"/>
+            </linearGradient>
+          </defs>
+
+          <!-- N 을 이루는 세로 직선들. intro.js 가 도형을 계산해 채운다. -->
+          <g data-nfx-slices></g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 브라우저가 소리를 막았을 때만 JS 가 보여준다 -->
+    <button class="nfx-sound" type="button" hidden>🔊 소리와 함께 다시 보기</button>
+    <!-- 필요 없으면 이 줄만 지우면 된다 -->
+    <button class="nfx-skip" type="button">건너뛰기</button>
+  </div>
+  <!-- └─ 인트로 오버레이 끝 ─────────────────────────────────────┘ -->
+
+
+  <!-- ↓↓↓ 여기부터가 메인 페이지. 실제로는 이 자리에 기존 HTML 이 들어간다. ↓↓↓ -->
+  <div class="demo-page" id="demoPage">
+    <header class="demo-header">
+      <span class="demo-logo">NETFLIX</span>
+      <nav class="demo-nav"><span>홈</span><span>시리즈</span><span>영화</span><span>내가 찜한 콘텐츠</span></nav>
+    </header>
+
+    <section class="demo-hero">
+      <h1>메인 페이지</h1>
+      <p>인트로가 끝나면 오버레이가 사라지고 이 화면이 드러납니다.
+         실제 프로젝트에서는 이 자리에 기존 메인 HTML 을 그대로 두면 됩니다.</p>
+      <button class="demo-btn">재생</button>
+    </section>
+
+    <section class="demo-row">
+      <h2>인기 콘텐츠</h2>
+      <div class="demo-cards">
+        <div class="demo-card">카드 1</div><div class="demo-card">카드 2</div>
+        <div class="demo-card">카드 3</div><div class="demo-card">카드 4</div>
+        <div class="demo-card">카드 5</div><div class="demo-card">카드 6</div>
+      </div>
+    </section>
+  </div>
+  <!-- ↑↑↑ 메인 페이지 끝 ↑↑↑ -->
+
+
+  <!-- ┌────────────────────────────────────────────────────────────┐
+       │ [붙여넣기 3/3]  인트로 스크립트                            │
+       │ </body> 직전에 이 줄을 추가한다. defer 를 꼭 붙일 것.      │
+       └────────────────────────────────────────────────────────────┘ -->
+  <script src="{{ url_for('static', filename='js/intro.js') }}" defer></script>
+
+  <script>
+    // 인트로가 끝나는 순간 메인 페이지가 이어받는다.
+    // 슬라이더 시작, 데이터 로드 등 "인트로 후에 해야 할 일"을 여기에 둔다.
+    document.addEventListener("nfx:done", () => {
+      document.getElementById("demoPage").classList.add("revealed");
+    });
+  </script>
+</body>
+</html>

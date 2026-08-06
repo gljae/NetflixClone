@@ -1,0 +1,220 @@
+/* ══════════════════════════════════════════════════════════════════
+ *  넷플릭스 인트로 "두둥" — N 분해  /  스타일
+ *
+ *  이 파일은 통째로 복사해서 쓰면 된다.
+ *  선택자가 전부 #nfx-intro 안쪽으로 묶여 있고 클래스도 nfx- 로 시작하므로
+ *  메인 페이지의 기존 CSS 와 충돌하지 않는다.
+ *
+ *  단계는 #nfx-intro 의 클래스로 표현한다 (JS 가 순서대로 붙인다):
+ *    is-playing  → N 이 세로 직선들로 그려진다
+ *    is-impact   → "두"  플래시 + N 이 한 번 튄다
+ *    is-burst    → "둥"  직선들이 흩어지며 커지다 사라진다
+ *    is-closing  → 오버레이가 걷히고 메인 페이지가 드러난다
+ * ══════════════════════════════════════════════════════════════════ */
+
+/* ── 오버레이 ─────────────────────────────────────────────── */
+
+#nfx-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;              /* 메인 페이지에 헤더 등이 있으면 이 값만 조정 */
+  display: grid;
+  place-items: center;
+  background: #000;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 800ms ease;   /* intro.js 의 close() 대기시간과 같은 값 */
+}
+
+#nfx-intro.is-closing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 인트로가 도는 동안 뒤의 메인 페이지가 스크롤되지 않게 잠근다 */
+html.nfx-lock, html.nfx-lock body {
+  overflow: hidden;
+}
+
+/* 임팩트 때 화면 전체에 번지는 붉은 잔광 */
+#nfx-intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 45% at 50% 50%, rgba(229, 9, 20, 0.28), transparent 70%);
+  opacity: 0;
+  transition: opacity 900ms ease-out;
+}
+#nfx-intro.is-impact::after { opacity: 1; }
+
+/* ── 로고 ─────────────────────────────────────────────────── */
+
+.nfx-stage {
+  position: relative;
+  width: min(34vh, 240px);
+}
+
+.nfx-burst {
+  transform-origin: 50% 50%;
+  /* 글로우는 SVG 가 아니라 이 div 에 건다.
+     SVG 에 걸면 필터 영역이 날아가는 조각을 잘라낸다. */
+  filter: drop-shadow(0 0 26px rgba(229, 9, 20, 0.35));
+  transition: filter 700ms ease-out;
+}
+
+#nfx-intro.is-impact .nfx-burst {
+  filter: drop-shadow(0 0 46px rgba(229, 9, 20, 0.75))
+          drop-shadow(0 0 120px rgba(229, 9, 20, 0.35));
+}
+
+/* 파란 조각이 섞이는 동안 글로우도 살짝 푸르게 물든다 */
+#nfx-intro.is-burst .nfx-burst {
+  filter: drop-shadow(0 0 46px rgba(229, 9, 20, 0.6))
+          drop-shadow(0 0 100px rgba(40, 110, 255, 0.4));
+}
+
+/* 조각이 화면 밖까지 날아가야 하므로 SVG 뷰포트 밖을 잘라내지 않는다 */
+.nfx-n {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ── ① N 그리기 — 조각이 제자리에서 세로로 펴진다 ──────────── */
+
+.nfx-slice {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+#nfx-intro.is-playing .nfx-slice {
+  animation: nfx-draw var(--sd, 620ms) cubic-bezier(0.22, 0.8, 0.28, 1) var(--d, 0ms) forwards;
+}
+
+@keyframes nfx-draw {
+  0%   { transform: scaleY(0);    opacity: 0; }
+  12%  { opacity: 1; }
+  80%  { transform: scaleY(1.05); opacity: 1; }
+  100% { transform: scaleY(1);    opacity: 1; }
+}
+
+/* 임팩트 순간 N 전체가 한 번 튄다 */
+#nfx-intro.is-impact .nfx-n {
+  animation: nfx-punch 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes nfx-punch {
+  0%   { transform: scale(1.14) rotate(-0.6deg); }
+  30%  { transform: scale(0.99) rotate(0.2deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+/* ── ② 분해 — 흩어지며 길게 늘어나 사라진다 ────────────────
+ *  (아래 규칙이 위 nfx-draw 규칙을 덮어야 하므로 반드시 뒤에 온다) */
+
+#nfx-intro.is-burst .nfx-slice {
+  animation: nfx-burst var(--bdur, 1350ms) cubic-bezier(0.32, 0, 0.5, 1) var(--bd, 0ms) forwards;
+}
+
+@keyframes nfx-burst {
+  0%   { transform: translateX(0) scaleY(1); opacity: 1; }
+  35%  { opacity: 1; }
+  100% { transform: translateX(var(--dx)) scaleY(var(--sy)); opacity: 0; }
+}
+
+/* 파란 조각 — 흩어질 때만 색이 튄다.
+   transform 은 위와 같은 nfx-burst 를 그대로 쓰고 fill 만 따로 얹는다.
+   조각마다 --fd 가 달라서 한꺼번에 파래지지 않고 간간히 번진다. */
+#nfx-intro.is-burst .nfx-slice--blue {
+  animation:
+    nfx-burst var(--bdur, 1350ms) cubic-bezier(0.32, 0, 0.5, 1) var(--bd, 0ms) forwards,
+    nfx-blue  900ms ease-out var(--fd, 0ms) forwards;
+}
+
+@keyframes nfx-blue {
+  0%   { fill: #ff2a36; }
+  14%  { fill: #6fc0ff; }
+  34%  { fill: #1552ff; }
+  60%  { fill: #7fd0ff; }
+  100% { fill: #1552ff; }
+}
+
+/* 동시에 전체가 카메라 쪽으로 다가온다 */
+#nfx-intro.is-burst .nfx-burst {
+  animation: nfx-zoom var(--bdur, 1350ms) cubic-bezier(0.36, 0, 0.66, 1) forwards;
+}
+
+@keyframes nfx-zoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(3.1); }
+}
+
+/* ── 플래시 ───────────────────────────────────────────────── */
+
+.nfx-flash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background: radial-gradient(circle at 50% 50%,
+              rgba(255, 255, 255, 0.9), rgba(255, 120, 120, 0.35) 35%, transparent 70%);
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+
+.nfx-flash.fire { animation: nfx-flash 520ms ease-out forwards; }
+
+@keyframes nfx-flash {
+  0%   { opacity: 0;    transform: scale(0.6); }
+  8%   { opacity: 0.85; transform: scale(1); }
+  100% { opacity: 0;    transform: scale(1.35); }
+}
+
+/* ── 버튼 (필요 없으면 마크업과 함께 지워도 된다) ──────────── */
+
+.nfx-skip,
+.nfx-sound {
+  position: absolute;
+  z-index: 6;
+  border: 1px solid #2e2e2e;
+  border-radius: 999px;
+  background: rgba(18, 18, 18, 0.8);
+  color: #cfcfcf;
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: opacity 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.nfx-skip {
+  right: 22px;
+  bottom: 22px;
+  padding: 9px 18px;
+  opacity: 0.45;
+}
+.nfx-skip:hover { opacity: 1; color: #fff; border-color: #666; }
+
+/* 브라우저가 소리를 막았을 때만 JS 가 노출시킨다 */
+.nfx-sound {
+  left: 50%;
+  bottom: 14%;
+  transform: translateX(-50%);
+  padding: 11px 22px;
+  color: #e5e5e5;
+  font-size: 14px;
+}
+.nfx-sound:hover { color: #fff; border-color: #666; }
+.nfx-sound[hidden] { display: none; }
+
+/* ── 모션 최소화 ──────────────────────────────────────────
+ *  JS 가 이 설정을 감지하면 인트로를 아예 재생하지 않고 바로 닫는다.
+ *  혹시 남아 있을 경우를 대비한 안전장치. */
+@media (prefers-reduced-motion: reduce) {
+  #nfx-intro { display: none; }
+}
