@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로그인 | NAFLIX</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Noto Sans KR", "Helvetica Neue", Arial, sans-serif;
+      color: #fff;
+      background: linear-gradient(180deg, #3c1718 0%, #3d0a0a 35%, #100303 70%, #000000 100%);
+      background-attachment: fixed;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 1;
+      height: 88px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .logo {
+      position: absolute;
+      top: 22px;
+      left: 200px;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .logo img {
+      display: block;
+      height: 56px;
+      width: auto;
+    }
+
+    .auth-page {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100vh - 88px);
+      padding: 44px 20px 90px;
+    }
+
+    .auth-panel {
+      width: 450px;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 60px 0 0;
+    }
+
+    .login-title {
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.25;
+      word-break: keep-all;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: #8c8c8c;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.45;
+      word-break: keep-all;
+    }
+
+    .flash {
+      width: 100%;
+      margin: 0 0 16px;
+      padding: 12px 14px;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.45;
+      background: rgba(229, 9, 20, 0.92);
+    }
+
+    .flash.success {
+      background: rgba(25, 135, 84, 0.92);
+    }
+
+    .email-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding: 16px 20px;
+      border-radius: 4px;
+      background: rgba(51, 51, 51, 0.6);
+      font-size: 16px;
+    }
+
+    .email-row span {
+      overflow-wrap: anywhere;
+    }
+
+    .email-row a {
+      flex-shrink: 0;
+      color: #fff;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    .otp-boxes {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .otp-box {
+      width: 64px;
+      height: 84px;
+      padding: 0;
+      border: 1px solid #6b6b6b;
+      border-radius: 4px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.45);
+      font-size: 28px;
+      font-weight: 600;
+      text-align: center;
+      outline: none;
+    }
+
+    .otp-box:focus {
+      border-color: #fff;
+    }
+
+    .otp-boxes.otp-boxes-error {
+      margin-bottom: 8px;
+    }
+
+    .otp-boxes.otp-boxes-error .otp-box {
+      border-color: #e50914;
+    }
+
+    .field-error-message {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px;
+      color: #e50914;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .field-error-message svg {
+      flex-shrink: 0;
+    }
+
+    .submit {
+      width: 100%;
+      height: 48px;
+      border: 0;
+      border-radius: 4px;
+      color: #fff;
+      background: #e50914;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .submit:hover,
+    .submit:focus {
+      background: #c40812;
+    }
+
+    .hint {
+      margin: 20px 0 0;
+      color: #b3b3b3;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .hint a,
+    .hint .link-button {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .link-button {
+      background: none;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .support {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 40px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .support::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: translateY(-3px) rotate(45deg);
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        height: 76px;
+      }
+
+      .logo {
+        top: 20px;
+        left: 80px;
+      }
+
+      .logo img {
+        height: 46px;
+      }
+
+      .auth-page {
+        min-height: calc(100vh - 76px);
+        padding: 22px 0 60px;
+        background: #000;
+      }
+
+      .auth-panel {
+        width: min(100%, 450px);
+        padding: 28px 22px 0;
+      }
+
+      .login-title {
+        font-size: 26px;
+      }
+
+      .otp-boxes {
+        gap: 10px;
+      }
+
+      .otp-box {
+        width: 56px;
+        height: 74px;
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="{{ url_for('login') }}" aria-label="NETFLIX">
+      <img src="{{ url_for('static', filename='img/netflix-logo.png') }}" alt="NETFLIX">
+    </a>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-panel" aria-labelledby="otp-title">
+      <h1 id="otp-title" class="login-title">이메일로 받은 코드를 입력하세요</h1>
+      <p class="subtitle">4자리 인증 코드를 보내드렸습니다. 메일함을 확인해주세요.</p>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      {% if notice %}
+        <div class="flash success">{{ notice }}</div>
+      {% endif %}
+
+      <div class="email-row">
+        <span>{{ email }}</span>
+        <a href="{{ url_for('login') }}">변경</a>
+      </div>
+
+      <form method="post" action="{{ url_for('login_code') }}" id="otp-form" novalidate>
+        <input type="hidden" name="code" id="otp-code-value">
+        <div class="otp-boxes{{ ' otp-boxes-error' if error else '' }}" id="otp-boxes">
+          <input class="otp-box" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" autofocus>
+          <input class="otp-box" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+          <input class="otp-box" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+          <input class="otp-box" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+        </div>
+        {% if error %}
+          <p class="field-error-message">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M5.6 5.6L10.4 10.4M10.4 5.6L5.6 10.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            {{ error }}
+          </p>
+        {% endif %}
+        <button class="submit" type="submit">로그인</button>
+      </form>
+
+      {% if cooldown and cooldown > 0 %}
+        <p class="hint">코드를 못 받으셨나요? 스팸/정크 폴더를 확인해주세요. {{ cooldown }}초 후에 다시 받을 수 있어요.</p>
+      {% else %}
+        <form method="post" action="{{ url_for('login_resend') }}">
+          <p class="hint">
+            코드를 못 받으셨나요? 스팸/정크 폴더를 확인하거나
+            <button type="submit" class="link-button">코드를 다시 받으세요</button>.
+          </p>
+        </form>
+      {% endif %}
+
+      <a class="support" href="#">고객 지원</a>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById("otp-form");
+      var hiddenInput = document.getElementById("otp-code-value");
+      var boxes = Array.prototype.slice.call(
+        document.querySelectorAll("#otp-boxes .otp-box")
+      );
+
+      function syncHiddenValue() {
+        hiddenInput.value = boxes.map(function (box) { return box.value; }).join("");
+      }
+
+      function maybeAutoSubmit() {
+        syncHiddenValue();
+        if (hiddenInput.value.length === boxes.length) {
+          form.submit();
+        }
+      }
+
+      boxes.forEach(function (box, index) {
+        box.addEventListener("input", function () {
+          box.value = box.value.replace(/[^0-9]/g, "").slice(0, 1);
+          if (box.value && index < boxes.length - 1) {
+            boxes[index + 1].focus();
+          }
+          maybeAutoSubmit();
+        });
+
+        box.addEventListener("keydown", function (event) {
+          if (event.key === "Backspace" && !box.value && index > 0) {
+            boxes[index - 1].focus();
+            boxes[index - 1].value = "";
+            syncHiddenValue();
+          }
+        });
+
+        box.addEventListener("paste", function (event) {
+          var pasted = (event.clipboardData || window.clipboardData)
+            .getData("text")
+            .replace(/[^0-9]/g, "");
+          if (!pasted) {
+            return;
+          }
+          event.preventDefault();
+          for (var i = 0; i < boxes.length; i++) {
+            boxes[i].value = pasted[i] || "";
+          }
+          var nextEmpty = boxes.findIndex(function (b) { return !b.value; });
+          (nextEmpty === -1 ? boxes[boxes.length - 1] : boxes[nextEmpty]).focus();
+          maybeAutoSubmit();
+        });
+      });
+
+      form.addEventListener("submit", syncHiddenValue);
+    })();
+  </script>
+</body>
+</html>

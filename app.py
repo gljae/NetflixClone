@@ -306,7 +306,7 @@ def register_routes(app):
         if not email:
             return redirect(url_for("landing"))
         return render_template(
-            "auth/code.html",
+            "login_otp.html",
             email=email,
             cooldown=cooldown_remaining("login_sent_at"),
             dev_code=session.get("dev_login_code"),
@@ -322,7 +322,7 @@ def register_routes(app):
         def again(error, status=400):
             return (
                 render_template(
-                    "auth/code.html",
+                    "login_otp.html",
                     email=email,
                     cooldown=cooldown_remaining("login_sent_at"),
                     dev_code=session.get("dev_login_code"),
@@ -372,7 +372,7 @@ def register_routes(app):
         if remaining:
             return (
                 render_template(
-                    "auth/code.html",
+                    "login_otp.html",
                     email=email,
                     cooldown=remaining,
                     dev_code=session.get("dev_login_code"),
