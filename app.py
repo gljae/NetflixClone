@@ -209,25 +209,35 @@ def register_routes(app):
         매직링크로 이메일을 확인했다는 뜻이라, 처음부터 다시 시킬 이유가 없다.
         코드로 들어와서 멈췄던 단계부터 이어가면 된다.
         """
-        email = (request.form.get("email") or "").strip().lower()
+        return route_by_email(request.form.get("email"), "landing.html")
+
+    # ------------------------------------------------------------ 로그인
+
+    def route_by_email(raw_email, template, error_key="error"):
+        """이메일 하나로 로그인/가입을 가른다.
+
+        입구가 둘이다 — 랜딩(/)과 전용 로그인 화면(/login). 판단 기준은
+        완전히 같고 오류를 되돌려줄 화면만 다르므로, 로직은 여기 하나만 둔다.
+        (예전엔 두 라우트에 같은 코드가 복사돼 있어서, 한쪽만 고치면
+         다른 쪽이 조용히 어긋나는 상태였다.)
+        """
+        email = (raw_email or "").strip().lower()
 
         if not EMAIL_RE.match(email):
             return (
                 render_template(
-                    "landing.html",
+                    template,
                     email=email,
-                    error="정확한 이메일 주소를 입력해주세요.",
+                    **{error_key: "정확한 이메일 주소를 입력해주세요."},
                 ),
                 400,
             )
 
         if User.query.filter_by(email=email).first():
-            return start_login(app, email)
+            return start_login(app, email, template=template, error_key=error_key)
 
         session["signup_email"] = email
         return redirect(url_for("signup_start"))
-
-    # ------------------------------------------------------------ 로그인
 
     @app.route("/login", methods=["GET", "POST"])
     def login():
@@ -244,25 +254,9 @@ def register_routes(app):
         if request.method == "GET":
             return render_template("login.html")
 
-        email = (request.form.get("email") or "").strip().lower()
+        return route_by_email(request.form.get("email"), "login.html", "email_error")
 
-        if not EMAIL_RE.match(email):
-            return (
-                render_template(
-                    "login.html",
-                    email=email,
-                    email_error="정확한 이메일 주소를 입력해주세요.",
-                ),
-                400,
-            )
-
-        if User.query.filter_by(email=email).first():
-            return start_login(app, email)
-
-        session["signup_email"] = email
-        return redirect(url_for("signup_start"))
-
-    def start_login(app, email, notice=None):
+    def start_login(app, email, notice=None, template="landing.html", error_key="error"):
         """로그인 코드를 발급해 보내고 입력 화면으로 보낸다."""
         # 새 코드를 내면 이전에 보낸 미사용 코드는 무효화한다.
         # 항상 "마지막에 받은 코드" 하나만 유효해야 헷갈리지 않는다.
@@ -279,11 +273,13 @@ def register_routes(app):
             send_login_code(app.config, email, otp.code)
         except Exception:
             app.logger.exception("로그인 코드 발송 실패")
+            # 사용자가 들어온 화면으로 돌려보낸다. /login 에서 왔는데
+            # 랜딩이 뜨면 흐름이 끊긴 것처럼 보인다.
             return (
                 render_template(
-                    "landing.html",
+                    template,
                     email=email,
-                    error="메일을 보내지 못했습니다. 터미널 로그에서 원인을 확인해주세요.",
+                    **{error_key: "메일을 보내지 못했습니다. 터미널 로그에서 원인을 확인해주세요."},
                 ),
                 502,
             )
