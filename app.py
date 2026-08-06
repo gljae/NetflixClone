@@ -409,6 +409,20 @@ def register_routes(app):
             plan=PLANS.get(current_user.plan_code),
         )
 
+    @app.get("/profile")
+    @login_required
+    def profile():
+        """프로필 선택 화면 (hasam031 작업).
+
+        profile.html 은 base.html 을 상속하지 않는 독립 문서다. 자체 CSS 에
+        body/* 같은 전역 셀렉터가 들어 있어서, 상속시키면 다른 화면까지
+        스타일이 번진다. 그래서 파일도 profile.css / profile.js 로 따로 둔다.
+
+        지금은 화면만 붙인 상태다. 프로필 목록이 템플릿에 하드코딩돼 있어서,
+        DB 와 연결하려면 profiles 테이블과 user 관계를 새로 만들어야 한다.
+        """
+        return render_template("profile.html")
+
     # -------------------------------------------------- 1단계: 이메일 확인
 
     @app.get("/signup")
