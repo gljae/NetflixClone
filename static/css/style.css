@@ -357,44 +357,9 @@ body {
   overflow-wrap: anywhere;
 }
 
-.auth-note {
-  margin-top: 20px;
-  color: #b3b3b3;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.email-readonly-dark {
-  color: #fff;
-  background: rgba(51, 51, 51, .6);
-  border-color: rgba(255, 255, 255, .13);
-}
-
-.email-readonly-dark a { color: #d2d2d2; }
-
-/* 4자리 코드 입력 — 자간을 벌려 자릿수가 눈에 들어오게 한다 */
-.code-field {
-  width: 100%;
-  height: 56px;
-  margin-top: 24px;
-  padding: 0 20px;
-  font-size: 22px;
-  letter-spacing: 10px;
-  color: #fff;
-  background: #333;
-  border: 1px solid #8c8c8c;
-  border-radius: 4px;
-  outline: none;
-}
-
-.code-field:focus { border-color: #fff; }
-.code-field.has-error { border-color: var(--red); }
-
-.code-field::placeholder {
-  font-size: 16px;
-  letter-spacing: normal;
-  color: #8c8c8c;
-}
+/* OTP 입력 화면(login_otp.html)은 자체 스타일을 들고 있어서
+   여기에 4자리 입력·안내문 관련 규칙을 두지 않는다.
+   아래 .auth-* 와 .btn-ghost 는 mypage.html 이 계속 쓴다. */
 
 .btn-ghost {
   display: block;
@@ -419,15 +384,6 @@ body {
   color: #8c8c8c;
   border-color: rgba(255, 255, 255, .15);
   cursor: not-allowed;
-}
-
-.form-notice {
-  margin-top: 16px;
-  padding: 12px 14px;
-  font-size: 14px;
-  color: #fff;
-  background: rgba(25, 135, 84, .9);
-  border-radius: 4px;
 }
 
 .summary-dark { border-color: rgba(255, 255, 255, .15); }
