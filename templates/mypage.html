@@ -31,6 +31,8 @@
 
   {% if not user.is_signup_complete %}
     <a class="btn-primary" href="{{ url_for('signup_plan') }}">가입 이어서 하기</a>
+  {% else %}
+    <a class="btn-primary" href="{{ url_for('profile') }}">프로필 선택하기</a>
   {% endif %}
 
   <a class="btn-ghost" href="{{ url_for('logout') }}">로그아웃</a>

@@ -1,0 +1,803 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-color: #141414;
+    --card-bg: #181818;
+    --netflix-red: #E50914;
+    --netflix-red-hover: #b80710;
+    --text-color: #ffffff;
+    --text-muted: #aaaaaa;
+    --nav-bg-dark: rgba(20, 20, 20, 0.95);
+    --glass-bg: rgba(40, 40, 40, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --transition-fast: 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #141414;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--netflix-red);
+}
+
+/* ----------------------------------------------------
+   1. Profile Selection Screen ("Who's Watching?")
+---------------------------------------------------- */
+.profile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.profile-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.profile-title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.5px;
+}
+
+.profile-container {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: transform var(--transition-fast);
+}
+
+.profile-card:hover {
+    color: var(--text-color);
+    transform: scale(1.08);
+}
+
+.profile-card .avatar-box {
+    width: 130px;
+    height: 130px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 3px solid transparent;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    position: relative;
+}
+
+.profile-card:hover .avatar-box {
+    border-color: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.avatar-dev { background: linear-gradient(135deg, #1e88e5, #0d47a1); }
+.avatar-nam { background: linear-gradient(135deg, #e50914, #831010); }
+.avatar-si  { background: linear-gradient(135deg, #fbc02d, #f57f17); }
+.avatar-guest { background: linear-gradient(135deg, #00c853, #006064); }
+
+.profile-name {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* ----------------------------------------------------
+   2. Main Layout & Navbar
+---------------------------------------------------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: background-color var(--transition-smooth);
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+.navbar.scrolled {
+    background-color: var(--nav-bg-dark);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.logo {
+    color: var(--netflix-red);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: 0 2px 10px rgba(229, 9, 20, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.current-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color var(--transition-fast);
+}
+
+.current-profile-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mini-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+/* ----------------------------------------------------
+   3. Hero Billboard Section
+---------------------------------------------------- */
+.billboard {
+    position: relative;
+    height: 80vh;
+    min-height: 550px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.billboard-video-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    min-width: 177.77vh;
+    min-height: 56.25vw;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.65;
+    overflow: hidden;
+}
+
+.billboard-video-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transform: scale(1.15);
+}
+
+.billboard-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+.billboard-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(20,20,20,0.3) 0%, rgba(20,20,20,0.6) 70%, rgba(20,20,20,1) 100%),
+                linear-gradient(90deg, rgba(20,20,20,0.7) 0%, rgba(20,20,20,0.2) 60%, rgba(20,20,20,0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.billboard-content {
+    max-width: 650px;
+    z-index: 10;
+    margin-top: 4rem;
+}
+
+.billboard-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(229, 9, 20, 0.9);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.billboard-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.billboard-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #46d369;
+    font-weight: 600;
+}
+
+.billboard-meta span.age-rating {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 1px 6px;
+    border-radius: 2px;
+    font-size: 0.8rem;
+}
+
+.billboard-desc {
+    font-size: 1.1rem;
+    color: #e5e5e5;
+    margin-bottom: 1.8rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.billboard-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    color: #000000;
+}
+.btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    transform: scale(1.03);
+}
+
+.btn-secondary {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+}
+.btn-secondary:hover {
+    background-color: rgba(109, 109, 110, 0.4);
+    transform: scale(1.03);
+}
+
+/* ----------------------------------------------------
+   4. Content Rows (Categories)
+---------------------------------------------------- */
+.main-content {
+    margin-top: -80px;
+    position: relative;
+    z-index: 20;
+    padding-bottom: 4rem;
+}
+
+.row {
+    margin-bottom: 3rem;
+    padding: 0 4%;
+}
+
+.row-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.row-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.row-container {
+    position: relative;
+}
+
+.row-cards {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+}
+
+.row-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 260px;
+    height: 150px;
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.card:hover {
+    transform: scale(1.1);
+    z-index: 50;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity var(--transition-fast);
+}
+
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.7rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #ddd;
+}
+
+/* ----------------------------------------------------
+   5. Detail Modal Component
+---------------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+    padding: 2rem 1rem;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #181818;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    transform: scale(0.9);
+    transition: transform var(--transition-smooth);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(24, 24, 24, 0.7);
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.modal-banner {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.modal-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(24,24,24,0.2) 0%, rgba(24,24,24,1) 100%);
+}
+
+.modal-banner-info {
+    position: relative;
+    z-index: 5;
+}
+
+.modal-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+}
+
+.modal-body-scroll {
+    padding: 1.5rem 2rem 2.5rem 2rem;
+    overflow-y: auto;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.modal-description {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.modal-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.modal-meta-item strong {
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* ----------------------------------------------------
+   6. Footer
+---------------------------------------------------- */
+footer {
+    padding: 3rem 4%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 5rem;
+    color: #757575;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: var(--text-muted);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* ----------------------------------------------------
+   7. Video Player Modal (Netflix Style)
+---------------------------------------------------- */
+.video-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.video-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 2rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.video-modal-close:hover {
+    background: var(--netflix-red);
+    border-color: var(--netflix-red);
+    transform: scale(1.1);
+}
+
+.video-modal-container {
+    width: 90%;
+    max-width: 1100px;
+    height: 75vh;
+    max-height: 650px;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .billboard-title { font-size: 2.3rem; }
+    .nav-links { display: none; }
+    .modal-grid { grid-template-columns: 1fr; }
+    .profile-title { font-size: 2rem; }
+    .profile-card .avatar-box { width: 100px; height: 100px; font-size: 2.5rem; }
+    .video-modal-container { width: 95%; height: 60vh; }
+    .episode-thumb-box { width: 100px; height: 60px; }
+}
+
+/* ----------------------------------------------------
+   8. Netflix Episode Item List Style
+---------------------------------------------------- */
+.episode-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.episode-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--netflix-red);
+    transform: translateX(6px);
+}
+
+.episode-num {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #808080;
+    min-width: 24px;
+}
+
+.episode-thumb-box {
+    position: relative;
+    width: 140px;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.episode-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.episode-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.episode-item:hover .episode-play-overlay {
+    opacity: 1;
+}
+
+.episode-play-icon {
+    font-size: 1.6rem;
+    color: white;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
+}
+
+.episode-info {
+    flex: 1;
+}
+
+.episode-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.episode-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+}
+
+.episode-desc {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    line-height: 1.4;
+}
