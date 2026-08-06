@@ -1,0 +1,37 @@
+{% extends "signup/_layout.html" %}
+{% block title %}메일함을 확인해 주세요 — NETFLIX{% endblock %}
+
+{% block card %}
+  <div class="card-icon" aria-hidden="true">✉</div>
+
+  <h1 class="card-title">메일함을 확인해 주세요</h1>
+  <p class="card-desc">
+    <strong>{{ email }}</strong> 으로<br>
+    계정 등록 링크를 보냈습니다.
+  </p>
+
+  {% if error %}
+    <p class="form-error">{{ error }}</p>
+  {% endif %}
+
+  {% if dev_link %}
+    {# 개발 모드(MAIL_BACKEND=console)에서만 보인다. 실제 발송 시에는 사라진다. #}
+    <div class="dev-link">
+      <p class="dev-link-label">개발용 — 메일 대신 여기서 바로 열기</p>
+      <a href="{{ dev_link }}">계정 등록 링크</a>
+    </div>
+  {% endif %}
+
+  <form method="post" action="{{ url_for('signup_send') }}">
+    {% if marketing_opt_in %}
+      <input type="hidden" name="marketing_opt_in" value="1">
+    {% endif %}
+    <button type="submit" class="btn-secondary" {% if cooldown %}disabled{% endif %}>
+      {% if cooldown %}{{ cooldown }}초 후 재전송 가능{% else %}메일 다시 보내기{% endif %}
+    </button>
+  </form>
+
+  <p class="card-note">
+    메일이 오지 않았다면 스팸함도 확인해 주세요.
+  </p>
+{% endblock %}

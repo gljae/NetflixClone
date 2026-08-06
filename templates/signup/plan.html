@@ -1,0 +1,44 @@
+{% extends "signup/_layout.html" %}
+{% block title %}멤버십 선택 — NETFLIX{% endblock %}
+{% block card_class %}signup-card-wide{% endblock %}
+
+{% block card %}
+  <h1 class="card-title">원하는 멤버십을 선택하세요</h1>
+  <p class="card-desc">언제든지 변경하거나 해지할 수 있습니다.</p>
+
+  {% if error %}
+    <p class="form-error">{{ error }}</p>
+  {% endif %}
+
+  <form method="post" action="{{ url_for('signup_plan') }}">
+    <div class="plan-grid">
+      {% for code, plan in plans %}
+        <label class="plan-card">
+          <input type="radio" name="plan_code" value="{{ code }}"
+                 {% if selected == code or (not selected and loop.first) %}checked{% endif %}>
+          <div class="plan-body">
+            <div class="plan-head">
+              <span class="plan-name">{{ plan.name }}</span>
+              {% if not plan.paid %}<span class="plan-badge">무료</span>{% endif %}
+            </div>
+            <p class="plan-price">
+              {% if plan.paid %}월 {{ plan.price | won }}{% else %}0원{% endif %}
+            </p>
+            <dl class="plan-spec">
+              <div><dt>화질</dt><dd>{{ plan.quality }}</dd></div>
+              <div><dt>해상도</dt><dd>{{ plan.resolution }}</dd></div>
+              <div><dt>동시 시청</dt><dd>{{ plan.devices }}</dd></div>
+            </dl>
+            <p class="plan-note">{{ plan.note }}</p>
+          </div>
+        </label>
+      {% endfor %}
+    </div>
+
+    <button type="submit" class="btn-primary">다음</button>
+  </form>
+
+  <p class="card-note">
+    무료 멤버십은 결제 정보 없이 바로 가입이 완료됩니다.
+  </p>
+{% endblock %}

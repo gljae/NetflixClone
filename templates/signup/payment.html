@@ -1,0 +1,19 @@
+{% extends "signup/_layout.html" %}
+{% block title %}결제 정보 — NETFLIX{% endblock %}
+
+{% block card %}
+  <h1 class="card-title">결제 정보를 입력하세요</h1>
+  <p class="card-desc">
+    선택하신 멤버십은 <strong>{{ plan.name }}</strong> (월 {{ plan.price | won }}) 입니다.
+  </p>
+
+  <div class="stub-box">
+    <p class="stub-title">아직 구현되지 않은 단계입니다</p>
+    <p>
+      카드 등록과 결제는 다음 작업 범위입니다.
+      지금은 유료 멤버십을 선택하면 이 화면에서 멈춥니다.
+    </p>
+  </div>
+
+  <a class="btn-secondary" href="{{ url_for('signup_plan') }}">멤버십 다시 선택하기</a>
+{% endblock %}

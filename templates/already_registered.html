@@ -1,0 +1,22 @@
+{#
+  이미 가입된 이메일로 시작하기를 눌렀을 때.
+
+  [로그인 연결]
+  로그인 기능이 붙으면 이 화면은 사라진다. app.py 의 auth_check() 가
+  이 템플릿 대신 로그인 매직링크 발송 화면으로 보내게 되기 때문이다.
+  그때 이 파일은 지우면 된다.
+#}
+{% extends "signup/_layout.html" %}
+{% block title %}이미 가입된 계정 — NETFLIX{% endblock %}
+
+{% block card %}
+  <h1 class="card-title">이미 가입된 이메일입니다</h1>
+  <p class="card-desc">
+    <strong>{{ email }}</strong> 계정은 이미 등록이 완료되었습니다.
+  </p>
+  <p class="card-note">
+    로그인 기능은 이번 범위에 포함되어 있지 않습니다.
+  </p>
+
+  <a class="btn-primary" href="{{ url_for('landing') }}">처음으로 돌아가기</a>
+{% endblock %}

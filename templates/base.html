@@ -1,0 +1,31 @@
+{#
+  모든 페이지의 뼈대.
+
+  나중에 붙일 것들을 위해 블록을 3개 비워뒀다.
+    head_extra : <head> 끝 — CSS/메타 추가
+    body_top   : <body> 맨 위 — 두둥 인트로 오버레이가 들어갈 자리
+    scripts    : </body> 직전 — 페이지별 스크립트
+#}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}NETFLIX{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  {# [두둥 연결 ①] 인트로 CSS 는 랜딩에서만 필요해서 landing.html 의
+     head_extra 블록에서 불러온다. 다른 페이지는 안 받는다. #}
+  {% block head_extra %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+{# [두둥 연결 ②] 인트로 오버레이가 들어갈 자리. landing.html 참고. #}
+{% block body_top %}{% endblock %}
+
+{% block body %}{% endblock %}
+
+{# [두둥 연결 ③] 인트로 스크립트가 들어갈 자리. landing.html 참고. #}
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+{#
+  회원가입 단계 공통 레이아웃.
+  넷플릭스는 랜딩만 검은색이고 가입 단계는 흰 배경이다.
+#}
+{% extends "base.html" %}
+{% block body_class %}page-light{% endblock %}
+
+{% block body %}
+<header class="signup-header">
+  <a class="logo" href="{{ url_for('landing') }}">NETFLIX</a>
+</header>
+
+<main class="signup-main">
+  <div class="signup-card {% block card_class %}{% endblock %}">
+    {% if step %}
+      <p class="card-step">3단계 중 {{ step }}단계</p>
+    {% endif %}
+    {% block card %}{% endblock %}
+  </div>
+</main>
+
+<footer class="signup-footer">
+  <p>넷플릭스 클론 코딩 예제 — 실제 서비스가 아닙니다.</p>
+</footer>
+{% endblock %}

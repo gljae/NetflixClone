@@ -1,0 +1,429 @@
+/* ------------------------------------------------------------------ 기본 */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red: #e50914;
+  --red-hover: #f6121d;
+  --ink: #000;
+  --gray: #737373;
+  --line: #d9d9d9;
+  --bg-light: #fff;
+}
+
+body {
+  font-family: "Pretendard", "Malgun Gothic", -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.page-dark  { background: #000; color: #fff; }
+.page-light { background: var(--bg-light); color: var(--ink); }
+
+.logo {
+  color: var(--red);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------------ 랜딩 */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.45) 50%, rgba(0,0,0,.85)),
+    radial-gradient(120% 90% at 50% 0%, #3a0508 0%, #150203 45%, #000 100%);
+}
+
+.hero-header { padding: 20px 44px; }
+
+.hero-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px 96px;
+}
+
+.hero-body h1 {
+  font-size: clamp(34px, 5.4vw, 60px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.hero-sub {
+  font-size: clamp(17px, 2.2vw, 22px);
+  margin-top: 18px;
+}
+
+.hero-lead {
+  font-size: 17px;
+  margin-top: 26px;
+  color: #e5e5e5;
+}
+
+.email-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  width: min(680px, 100%);
+}
+
+/* 플로팅 라벨: 값이 있거나 포커스면 라벨이 위로 올라간다 */
+.email-field {
+  position: relative;
+  flex: 1;
+}
+
+.email-field input {
+  width: 100%;
+  height: 56px;
+  padding: 20px 14px 6px;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(22, 22, 22, .7);
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+}
+
+.email-field input:focus { border-color: #fff; }
+
+.email-field label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b3b3b3;
+  font-size: 16px;
+  pointer-events: none;
+  transition: transform .15s ease, font-size .15s ease;
+}
+
+.email-field input:focus + label,
+.email-field input:not(:placeholder-shown) + label {
+  transform: translateY(-160%);
+  font-size: 12px;
+}
+
+.btn-hero {
+  padding: 0 26px;
+  height: 56px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--red);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-hero:hover { background: var(--red-hover); }
+
+@media (max-width: 640px) {
+  .email-form { flex-direction: column; }
+  .btn-hero { width: 100%; }
+}
+
+/* --------------------------------------------------------- 회원가입 공통 */
+
+.signup-header {
+  padding: 18px 44px;
+  border-bottom: 1px solid var(--line);
+}
+
+.signup-main {
+  display: flex;
+  justify-content: center;
+  padding: 56px 24px 80px;
+  min-height: calc(100vh - 130px);
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.signup-card-wide { max-width: 880px; }
+
+.card-step {
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+.card-desc {
+  font-size: 16px;
+  color: #333;
+  margin-top: 14px;
+}
+
+.card-note {
+  font-size: 13px;
+  color: var(--gray);
+  margin-top: 18px;
+}
+
+.card-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: var(--red);
+  border: 2px solid var(--red);
+  border-radius: 50%;
+}
+
+.card-icon-ok   { color: #1d8a4b; border-color: #1d8a4b; }
+.card-icon-warn { color: #b45309; border-color: #b45309; }
+
+.signup-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 44px;
+  color: var(--gray);
+  font-size: 13px;
+}
+
+/* -------------------------------------------------------------- 폼 요소 */
+
+.btn-primary,
+.btn-secondary {
+  display: block;
+  width: 100%;
+  height: 56px;
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 56px;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary { background: var(--red); color: #fff; }
+.btn-primary:hover { background: var(--red-hover); }
+
+.btn-secondary {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn-secondary:hover { background: #f3f3f3; }
+
+.btn-secondary:disabled {
+  color: var(--gray);
+  cursor: not-allowed;
+  background: #f3f3f3;
+}
+
+.email-readonly {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 16px;
+  font-size: 16px;
+  text-align: left;
+  background: #f3f3f3;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
+.email-readonly a {
+  flex: none;
+  color: var(--gray);
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: left;
+  color: #333;
+  cursor: pointer;
+}
+
+.checkbox input { width: 18px; height: 18px; accent-color: var(--red); flex: none; }
+
+.form-error {
+  margin-top: 14px;
+  padding: 12px 14px;
+  font-size: 14px;
+  text-align: left;
+  color: #8f1111;
+  background: #fdeaea;
+  border-radius: 4px;
+}
+
+.page-dark .form-error {
+  color: #fff;
+  background: rgba(229, 9, 20, .85);
+  width: min(680px, 100%);
+}
+
+/* ---------------------------------------------------------- 플랜 선택 */
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin-top: 32px;
+  text-align: left;
+}
+
+.plan-card { cursor: pointer; }
+
+/* 라디오는 숨기고 카드 전체를 선택 영역으로 쓴다 */
+.plan-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.plan-body {
+  height: 100%;
+  padding: 20px 18px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  transition: border-color .12s ease, background .12s ease;
+}
+
+.plan-card:hover .plan-body { border-color: #a3a3a3; }
+
+.plan-card input:checked + .plan-body {
+  border-color: var(--red);
+  background: #fff5f5;
+}
+
+.plan-card input:focus-visible + .plan-body { outline: 2px solid #0b5fff; outline-offset: 2px; }
+
+.plan-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-name { font-size: 17px; font-weight: 700; }
+
+.plan-badge {
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--red);
+  border-radius: 3px;
+}
+
+.plan-price {
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.plan-spec {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #333;
+}
+
+.plan-spec > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 0;
+  border-top: 1px solid #ececec;
+}
+
+.plan-spec dt { color: var(--gray); }
+.plan-spec dd { text-align: right; }
+
+.plan-note {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+/* ------------------------------------------------------------ 요약/기타 */
+
+.summary {
+  margin-top: 28px;
+  text-align: left;
+  font-size: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.summary > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 2px;
+  border-bottom: 1px solid var(--line);
+}
+
+.summary dt { color: var(--gray); }
+.summary dd { text-align: right; overflow-wrap: anywhere; }
+
+.stub-box {
+  margin-top: 28px;
+  padding: 20px 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  color: #444;
+  background: #f7f7f7;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+}
+
+.stub-title { font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+
+/* 개발용 매직링크 박스 — MAIL_BACKEND=console 일 때만 렌더링된다 */
+.dev-link {
+  margin-top: 24px;
+  padding: 14px;
+  text-align: left;
+  background: #fffbe6;
+  border: 1px dashed #d4a72c;
+  border-radius: 6px;
+}
+
+.dev-link-label {
+  font-size: 12px;
+  color: #7a5c00;
+  margin-bottom: 6px;
+}
+
+.dev-link a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #7a5c00;
+  overflow-wrap: anywhere;
+}
