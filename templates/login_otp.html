@@ -345,9 +345,22 @@
         hiddenInput.value = boxes.map(function (box) { return box.value; }).join("");
       }
 
+      function lockForm() {
+        submitted = true;
+        boxes.forEach(function (box) { box.disabled = true; });
+        if (submitButton) {
+          submitButton.disabled = true;
+        }
+      }
+
       function maybeAutoSubmit() {
         syncHiddenValue();
         if (!submitted && hiddenInput.value.length === boxes.length) {
+          // form.submit() 은 스펙상 "submit" 이벤트를 발생시키지 않는다.
+          // 그래서 아래 submit 리스너의 잠금 로직을 못 타고 지나간다 —
+          // 여기서 먼저 잠가야 그 직후의 수동 클릭이 두 번째 요청으로
+          // 새는 걸 막을 수 있다.
+          lockForm();
           form.submit();
         }
       }
@@ -357,11 +370,7 @@
           event.preventDefault();
           return;
         }
-        submitted = true;
-        boxes.forEach(function (box) { box.disabled = true; });
-        if (submitButton) {
-          submitButton.disabled = true;
-        }
+        lockForm();
       });
 
       boxes.forEach(function (box, index) {
