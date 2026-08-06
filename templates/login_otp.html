@@ -109,33 +109,35 @@
       text-decoration: underline;
     }
 
-    .field {
-      width: 100%;
-      height: 50px;
+    .otp-boxes {
+      display: flex;
+      gap: 16px;
       margin-bottom: 16px;
-      padding: 16px 20px;
+    }
+
+    .otp-box {
+      width: 64px;
+      height: 64px;
+      padding: 0;
       border: 1px solid #8c8c8c;
       border-radius: 4px;
       color: #fff;
-      background: #333;
-      font-size: 20px;
-      letter-spacing: 6px;
+      background: #262626;
+      font-size: 28px;
+      font-weight: 600;
+      text-align: center;
       outline: none;
     }
 
-    .field::placeholder {
-      color: #8c8c8c;
-      letter-spacing: normal;
-      font-size: 16px;
-    }
-
-    .field:focus {
+    .otp-box:focus {
       border-color: #fff;
-      background: #333;
     }
 
-    .field.field-error {
+    .otp-boxes.otp-boxes-error {
       margin-bottom: 8px;
+    }
+
+    .otp-boxes.otp-boxes-error .otp-box {
       border-color: #e50914;
     }
 
@@ -238,6 +240,16 @@
       .login-title {
         font-size: 26px;
       }
+
+      .otp-boxes {
+        gap: 10px;
+      }
+
+      .otp-box {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -266,18 +278,14 @@
         <a href="{{ url_for('login') }}">변경</a>
       </div>
 
-      <form method="post" action="{{ url_for('login_otp') }}" novalidate>
-        <input
-          class="field{{ ' field-error' if code_error else '' }}"
-          type="text"
-          name="code"
-          inputmode="numeric"
-          pattern="[0-9]*"
-          maxlength="4"
-          placeholder="코드 4자리"
-          autocomplete="one-time-code"
-          autofocus
-        >
+      <form method="post" action="{{ url_for('login_otp') }}" id="otp-form" novalidate>
+        <input type="hidden" name="code" id="otp-code-value">
+        <div class="otp-boxes{{ ' otp-boxes-error' if code_error else '' }}" id="otp-boxes">
+          <input class="otp-box" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" autofocus>
+          <input class="otp-box" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+          <input class="otp-box" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+          <input class="otp-box" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+        </div>
         {% if code_error %}
           <p class="field-error-message">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -295,5 +303,62 @@
       <a class="support" href="#">고객 지원</a>
     </section>
   </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById("otp-form");
+      var hiddenInput = document.getElementById("otp-code-value");
+      var boxes = Array.prototype.slice.call(
+        document.querySelectorAll("#otp-boxes .otp-box")
+      );
+
+      function syncHiddenValue() {
+        hiddenInput.value = boxes.map(function (box) { return box.value; }).join("");
+      }
+
+      function maybeAutoSubmit() {
+        syncHiddenValue();
+        if (hiddenInput.value.length === boxes.length) {
+          form.submit();
+        }
+      }
+
+      boxes.forEach(function (box, index) {
+        box.addEventListener("input", function () {
+          box.value = box.value.replace(/[^0-9]/g, "").slice(0, 1);
+          if (box.value && index < boxes.length - 1) {
+            boxes[index + 1].focus();
+          }
+          maybeAutoSubmit();
+        });
+
+        box.addEventListener("keydown", function (event) {
+          if (event.key === "Backspace" && !box.value && index > 0) {
+            boxes[index - 1].focus();
+            boxes[index - 1].value = "";
+            syncHiddenValue();
+          }
+        });
+
+        box.addEventListener("paste", function (event) {
+          var pasted = (event.clipboardData || window.clipboardData)
+            .getData("text")
+            .replace(/[^0-9]/g, "");
+          if (!pasted) {
+            return;
+          }
+          event.preventDefault();
+          for (var i = 0; i < boxes.length; i++) {
+            boxes[i].value = pasted[i] || "";
+          }
+          var nextEmpty = boxes.findIndex(function (b) { return !b.value; });
+          (nextEmpty === -1 ? boxes[boxes.length - 1] : boxes[nextEmpty]).focus();
+          maybeAutoSubmit();
+        });
+      });
+
+      form.addEventListener("submit", syncHiddenValue);
+    })();
+  </script>
 </body>
 </html>
