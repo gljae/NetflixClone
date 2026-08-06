@@ -1,0 +1,9 @@
+# 비밀값이 들어 있는 실제 설정 파일 — 절대 커밋하지 않는다
+.env
+
+.venv/
+__pycache__/
+*.pyc
+
+# SQLite DB
+instance/

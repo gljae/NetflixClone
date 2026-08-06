@@ -1,0 +1,37 @@
+{#
+  로그인 후 홈 — 스텁.
+
+  실제 홈 화면(콘텐츠 목록 등)이 생기면 이 템플릿을 갈아끼우면 된다.
+  app.py 의 mypage() 라우트만 바꾸면 되고, 로그인 쪽은 손댈 필요 없다.
+#}
+{% extends "auth/_layout.html" %}
+{% block title %}마이페이지 — NETFLIX{% endblock %}
+
+{% block panel %}
+  <h1 class="auth-title">로그인되었습니다</h1>
+  <p class="auth-sub">{{ user.email }}</p>
+
+  <dl class="summary summary-dark">
+    <div><dt>이메일</dt><dd>{{ user.email }}</dd></div>
+    <div><dt>멤버십</dt><dd>{{ plan.name if plan else "미선택" }}</dd></div>
+    <div><dt>요금</dt>
+      <dd>
+        {% if plan and plan.paid %}월 {{ plan.price | won }}
+        {% elif plan %}무료
+        {% else %}—{% endif %}
+      </dd>
+    </div>
+    <div><dt>가입 완료</dt>
+      <dd>{{ "예" if user.is_signup_complete else "아니오 (진행 중)" }}</dd>
+    </div>
+    <div><dt>혜택 메일</dt>
+      <dd>{{ "수신" if user.marketing_opt_in else "수신 안 함" }}</dd>
+    </div>
+  </dl>
+
+  {% if not user.is_signup_complete %}
+    <a class="btn-primary" href="{{ url_for('signup_plan') }}">가입 이어서 하기</a>
+  {% endif %}
+
+  <a class="btn-ghost" href="{{ url_for('logout') }}">로그아웃</a>
+{% endblock %}

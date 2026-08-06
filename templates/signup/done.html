@@ -1,0 +1,22 @@
+{% extends "signup/_layout.html" %}
+{% block title %}가입 완료 — NETFLIX{% endblock %}
+
+{% block card %}
+  <div class="card-icon card-icon-ok" aria-hidden="true">✓</div>
+
+  <h1 class="card-title">가입이 완료되었습니다</h1>
+  <p class="card-desc">
+    <strong>{{ user.email }}</strong><br>
+    {{ plan.name }} 멤버십으로 시작합니다.
+  </p>
+
+  <dl class="summary">
+    <div><dt>이메일</dt><dd>{{ user.email }}</dd></div>
+    <div><dt>멤버십</dt><dd>{{ plan.name }}</dd></div>
+    <div><dt>요금</dt><dd>{% if plan.paid %}월 {{ plan.price | won }}{% else %}무료{% endif %}</dd></div>
+    <div><dt>화질</dt><dd>{{ plan.quality }}</dd></div>
+    <div><dt>혜택 메일</dt><dd>{{ "수신" if user.marketing_opt_in else "수신 안 함" }}</dd></div>
+  </dl>
+
+  <a class="btn-primary" href="{{ url_for('landing') }}">처음으로</a>
+{% endblock %}

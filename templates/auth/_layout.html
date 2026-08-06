@@ -1,0 +1,23 @@
+{#
+  로그인 단계 공통 레이아웃.
+
+  가입 단계(signup/_layout.html)는 흰 배경, 로그인은 어두운 배경이다.
+  실제 넷플릭스가 그렇게 나눠져 있다 — 로그인은 기존 회원용이라 브랜드
+  화면에 가깝고, 가입은 폼 위주라 밝은 배경을 쓴다.
+#}
+{% extends "base.html" %}
+{% block body_class %}page-dark{% endblock %}
+
+{% block body %}
+<div class="auth-page">
+  <header class="auth-header">
+    <a class="logo" href="{{ url_for('landing') }}">NETFLIX</a>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-panel">
+      {% block panel %}{% endblock %}
+    </div>
+  </main>
+</div>
+{% endblock %}

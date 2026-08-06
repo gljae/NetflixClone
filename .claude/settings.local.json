@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"D:/클로드/정글/\" ; echo \"---\" ; ls -la \"D:/클로드/정글/넷플릭스 회원가입\" 2>&1)",
+      "mcp__visualize__read_me",
+      "PowerShell(python -c \"import flask, flask_sqlalchemy; print\\('flask', flask.__version__\\); print\\('flask_sqlalchemy ok'\\)\")"
+    ]
+  }
+}
