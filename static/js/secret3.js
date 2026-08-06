@@ -6,7 +6,7 @@
 
 window.secret3Data = {
     key: 'secret3',
-    name: '시크릿 3',
+    name: '남기제',
     avatarClass: 'avatar-secret3',
     emoji: '',
     rowProjectsTitle: '<i class="fa-solid fa-gamepad" style="color:#ff6f00;"></i> 시크릿 3 - 게이밍 & 애니 서브컬처',
@@ -68,7 +68,7 @@ window.secret3Data = {
 };
 
 // 시크릿 3 프로필이 활성화될 때 실행될 커스텀 로직
-window.onSecret3Active = function() {
+window.onSecret3Active = function () {
     console.log("🕵️ [시크릿 3] 프로필 활성화됨: 네온 오렌지 포인트 테마 적용");
     document.documentElement.style.setProperty('--netflix-red', '#ff6f00');
 };

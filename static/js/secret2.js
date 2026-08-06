@@ -6,7 +6,7 @@
 
 window.secret2Data = {
     key: 'secret2',
-    name: '시크릿 2',
+    name: '김시은',
     avatarClass: 'avatar-secret2',
     emoji: '',
     rowProjectsTitle: '<i class="fa-solid fa-compact-disc" style="color:#ab47bc;"></i> 시크릿 2 - K-POP & 시네마틱 픽',
@@ -75,7 +75,7 @@ window.secret2Data = {
 };
 
 // 시크릿 2 프로필이 활성화될 때 실행될 커스텀 로직
-window.onSecret2Active = function() {
+window.onSecret2Active = function () {
     console.log("🔑 [시크릿 2] 프로필 활성화됨: 딥 퍼플/매젠타 포인트 테마 적용");
     document.documentElement.style.setProperty('--netflix-red', '#ab47bc');
 };

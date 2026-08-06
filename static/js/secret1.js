@@ -6,7 +6,7 @@
 
 window.secret1Data = {
     key: 'secret1',
-    name: '시크릿 1',
+    name: '김건우',
     avatarClass: 'avatar-secret1',
     emoji: '',
     rowProjectsTitle: '<i class="fa-solid fa-fire" style="color:#00e676;"></i> 시크릿 1 - K-HIPHOP / K-POP / J-POP 플레이리스트',
@@ -153,7 +153,7 @@ window.secret1Data = {
 };
 
 // 시크릿 1 프로필이 활성화될 때 실행될 커스텀 로직
-window.onSecret1Active = function() {
+window.onSecret1Active = function () {
     console.log("🔒 [시크릿 1] 프로필 활성화됨: 에메랄드 그린 포인트 테마 적용");
     document.documentElement.style.setProperty('--netflix-red', '#00c853');
 };
