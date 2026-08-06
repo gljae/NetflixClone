@@ -331,9 +331,15 @@
     (function () {
       var form = document.getElementById("otp-form");
       var hiddenInput = document.getElementById("otp-code-value");
+      var submitButton = form.querySelector(".submit");
       var boxes = Array.prototype.slice.call(
         document.querySelectorAll("#otp-boxes .otp-box")
       );
+      // 자동 제출과 수동 클릭이 겹치면 같은 코드로 요청이 두 번 나가서,
+      // 먼저 도착한 요청은 로그인에 성공하고 뒤에 도착한 요청은 "이미 쓴
+      // 코드"로 처리돼 에러 화면이 뜬다(실제로는 로그인된 상태인데 화면만
+      // 에러). 한 번 제출되면 더는 제출되지 않도록 막는다.
+      var submitted = false;
 
       function syncHiddenValue() {
         hiddenInput.value = boxes.map(function (box) { return box.value; }).join("");
@@ -341,10 +347,22 @@
 
       function maybeAutoSubmit() {
         syncHiddenValue();
-        if (hiddenInput.value.length === boxes.length) {
+        if (!submitted && hiddenInput.value.length === boxes.length) {
           form.submit();
         }
       }
+
+      form.addEventListener("submit", function (event) {
+        if (submitted) {
+          event.preventDefault();
+          return;
+        }
+        submitted = true;
+        boxes.forEach(function (box) { box.disabled = true; });
+        if (submitButton) {
+          submitButton.disabled = true;
+        }
+      });
 
       boxes.forEach(function (box, index) {
         box.addEventListener("input", function () {
