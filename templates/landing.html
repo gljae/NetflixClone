@@ -78,9 +78,7 @@
   <header class="hero-header">
     <span class="logo">NETFLIX</span>
 
-    {# 로그인 입구가 따로 없다. 아래 이메일 폼 하나로 가입·로그인이 갈리기
-       때문에, 이 버튼도 결국 같은 폼으로 스크롤만 시킨다. #}
-    <a class="btn-login" href="#email">로그인</a>
+    <a class="btn-login" href="{{ url_for('login') }}">로그인</a>
   </header>
 
   <main class="hero-body">

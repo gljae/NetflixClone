@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로그인 | NAFLIX</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Noto Sans KR", "Helvetica Neue", Arial, sans-serif;
+      color: #fff;
+      background: linear-gradient(180deg, #3c1718 0%, #3d0a0a 35%, #100303 70%, #000000 100%);
+      background-attachment: fixed;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 1;
+      height: 88px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .logo {
+      position: absolute;
+      top: 22px;
+      left: 200px;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .logo img {
+      display: block;
+      height: 56px;
+      width: auto;
+    }
+
+    .auth-page {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100vh - 88px);
+      padding: 44px 20px 90px;
+    }
+
+    .auth-panel {
+      width: 450px;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 60px 0 0;
+    }
+
+    .login-title {
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: #8c8c8c;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.45;
+      word-break: keep-all;
+    }
+
+    .flash {
+      width: 100%;
+      margin: 0 0 16px;
+      padding: 12px 14px;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.45;
+      background: rgba(229, 9, 20, 0.92);
+    }
+
+    .flash.success {
+      background: rgba(25, 135, 84, 0.92);
+    }
+
+    .field-group {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .field-group.has-error {
+      margin-bottom: 8px;
+    }
+
+    .field {
+      width: 100%;
+      height: 56px;
+      padding: 22px 20px 6px;
+      border: 1px solid #8c8c8c;
+      border-radius: 4px;
+      color: #fff;
+      background: #372c39;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .field:focus {
+      border: 2px solid #fff;
+      padding: 21px 19px 5px 19px;
+    }
+
+    .field.field-error {
+      border-color: #e50914;
+    }
+
+    /* 브라우저 자동완성이 강제로 밝은 배경을 입히는 걸 막는다 */
+    .field:-webkit-autofill,
+    .field:-webkit-autofill:hover,
+    .field:-webkit-autofill:focus {
+      -webkit-text-fill-color: #fff;
+      -webkit-box-shadow: 0 0 0px 1000px #372c39 inset;
+      box-shadow: 0 0 0px 1000px #372c39 inset;
+      caret-color: #fff;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    .field-label {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8c8c8c;
+      font-size: 16px;
+      pointer-events: none;
+      transition: top 0.15s ease, font-size 0.15s ease, color 0.15s ease;
+    }
+
+    .field:focus + .field-label,
+    .field:not(:placeholder-shown) + .field-label {
+      top: 14px;
+      transform: translateY(0);
+      font-size: 12px;
+      color: #b3b3b3;
+    }
+
+    .field-error-message {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px;
+      color: #e50914;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .field-error-message svg {
+      flex-shrink: 0;
+    }
+
+    .submit {
+      width: 100%;
+      height: 48px;
+      border: 0;
+      border-radius: 4px;
+      color: #fff;
+      background: #e50914;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .submit:hover,
+    .submit:focus {
+      background: #c40812;
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 12px 0 28px;
+      color: #b3b3b3;
+      font-size: 13px;
+    }
+
+    .remember {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .remember input {
+      width: 16px;
+      height: 16px;
+      accent-color: #737373;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .support {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 40px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .support::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: translateY(-3px) rotate(45deg);
+    }
+
+    .recaptcha {
+      margin: 38px 0 0;
+      color: #8c8c8c;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        height: 76px;
+      }
+
+      .logo {
+        top: 20px;
+        left: 80px;
+      }
+
+      .logo img {
+        height: 46px;
+      }
+
+      .auth-page {
+        min-height: calc(100vh - 76px);
+        padding: 22px 0 60px;
+        background: #000;
+      }
+
+      .auth-panel {
+        width: min(100%, 450px);
+        padding: 28px 22px 0;
+      }
+
+      .login-title {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="{{ url_for('login') }}" aria-label="NETFLIX">
+      <img src="{{ url_for('static', filename='img/netflix-logo.png') }}" alt="NETFLIX">
+    </a>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-panel" aria-labelledby="login-title">
+      <h1 id="login-title" class="login-title">이메일 주소를 입력하세요</h1>
+      <p class="subtitle">메일함으로 보내드리는 [계정 등록] 버튼을 누르면 계속 진행할 수 있습니다.</p>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form method="post" action="{{ url_for('login', next=request.args.get('next')) }}" novalidate>
+        <div class="field-group{{ ' has-error' if email_error else '' }}">
+          <input class="field{{ ' field-error' if email_error else '' }}" type="email" name="email" id="email" value="{{ email or '' }}" placeholder=" " autocomplete="email" autofocus>
+          <label class="field-label" for="email">이메일 주소</label>
+        </div>
+        {% if email_error %}
+          <p class="field-error-message">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M5.6 5.6L10.4 10.4M10.4 5.6L5.6 10.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            {{ email_error }}
+          </p>
+        {% endif %}
+        <button class="submit" type="submit">계속</button>
+      </form>
+
+      <a class="support" href="#">고객 지원</a>
+      <p class="recaptcha">이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다.</p>
+    </section>
+  </main>
+</body>
+</html>

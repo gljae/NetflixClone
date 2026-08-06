@@ -229,6 +229,39 @@ def register_routes(app):
 
     # ------------------------------------------------------------ 로그인
 
+    @app.route("/login", methods=["GET", "POST"])
+    def login():
+        """전용 로그인 입구.
+
+        랜딩(auth_check)과 갈림 로직은 같다 — 이미 있는 계정이면 OTP,
+        신규 이메일이면 가입으로 보낸다. 다만 마케팅 문구 없이 이메일
+        입력창만 있는, 실제 넷플릭스 로그인 화면에 가까운 디자인이다.
+        홈 화면의 "로그인" 버튼이 여기로 연결된다.
+        """
+        if current_user.is_authenticated:
+            return redirect(url_for("mypage"))
+
+        if request.method == "GET":
+            return render_template("login.html")
+
+        email = (request.form.get("email") or "").strip().lower()
+
+        if not EMAIL_RE.match(email):
+            return (
+                render_template(
+                    "login.html",
+                    email=email,
+                    email_error="정확한 이메일 주소를 입력해주세요.",
+                ),
+                400,
+            )
+
+        if User.query.filter_by(email=email).first():
+            return start_login(app, email)
+
+        session["signup_email"] = email
+        return redirect(url_for("signup_start"))
+
     def start_login(app, email, notice=None):
         """로그인 코드를 발급해 보내고 입력 화면으로 보낸다."""
         # 새 코드를 내면 이전에 보낸 미사용 코드는 무효화한다.
