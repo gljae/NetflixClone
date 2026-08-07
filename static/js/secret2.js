@@ -177,13 +177,13 @@ window.secret2Data = {
             img: '/static/img/artist-davichi.jpeg',
             displayTags: ['음악'],
             episodes: [
-                { num: '1', title: '너에게 못했던 내 마지막 말은', desc: '', img: '/static/img/artist-davichi.jpeg' },
-                { num: '2', title: '나의 오랜 연인에게', desc: '', img: '/static/img/artist-davichi.jpeg' },
-                { num: '3', title: '마치 우린 없었던 사이', desc: '', img: '/static/img/artist-davichi.jpeg' },
-                { num: '4', title: '이 사랑', desc: '', img: '/static/img/artist-davichi.jpeg' },
-                { num: '5', title: '매일 크리스마스', desc: '', img: '/static/img/artist-davichi.jpeg' },
-                { num: '6', title: '팡파레', desc: '', img: '/static/img/artist-davichi.jpeg' },
-                { num: '7', title: '거북이', desc: '', img: '/static/img/artist-davichi.jpeg' }
+                { num: '1', title: '너에게 못했던 내 마지막 말은', desc: '', img: '/static/img/davichi-noege.jpeg' },
+                { num: '2', title: '나의 오랜 연인에게', desc: '', img: '/static/img/davichi-yeonin.jpeg' },
+                { num: '3', title: '마치 우린 없었던 사이', desc: '', img: '/static/img/davichi-machi.jpeg' },
+                { num: '4', title: '이 사랑', desc: '', img: '/static/img/davichi-isarang.jpeg' },
+                { num: '5', title: '매일 크리스마스', desc: '', img: '/static/img/davichi-christmas.jpeg' },
+                { num: '6', title: '팡파레', desc: '', img: '/static/img/davichi-fanfare.jpeg' },
+                { num: '7', title: '거북이', desc: '', img: '/static/img/davichi-turtle.jpeg' }
             ]
         },
         {
