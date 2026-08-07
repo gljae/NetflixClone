@@ -11,7 +11,6 @@ window.secret2Data = {
     emoji: '',
     rowProjectsTitle: '<i class="fa-solid fa-tv" style="color:#ab47bc;"></i> 김시은 님이 시청 중인 콘텐츠',
     rowHobbiesTitle: '<i class="fa-solid fa-music" style="color:#ab47bc;"></i> 김시은 님이 즐겨듣는 음악',
-    rowInterestsTitle: '<i class="fa-solid fa-star" style="color:#ab47bc;"></i> 김시은 님이 관심있는 관심사',
     rowShowoffTitle: '<i class="fa-solid fa-heart" style="color:#ab47bc;"></i> 김시은 님이 자랑하고 싶은 콘텐츠',
     hero: {
         badge: '<i class="fa-solid fa-key" style="color:#ab47bc;"></i> SECRET 2 CINEMATIC SPACE',
@@ -202,20 +201,6 @@ window.secret2Data = {
                 { num: '5', title: '0+0', desc: '', img: '/static/img/hanroro-3rd.jpeg' },
                 { num: '6', title: '생존법', desc: '', img: '/static/img/hanroro-saengjon.jpeg' }
             ]
-        }
-    ],
-    // "관심사" 행 — 지금은 틀만 잡아둔 예시 데이터야.
-    // 카드 하나 = 관심사 하나. title/desc/tags/img 를 실제 관심사로 바꿔서 채우면 돼.
-    // (강아지 사진/영상 자랑 행은 별도로 이름 정해서 추가할 예정 — 아직 미포함)
-    interests: [
-        {
-            title: '관심사 이름을 입력하세요 (예시)',
-            desc: '이 관심사에 대한 소개를 짧게 적어보세요.',
-            tags: '관심사',
-            period: '2026',
-            role: '관심 있는 분야',
-            img: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80',
-            displayTags: ['관심사']
         }
     ],
     // "자랑하고 싶은 콘텐츠" 행 — 반려견 소개 카드. 사진은 static/img/dog-*.jpg 실제 이미지 사용.
