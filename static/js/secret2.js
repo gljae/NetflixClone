@@ -241,12 +241,22 @@ window.secret2Data = {
         },
         {
             title: '이브',
-            desc: '우리집 둘째 반려견 이브를 소개합니다.',
-            tags: '반려견',
-            period: '2026',
-            role: '우리집 둘째',
+            desc: '우리집 넷째 말티츄 이브.',
+            tags: '바보',
+            period: '2살',
+            role: '솜이 1.5배',
+            periodLabel: '나이',
+            roleLabel: '크기',
+            tagsLabel: '성격',
             img: '/static/img/dog-eve.jpg',
-            displayTags: ['반려견']
+            displayTags: ['바보'],
+            episodes: [
+                { num: '1', title: '크리스마스 이브에 데려와서 이브', desc: '', img: '/static/img/eve-1.jpg' },
+                { num: '2', title: '파랑 + 검정의 오드아이', desc: '', img: '/static/img/eve-2.jpg' },
+                { num: '3', title: '둘이 사이 별로 좋지 않음', desc: '', img: '/static/img/eve-3.jpg' },
+                { num: '4', title: '안정형 남친st.', desc: '', img: '/static/img/eve-4.jpg' },
+                { num: '5', title: '머리만 댈 수 있다면 그곳이 침대임', desc: '', img: '/static/img/eve-5.jpg' }
+            ]
         }
     ]
 };
