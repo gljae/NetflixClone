@@ -12,6 +12,7 @@ window.secret2Data = {
     rowProjectsTitle: '<i class="fa-solid fa-tv" style="color:#ab47bc;"></i> 김시은 님이 시청 중인 콘텐츠',
     rowHobbiesTitle: '<i class="fa-solid fa-music" style="color:#ab47bc;"></i> 김시은 님이 즐겨듣는 음악',
     rowInterestsTitle: '<i class="fa-solid fa-star" style="color:#ab47bc;"></i> 김시은 님이 관심있는 관심사',
+    rowShowoffTitle: '<i class="fa-solid fa-heart" style="color:#ab47bc;"></i> 김시은 님이 자랑하고 싶은 콘텐츠',
     hero: {
         badge: '<i class="fa-solid fa-key" style="color:#ab47bc;"></i> SECRET 2 CINEMATIC SPACE',
         title: '시크릿 2:<br>시네마틱 라이브러리',
@@ -215,6 +216,27 @@ window.secret2Data = {
             role: '관심 있는 분야',
             img: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80',
             displayTags: ['관심사']
+        }
+    ],
+    // "자랑하고 싶은 콘텐츠" 행 — 반려견 소개 카드. 사진은 static/img/dog-*.jpg 실제 이미지 사용.
+    showoff: [
+        {
+            title: '솜이',
+            desc: '우리집 첫째 반려견 솜이를 소개합니다.',
+            tags: '반려견',
+            period: '2026',
+            role: '우리집 첫째',
+            img: '/static/img/dog-somi.jpg',
+            displayTags: ['반려견']
+        },
+        {
+            title: '이브',
+            desc: '우리집 둘째 반려견 이브를 소개합니다.',
+            tags: '반려견',
+            period: '2026',
+            role: '우리집 둘째',
+            img: '/static/img/dog-eve.jpg',
+            displayTags: ['반려견']
         }
     ]
 };

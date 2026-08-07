@@ -179,6 +179,43 @@ document.addEventListener('DOMContentLoaded', () => {
             if (rowInterestsEl) rowInterestsEl.style.display = 'none';
         }
 
+        // Render Showoff Row (4번째 커스텀 행. data.showoff 가 있는 프로필만 노출)
+        const rowShowoffTitleEl = document.getElementById('rowShowoffTitle');
+        if (rowShowoffTitleEl && data.rowShowoffTitle) {
+            rowShowoffTitleEl.innerHTML = data.rowShowoffTitle;
+        }
+
+        const rowShowoffEl = document.getElementById('row-showoff');
+        const showoffContainer = document.querySelector('#row-showoff .row-cards');
+
+        if (data.showoff && data.showoff.length > 0) {
+            if (rowShowoffEl) rowShowoffEl.style.display = 'block';
+            if (showoffContainer) {
+                showoffContainer.innerHTML = data.showoff.map(s => {
+                    const episodesAttr = s.episodes ? `data-episodes="${encodeURIComponent(JSON.stringify(s.episodes))}"` : '';
+                    return `
+                    <div class="card"
+                        data-title="${s.title}"
+                        data-desc="${s.desc}"
+                        data-tags="${s.tags}"
+                        data-period="${s.period}"
+                        data-role="${s.role}"
+                        ${episodesAttr}>
+                        <img src="${s.img}" class="card-img" style="${s.imgStyle || ''}">
+                        <div class="card-body">
+                            <div class="card-title">${s.title}</div>
+                            <div class="card-tags">
+                                ${s.displayTags.map(t => `<span class="tag">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                }).join('');
+            }
+        } else {
+            if (rowShowoffEl) rowShowoffEl.style.display = 'none';
+        }
+
         // Rebind click events for newly created cards
         bindCardEvents();
     }
