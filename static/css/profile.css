@@ -719,6 +719,64 @@ footer a:hover {
     background: #000;
 }
 
+/* ----------------------------------------------------
+   7-1. Image Lightbox Modal (사진 회차를 크게 볼 때)
+---------------------------------------------------- */
+.image-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.image-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 2rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.image-modal-close:hover {
+    background: var(--netflix-red);
+    border-color: var(--netflix-red);
+    transform: scale(1.1);
+}
+
+.image-modal-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    object-fit: contain;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .billboard-title { font-size: 2.3rem; }

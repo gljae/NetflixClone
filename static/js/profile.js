@@ -331,13 +331,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `).join('');
 
-            // Click episode -> open video player modal instantly!
+            // Click episode -> 유튜브 링크가 있으면 영상 재생, 없으면 사진을 크게 보여준다.
             episodesList.querySelectorAll('.episode-item').forEach(item => {
                 item.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const youtubeVideo = item.dataset.youtubeVideo;
                     if (youtubeVideo) {
                         openVideoModal(youtubeVideo);
+                        return;
+                    }
+                    const thumbImg = item.querySelector('.episode-thumb-img');
+                    if (thumbImg && thumbImg.src) {
+                        openImageModal(thumbImg.src, thumbImg.alt);
                     }
                 });
             });
@@ -442,6 +447,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (videoModalOverlay) {
         videoModalOverlay.addEventListener('click', (e) => {
             if (e.target === videoModalOverlay) closeVideoModal();
+        });
+    }
+
+    // 4-1. Image Lightbox Modal (회차 사진을 원본 크기로 크게 보기)
+    const imageModalOverlay = document.getElementById('imageModalOverlay');
+    const imageModalCloseBtn = document.getElementById('imageModalCloseBtn');
+    const imageModalImg = document.getElementById('imageModalImg');
+
+    function openImageModal(src, alt) {
+        if (!imageModalOverlay || !imageModalImg) return;
+        imageModalImg.src = src;
+        imageModalImg.alt = alt || '';
+        imageModalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal() {
+        if (!imageModalOverlay) return;
+        imageModalOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        setTimeout(() => {
+            if (imageModalImg) imageModalImg.src = '';
+        }, 300);
+    }
+
+    if (imageModalCloseBtn) {
+        imageModalCloseBtn.addEventListener('click', closeImageModal);
+    }
+    if (imageModalOverlay) {
+        imageModalOverlay.addEventListener('click', (e) => {
+            if (e.target === imageModalOverlay) closeImageModal();
         });
     }
 
