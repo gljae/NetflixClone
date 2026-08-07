@@ -102,19 +102,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Render Hobbies Row (Show if data.hobbies exists, hide row if missing)
+        // 행 제목도 프로필별로 바꿀 수 있게: data.rowHobbiesTitle 이 없으면
+        // HTML에 원래 있던 문구("내가 찜한 콘텐츠...")를 그대로 쓴다.
+        const rowHobbiesTitleEl = document.getElementById('rowHobbiesTitle');
+        if (rowHobbiesTitleEl && data.rowHobbiesTitle) {
+            rowHobbiesTitleEl.innerHTML = data.rowHobbiesTitle;
+        }
+
         const rowHobbiesEl = document.getElementById('row-hobbies');
         const hobbiesContainer = document.querySelector('#row-hobbies .row-cards');
 
         if (data.hobbies && data.hobbies.length > 0) {
             if (rowHobbiesEl) rowHobbiesEl.style.display = 'block';
             if (hobbiesContainer) {
-                hobbiesContainer.innerHTML = data.hobbies.map(h => `
-                    <div class="card" 
+                hobbiesContainer.innerHTML = data.hobbies.map(h => {
+                    // projects 카드와 마찬가지로, episodes 가 있으면(예: 가수 -> 노래 목록)
+                    // 카드를 눌렀을 때 회차 목록이 뜨도록 data-episodes 를 실어 보낸다.
+                    const episodesAttr = h.episodes ? `data-episodes="${encodeURIComponent(JSON.stringify(h.episodes))}"` : '';
+                    return `
+                    <div class="card"
                         data-title="${h.title}"
                         data-desc="${h.desc}"
                         data-tags="${h.tags}"
                         data-period="${h.period}"
-                        data-role="${h.role}">
+                        data-role="${h.role}"
+                        ${episodesAttr}>
                         <img src="${h.img}" class="card-img" style="${h.imgStyle || ''}">
                         <div class="card-body">
                             <div class="card-title">${h.title}</div>
@@ -123,7 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
                     </div>
-                `).join('');
+                `;
+                }).join('');
             }
         } else {
             if (rowHobbiesEl) rowHobbiesEl.style.display = 'none';

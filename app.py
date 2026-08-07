@@ -91,6 +91,14 @@ def create_app():
             "DATABASE_URL", "sqlite:///netflix_clone.db"
         ),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        # Neon 같은 서버리스 Postgres 는 몇 분간 요청이 없으면 컴퓨트가
+        # 잠들면서 기존 커넥션을 끊어버린다. pool_pre_ping 을 켜두면 커넥션을
+        # 재사용하기 전에 살아있는지 가볍게 확인하고, 죽어있으면 자동으로
+        # 새로 연결한다 ("SSL connection has been closed unexpectedly" 방지).
+        SQLALCHEMY_ENGINE_OPTIONS={
+            "pool_pre_ping": True,
+            "pool_recycle": 280,
+        },
         # 메일: console = 터미널에 링크 출력(기본), smtp = 실제 발송
         MAIL_BACKEND=os.environ.get("MAIL_BACKEND", "console"),
         MAIL_SENDER=os.environ.get("MAIL_SENDER", "no-reply@netflix.local"),
