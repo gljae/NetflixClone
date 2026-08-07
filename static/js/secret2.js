@@ -16,9 +16,9 @@ window.secret2Data = {
         badge: '<i class="fa-solid fa-key" style="color:#ab47bc;"></i> SIEUN\'S ORIGINAL',
         title: '시크릿 2:<br>시네마틱 라이브러리',
         desc: '감각적인 비주얼과 감성적인 멜로디가 공존하는 시크릿 2 전용 시네마 공간입니다.',
-        bgYoutube: 'https://www.youtube.com/embed/z-xfGoabprU?autoplay=1&mute=1&loop=1&playlist=z-xfGoabprU&controls=0&showinfo=0&rel=0',
+        bgYoutube: 'https://www.youtube.com/embed/suGnxV2IgSc?autoplay=1&mute=1&loop=1&playlist=suGnxV2IgSc&controls=0&showinfo=0&rel=0',
         bgImage: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1600&q=80',
-        demoYoutube: 'https://www.youtube.com/embed/z-xfGoabprU?autoplay=1',
+        demoYoutube: 'https://www.youtube.com/embed/suGnxV2IgSc?autoplay=1',
         heroInfo: {
             title: '시크릿 2: 시네마틱 라이브러리',
             desc: '이 프로필의 주인장 김시은의 시크릿 공간입니다.',
