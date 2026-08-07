@@ -161,11 +161,11 @@ window.secret2Data = {
             img: '/static/img/artist-mctm.jpeg',
             displayTags: ['음악'],
             episodes: [
-                { num: '1', title: '흩어지지 않게', desc: '', img: '/static/img/artist-mctm.jpeg' },
-                { num: '2', title: '처음처럼', desc: '', img: '/static/img/artist-mctm.jpeg' },
-                { num: '3', title: '넘쳐흘러', desc: '', img: '/static/img/artist-mctm.jpeg' },
-                { num: '4', title: 'One Love', desc: '', img: '/static/img/artist-mctm.jpeg' },
-                { num: '5', title: '안녕을', desc: '', img: '/static/img/artist-mctm.jpeg' }
+                { num: '1', title: '흩어지지 않게', desc: '', img: '/static/img/mctm-9th.jpeg' },
+                { num: '2', title: '처음처럼', desc: '', img: '/static/img/mctm-ceremonia.jpeg' },
+                { num: '3', title: '넘쳐흘러', desc: '', img: '/static/img/mctm-circular.jpeg' },
+                { num: '4', title: 'One Love', desc: '', img: '/static/img/mctm-collage.jpeg' },
+                { num: '5', title: '안녕을', desc: '', img: '/static/img/mctm-9th.jpeg' }
             ]
         },
         {
