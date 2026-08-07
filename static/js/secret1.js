@@ -602,6 +602,17 @@ window.onSecret1Active = function () {
                 openSecret1CustomModal(data);
             });
         });
+        // 3. 상단 네비게이션 바 메뉴 (K-POP | HIP-HOP | J-POP) 동적 변경
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks) {
+            navLinks.innerHTML = `
+                <li><a href="#hero" class="active">홈</a></li>
+                <li><a href="#row-projects">K-POP</a></li>
+                <li><a href="#row-hobbies">HIP-HOP</a></li>
+                <li><a href="#row-secret1-jpop">J-POP</a></li>
+                <li><a href="/mypage">계정</a></li>
+            `;
+        }
     }, 50);
 };
 
@@ -614,6 +625,17 @@ function cleanupSecret1ExtraRows() {
     const hobbiesTitle = rowHobbiesEl ? rowHobbiesEl.querySelector('.row-title') : null;
     if (hobbiesTitle) {
         hobbiesTitle.innerHTML = '<i class="fa-solid fa-heart" style="color:#e50914;"></i> 내가 찜한 콘텐츠 (취미 & 관심사)';
+    }
+
+    // 상단 네비게이션 바 메뉴 원복
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+        navLinks.innerHTML = `
+            <li><a href="#hero" class="active">홈</a></li>
+            <li><a href="#row-projects">주요 프로젝트</a></li>
+            <li><a href="#row-hobbies">관심사</a></li>
+            <li><a href="/mypage">계정</a></li>
+        `;
     }
 }
 
