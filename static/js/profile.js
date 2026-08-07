@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-tags="${h.tags}"
                         data-period="${h.period}"
                         data-role="${h.role}"
+                        data-episodes-label="${h.episodesLabel || ''}"
                         ${episodesAttr}>
                         <img src="${h.img}" class="card-img" style="${h.imgStyle || ''}">
                         <div class="card-body">
@@ -313,6 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (data.episodes && data.episodes.length > 0 && modalEpisodesSection && episodesList) {
             modalEpisodesSection.style.display = 'block';
+            const modalEpisodesLabel = document.getElementById('modalEpisodesLabel');
+            if (modalEpisodesLabel) modalEpisodesLabel.textContent = data.episodesLabel || '회차 (에피소드)';
             episodesList.innerHTML = data.episodes.map(ep => `
                 <div class="episode-item" data-youtube-video="${ep.youtubeVideo || ''}">
                     <div class="episode-num">${ep.num}</div>
@@ -504,6 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     periodLabel: card.dataset.periodLabel,
                     roleLabel: card.dataset.roleLabel,
                     tagsLabel: card.dataset.tagsLabel,
+                    episodesLabel: card.dataset.episodesLabel,
                     link: card.dataset.link,
                     instagram: card.dataset.instagram,
                     img: card.querySelector('img')?.src,

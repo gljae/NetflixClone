@@ -9,9 +9,9 @@ window.secret2Data = {
     name: '김시은',
     avatarClass: 'avatar-secret2',
     emoji: '',
-    rowProjectsTitle: '<i class="fa-solid fa-tv" style="color:#ab47bc;"></i> 김시은 님이 시청 중인 콘텐츠',
-    rowHobbiesTitle: '<i class="fa-solid fa-music" style="color:#ab47bc;"></i> 김시은 님이 즐겨듣는 음악',
-    rowShowoffTitle: '<i class="fa-solid fa-heart" style="color:#ab47bc;"></i> 김시은 님이 자랑하고 싶은 콘텐츠',
+    rowProjectsTitle: '김시은 님이 시청 중인 콘텐츠',
+    rowHobbiesTitle: '김시은 님이 즐겨듣는 음악',
+    rowShowoffTitle: '김시은 님이 자랑하고 싶은 콘텐츠',
     hero: {
         badge: '<i class="fa-solid fa-key" style="color:#ab47bc;"></i> SIEUN\'S ORIGINAL',
         title: '시크릿 2:<br>시네마틱 라이브러리',
@@ -108,6 +108,7 @@ window.secret2Data = {
             tags: 'Pop Punk, Rock',
             period: '2026',
             role: '즐겨 듣는 가수',
+            episodesLabel: '노래',
             img: '/static/img/artist-5sos.jpeg',
             displayTags: ['음악'],
             episodes: [
@@ -126,6 +127,7 @@ window.secret2Data = {
             tags: 'Rock, Alternative',
             period: '2026',
             role: '즐겨 듣는 가수',
+            episodesLabel: '노래',
             img: '/static/img/artist-muse.jpeg',
             displayTags: ['음악'],
             episodes: [
@@ -145,6 +147,7 @@ window.secret2Data = {
             tags: 'K-POP',
             period: '2026',
             role: '즐겨 듣는 가수',
+            episodesLabel: '노래',
             img: '/static/img/artist-2ne1.jpeg',
             displayTags: ['음악'],
             episodes: [
@@ -161,6 +164,7 @@ window.secret2Data = {
             tags: 'Rock Ballad',
             period: '2026',
             role: '즐겨 듣는 가수',
+            episodesLabel: '노래',
             img: '/static/img/artist-mctm.jpeg',
             displayTags: ['음악'],
             episodes: [
@@ -177,6 +181,7 @@ window.secret2Data = {
             tags: 'Ballad',
             period: '2026',
             role: '즐겨 듣는 가수',
+            episodesLabel: '노래',
             img: '/static/img/artist-davichi.jpeg',
             displayTags: ['음악'],
             episodes: [
@@ -195,6 +200,7 @@ window.secret2Data = {
             tags: 'Indie, Folk',
             period: '2026',
             role: '즐겨 듣는 가수',
+            episodesLabel: '노래',
             img: '/static/img/artist-hanroro.jpeg',
             displayTags: ['음악'],
             episodes: [
