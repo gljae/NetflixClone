@@ -1,7 +1,5 @@
 /**
- * secret1.js - 시크릿 1 프로필 전용 커스텀 스크립트 및 데이터
- * 
- * 시크릿 1 프로필의 메인 테마, 프로젝트 목록, 취미 및 페이지 꾸미기 로직을 작성할 수 있습니다.
+ * secret1.js - 시크릿 1 (김건우) 프로필 전용 커스텀 스크립트 및 데이터
  */
 
 window.secret1Data = {
@@ -23,11 +21,11 @@ window.secret1Data = {
             tags: 'K-POP, HIPHOP, J-POP',
             period: '2026',
             role: '플레이리스트',
-
             link: 'https://github.com/gljae/NetflixClone',
             img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80'
         }
     },
+    // Row 1: K-POP (여돌 / 남돌)
     projects: [
         {
             title: '여돌 K-POP 플레이리스트',
@@ -129,7 +127,7 @@ window.secret1Data = {
             ]
         }
     ],
-
+    // Row 2: 힙합 (국힙 / 외힙)
     hobbies: [
         {
             title: '건우의 국힙 플레이리스트',
@@ -138,324 +136,300 @@ window.secret1Data = {
             period: '2026',
             role: '플레이리스트',
             img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80',
-            displayTags: ['국힙', 'Beat Pick']
+            displayTags: ['국힙', 'Beat Pick'],
+            episodes: [
+                {
+                    num: '1',
+                    title: '식케이(Sik-K), Lil Moshpit - LOV3 (Feat. Bryan Chase, Okasian)',
+                    desc: '트렌디하고 파워풀한 레이지 사운드의 정수',
+                    youtubeVideo: 'https://www.youtube.com/embed/oCvA-i9OTyg?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/oCvA-i9OTyg/maxresdefault.jpg'
+                },
+                {
+                    num: '2',
+                    title: '창모(CHANGMO) - Hyperstar',
+                    desc: '에너지 넘치는 피아노 리프와 창모 특유의 랩핑',
+                    youtubeVideo: 'https://www.youtube.com/embed/bL4KyoQWspM?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/bL4KyoQWspM/maxresdefault.jpg'
+                },
+                {
+                    num: '3',
+                    title: '키드밀리 - 25 (Feat. YANGHONGWON)',
+                    desc: '레이지 장르의 신선함을 보여주는 트랙',
+                    youtubeVideo: 'https://www.youtube.com/embed/1JS5Td0MeNE?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/1JS5Td0MeNE/hqdefault.jpg'
+                },
+                {
+                    num: '4',
+                    title: '씨잼 - Pokerface (포커페이스)',
+                    desc: '드라이브 할 때 이만한 곡이 없음',
+                    youtubeVideo: 'https://www.youtube.com/embed/yrJSc3NKNfc?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/yrJSc3NKNfc/hqdefault.jpg'
+                },
+                {
+                    num: '5',
+                    title: 'Just Music - Rain Showers Remix ',
+                    desc: '젓뮤 전성기를 연 곡 중 하나. 이 곡이 수록된 파급효과 앨범도 명반이니 꼭 들어보는걸 추천.',
+                    youtubeVideo: 'https://www.youtube.com/embed/K32MnQSxSFM?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/K32MnQSxSFM/hqdefault.jpg'
+                },
+                {
+                    num: '6',
+                    title: 'JUSTHIS - Welcome to My HOME ',
+                    desc: '주인장이 젤 좋아하는 래퍼. 1집 겁나 명반이니 들어보세요.',
+                    youtubeVideo: 'https://www.youtube.com/embed/KEDYtwOmdtU?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/KEDYtwOmdtU/hqdefault.jpg'
+                },
+                {
+                    num: '7',
+                    title: 'ILLIONAIRE RECORDS - 연결고리',
+                    desc: '국힙 트랩의 시초.',
+                    youtubeVideo: 'https://www.youtube.com/embed/Q7AbIQHYidQ?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/Q7AbIQHYidQ/hqdefault.jpg'
+                },
+                {
+                    num: '8',
+                    title: '빈지노 - Always Awake ',
+                    desc: '청춘을 노래로 표현한다면 이노래가 아닐까?',
+                    youtubeVideo: 'https://www.youtube.com/embed/iGWKNrtbF9I?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/iGWKNrtbF9I/hqdefault.jpg'
+                },
+                {
+                    num: '9',
+                    title: 'DPR LIVE -To Myself ',
+                    desc: 'COMING TO YOU LIVE.',
+                    youtubeVideo: 'https://www.youtube.com/embed/oMQkDkCBmmM?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/oMQkDkCBmmM/hqdefault.jpg'
+                },
+                {
+                    num: '10',
+                    title: "DEAN - I'm Not Sorry (feat. Eric Bellinger)",
+                    desc: '앨 범 쳐 내 라 고',
+                    youtubeVideo: 'https://www.youtube.com/embed/wzvRxguTPa4?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/wzvRxguTPa4/hqdefault.jpg'
+                },
+                {
+                    num: '11',
+                    title: '키드밀리 - PUMPS (feat. OKASHII) ',
+                    desc: '키드밀리의 따끈따끈한 신보. 사운드가 너무 내 스타일.',
+                    youtubeVideo: 'https://www.youtube.com/embed/ZnwMsjGPYL4?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/ZnwMsjGPYL4/hqdefault.jpg'
+                },
+                {
+                    num: '12',
+                    title: 'ZENE THE ZILLA, Hash Swan, Nosun - 130 메트로놈 ',
+                    desc: '요즘 폼 바짝 오른 제네더질라, 항상 상수인 해쉬스완, 랩퍼블릭과 쇼미로 증명한 노선까지 거를게 없는 싱글.',
+                    youtubeVideo: 'https://www.youtube.com/embed/cB068G7jseg?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/cB068G7jseg/hqdefault.jpg'
+                }
+            ]
         },
         {
             title: '건우의 외힙 플레이리스트',
             desc: '트렌디한 비트와 힙한 사운드의 외힙 명곡 모음.',
-            tags: 'US HipHop, Playlist',
+            tags: 'HipHop, Playlist',
             period: '2026',
             role: '플레이리스트',
             img: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80',
-            displayTags: ['외힙', 'US HipHop']
+            displayTags: ['외힙', 'US HipHop'],
+            episodes: [
+                {
+                    num: '1',
+                    title: 'Travis Scott - SICKO MODE (ft. Drake)',
+                    desc: '변주 사운드의 미친 충격. 외힙의 대표적인 트랩 명곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/d-JBBNg8YKs?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/d-JBBNg8YKs/hqdefault.jpg'
+                },
+                {
+                    num: '2',
+                    title: 'Kendrick Lamar - HUMBLE.',
+                    desc: '묵직한 피아노 훅과 켄드릭 라마의 날카로운 래핑.',
+                    youtubeVideo: 'https://www.youtube.com/embed/tvTRZJ-4EyI?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/tvTRZJ-4EyI/maxresdefault.jpg'
+                },
+                {
+                    num: '3',
+                    title: 'Playboi Carti - ILoveUIHateU',
+                    desc: '원조가 말아주는 레이지는 다르다.',
+                    youtubeVideo: 'https://www.youtube.com/embed/pZ6oeHV28b0?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/pZ6oeHV28b0/maxresdefault.jpg'
+                },
+                {
+                    num: '4',
+                    title: 'Migos - Bad and Boujee ft Lil Uzi Vert',
+                    desc: '외힙 역사상 최고의 도입부, 트랩을 전세계적으로 유행시킨 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/S-sJp1FfG7Q?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/S-sJp1FfG7Q/hqdefault.jpg'
+                },
+                {
+                    num: '5',
+                    title: 'Kanye West - Runaway (feat. Pusha T)',
+                    desc: '올드 칸예의 정수가 들어간 최고의 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/EMnQwBTJnMM?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/EMnQwBTJnMM/hqdefault.jpg'
+                },
+                {
+                    num: '6',
+                    title: 'Drake - God’s Plan',
+                    desc: '드레이크의 대표곡. 외힙 입문용으로 추천.',
+                    youtubeVideo: 'https://www.youtube.com/embed/m1a_GqJf02M?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/m1a_GqJf02M/hqdefault.jpg'
+                },
+                {
+                    num: '7',
+                    title: 'Travis Scott - FE!N ft. Playboi Carti',
+                    desc: '라이브에서 지진을 일으킨 전설의 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/B9synWjqBn8?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/B9synWjqBn8/hqdefault.jpg'
+                },
+                {
+                    num: '8',
+                    title: 'Lil Uzi Vert - 20 Min',
+                    desc: '비트가 너무 맛있는 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/bnFa4Mq5PAM?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/bnFa4Mq5PAM/hqdefault.jpg'
+                },
+                {
+                    num: '9',
+                    title: 'Central Cee - Doja',
+                    desc: 'UK Drill 장르를 전세계적으로 알린 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/_VuJA-VQRcY?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/_VuJA-VQRcY/hqdefault.jpg'
+                }
+            ]
+        }
+    ],
+    // Row 3: J-POP & 애니 OST
+    jpop: [
+        {
+            title: '건우의 J-POP 플레이리스트',
+            desc: '특유의 감성과 멜로디라인이 돋보이는 힐링 J-POP 추천곡입니다.',
+            tags: 'J-POP, Band',
+            period: '2026',
+            role: '플레이리스트',
+            img: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80',
+            displayTags: ['J-POP', 'Band Sound'],
+            episodes: [
+                {
+                    num: '1',
+                    title: 'King Gnu - 飛行艇(비행정)',
+                    desc: '킹누 특유의 강력한 밴드 사운드가 매력적인 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/MSv7NbfbtU8?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/MSv7NbfbtU8/maxresdefault.jpg'
+                },
+                {
+                    num: '2',
+                    title: 'ZUTOMAYO – STUDY ME',
+                    desc: 'ACAね의 도입부 보컬이 너무 매력적인 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/Atvsg_zogxo?autoplay=1&enablejsapi=1&rel=0',
+                    img: 'https://i.ytimg.com/vi/Atvsg_zogxo/maxresdefault.jpg'
+                },
+                {
+                    num: '3',
+                    title: 'Official髭男dism - Pretender',
+                    desc: '히게단 특유의 감성적이고 애절한 팝 록 명곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/TQ8WlA2GXbk?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/TQ8WlA2GXbk/maxresdefault.jpg'
+                },
+                {
+                    num: '4',
+                    title: 'YOASOBI - 群青(군청)',
+                    desc: '청량한 사운드가 돋보이는 요아소비 대표곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/Y4nEEZwckuU?autoplay=1&enablejsapi=1&rel=0',
+                    img: 'https://i.ytimg.com/vi/Y4nEEZwckuU/maxresdefault.jpg'
+                }
+            ]
+        },
+        {
+            title: '건우의 애니 OST 플레이리스트',
+            desc: '가슴 벅찬 감성과 벅차오르는 명작 애니메이션 주제가 모음.',
+            tags: 'Anime OST, Classic',
+            period: '2026',
+            role: '플레이리스트',
+            img: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80',
+            displayTags: ['애니 OST', 'Anime'],
+            episodes: [
+                {
+                    num: '1',
+                    title: 'King Gnu - SPECIALZ',
+                    desc: '주술회전 2기 시부야 사변 오프닝.',
+                    youtubeVideo: 'https://www.youtube.com/embed/fhzKLBZJC3w?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/fhzKLBZJC3w/maxresdefault.jpg'
+                },
+                {
+                    num: '2',
+                    title: 'KANA-BOON - Silhouette',
+                    desc: '그 시절 우리는 모두 닌자였다. 나루토 질풍전 16기 OP.',
+                    youtubeVideo: 'https://www.youtube.com/embed/dlFA0Zq1k2A?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/dlFA0Zq1k2A/maxresdefault.jpg'
+                },
+                {
+                    num: '3',
+                    title: 'LiSA - 홍련화',
+                    desc: '귀멸의 칼날 1기 오프닝. 폭발적인 가창력의 대표 OST.',
+                    youtubeVideo: 'https://www.youtube.com/embed/JoUayamxUtI?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/JoUayamxUtI/maxresdefault.jpg'
+                },
+                {
+                    num: '4',
+                    title: 'Ado - 역광',
+                    desc: '원피스 필름 레드 삽입곡. 상징적인 가사가 돋보이는 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/gt-v_YCkaMY?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/gt-v_YCkaMY/maxresdefault.jpg'
+                },
+                {
+                    num: '5',
+                    title: 'Vaundy - 飛ぶ時(날아오를때)',
+                    desc: '황천의 츠가이 op. 믿고 듣는 바운디.',
+                    youtubeVideo: 'https://www.youtube.com/embed/ARj1adoUoEU?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/ARj1adoUoEU/maxresdefault.jpg'
+                },
+                {
+                    num: '6',
+                    title: 'SPYAIR - 사무라이하트',
+                    desc: '씹덕들 척추 기립.',
+                    youtubeVideo: 'https://www.youtube.com/embed/2sy3H9rnk9A?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/2sy3H9rnk9A/maxresdefault.jpg'
+                },
+                {
+                    num: '7',
+                    title: 'Mrs. GREEN APPLE - Inferno',
+                    desc: '주인장이 미세스 그린에 입문한 곡. 불꽃 소방대 2기 op.',
+                    youtubeVideo: 'https://www.youtube.com/embed/wfCcs0vLysk?autoplay=1&enablejsapi=1&rel=0',
+                    img: 'https://i.ytimg.com/vi/wfCcs0vLysk/maxresdefault.jpg'
+                },
+                {
+                    num: '8',
+                    title: '폴카닷 스팅레이 - 역양',
+                    desc: '얼음 성벽 보다가 엔딩 나오는 타이밍과 노래가 좋아서 찾아본 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/qbcqvrV6-2Q?autoplay=1&enablejsapi=1&rel=0',
+                    img: 'https://i.ytimg.com/vi/qbcqvrV6-2Q/maxresdefault.jpg'
+                }
+            ]
         }
     ]
 };
 
-// 힙합 플레이리스트 상세 데이터 (국힙 & 외힙)
-window.secret1KhiphopData = [
-    {
-        title: '건우의 국힙 플레이리스트',
-        desc: '비트 좋은 국힙 추천 모음.',
-        tags: 'K-HipHop, Playlist',
-        period: '2026',
-        role: '플레이리스트',
-        img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80',
-        displayTags: ['국힙', 'Beat Pick'],
-        episodes: [
-            {
-                num: '1',
-                title: '식케이(Sik-K), Lil Moshpit - LOV3 (Feat. Bryan Chase, Okasian)',
-                desc: '트렌디하고 파워풀한 레이지 사운드의 정수',
-                youtubeVideo: 'https://www.youtube.com/embed/oCvA-i9OTyg?autoplay=1',
-                img: 'https://i.ytimg.com/vi/oCvA-i9OTyg/maxresdefault.jpg'
-            },
-            {
-                num: '2',
-                title: '창모(CHANGMO) - Hyperstar',
-                desc: '에너지 넘치는 피아노 리프와 창모 특유의 랩핑',
-                youtubeVideo: 'https://www.youtube.com/embed/bL4KyoQWspM?autoplay=1',
-                img: 'https://i.ytimg.com/vi/bL4KyoQWspM/maxresdefault.jpg'
-            },
-            {
-                num: '3',
-                title: '키드밀리 - 25 (Feat. YANGHONGWON)',
-                desc: '레이지 장르의 신선함을 보여주는 트랙',
-                youtubeVideo: 'https://www.youtube.com/embed/1JS5Td0MeNE?autoplay=1',
-                img: 'https://i.ytimg.com/vi/1JS5Td0MeNE/hqdefault.jpg'
-            },
-            {
-                num: '4',
-                title: '씨잼 - Pokerface (포커페이스)',
-                desc: '드라이브 할 때 이만한 곡이 없음',
-                youtubeVideo: 'https://www.youtube.com/embed/yrJSc3NKNfc?autoplay=1',
-                img: 'https://i.ytimg.com/vi/yrJSc3NKNfc/hqdefault.jpg'
-            },
-            {
-                num: '5',
-                title: 'Just Music - Rain Showers Remix ',
-                desc: '젓뮤 전성기를 연 곡 중 하나. 이 곡이 수록된 파급효과 앨범도 명반이니 꼭 들어보는걸 추천.',
-                youtubeVideo: 'https://www.youtube.com/embed/K32MnQSxSFM?autoplay=1',
-                img: 'https://i.ytimg.com/vi/K32MnQSxSFM/hqdefault.jpg'
-            },
-            {
-                num: '6',
-                title: 'JUSTHIS - Welcome to My HOME ',
-                desc: '주인장이 젤 좋아하는 래퍼. 1집 겁나 명반이니 들어보세요.',
-                youtubeVideo: 'https://www.youtube.com/embed/KEDYtwOmdtU?autoplay=1',
-                img: 'https://i.ytimg.com/vi/KEDYtwOmdtU/hqdefault.jpg'
-            },
-            {
-                num: '7',
-                title: 'ILLIONAIRE RECORDS - 연결고리',
-                desc: '국힙 트랩의 시초.',
-                youtubeVideo: 'https://www.youtube.com/embed/Q7AbIQHYidQ?autoplay=1',
-                img: 'https://i.ytimg.com/vi/Q7AbIQHYidQ/hqdefault.jpg'
-            },
-            {
-                num: '8',
-                title: '빈지노 - Always Awake ',
-                desc: '청춘을 노래로 표현한다면 이노래가 아닐까?',
-                youtubeVideo: 'https://www.youtube.com/embed/iGWKNrtbF9I?autoplay=1',
-                img: 'https://i.ytimg.com/vi/iGWKNrtbF9I/hqdefault.jpg'
-            },
-            {
-                num: '9',
-                title: 'DPR LIVE -To Myself ',
-                desc: 'COMING TO YOU LIVE.',
-                youtubeVideo: 'https://www.youtube.com/embed/oMQkDkCBmmM?autoplay=1',
-                img: 'https://i.ytimg.com/vi/oMQkDkCBmmM/hqdefault.jpg'
-            },
-            {
-                num: '10',
-                title: "DEAN - I'm Not Sorry (feat. Eric Bellinger)",
-                desc: '앨 범 쳐 내 라 고',
-                youtubeVideo: 'https://www.youtube.com/embed/wzvRxguTPa4?autoplay=1',
-                img: 'https://i.ytimg.com/vi/wzvRxguTPa4/hqdefault.jpg'
-            },
-            {
-                num: '11',
-                title: '키드밀리 - PUMPS (feat. OKASHII) ',
-                desc: '키드밀리의 따끈따끈한 신보. 사운드가 너무 내 스타일.',
-                youtubeVideo: 'https://www.youtube.com/embed/ZnwMsjGPYL4?autoplay=1',
-                img: 'https://i.ytimg.com/vi/ZnwMsjGPYL4/hqdefault.jpg'
-            },
-            {
-                num: '12',
-                title: 'ZENE THE ZILLA, Hash Swan, Nosun - 130 메트로놈 ',
-                desc: '요즘 폼 바짝 오른 제네더질라, 항상 상수인 해쉬스완, 랩퍼블릭과 쇼미로 증명한 노선까지 거를게 없는 싱글.',
-                youtubeVideo: 'https://www.youtube.com/embed/cB068G7jseg?autoplay=1',
-                img: 'https://i.ytimg.com/vi/cB068G7jseg/hqdefault.jpg'
-            },
-        ]
-    },
-    {
-        title: '건우의 외힙 플레이리스트',
-        desc: '트렌디한 비트와 힙한 사운드의 외힙 명곡 모음.',
-        tags: 'HipHop, Playlist',
-        period: '2026',
-        role: '플레이리스트',
-        img: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80',
-        displayTags: ['외힙', 'US HipHop'],
-        episodes: [
-            {
-                num: '1',
-                title: 'Travis Scott - SICKO MODE (ft. Drake)',
-                desc: '변주 사운드의 미친 충격. 외힙의 대표적인 트랩 명곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/6ONRf7h3Mdk?autoplay=1',
-                img: 'https://i.ytimg.com/vi/6ONRf7h3Mdk/hqdefault.jpg'
-            },
-            {
-                num: '2',
-                title: 'Kendrick Lamar - HUMBLE.',
-                desc: '묵직한 피아노 훅과 켄드릭 라마의 날카로운 래핑.',
-                youtubeVideo: 'https://www.youtube.com/embed/tvTRZJ-4EyI?autoplay=1',
-                img: 'https://i.ytimg.com/vi/tvTRZJ-4EyI/maxresdefault.jpg'
-            },
-            {
-                num: '3',
-                title: 'Playboi Carti - ILoveUIHateU',
-                desc: '원조가 말아주는 레이지는 다르다.',
-                youtubeVideo: 'https://www.youtube.com/embed/pZ6oeHV28b0?autoplay=1',
-                img: 'https://i.ytimg.com/vi/pZ6oeHV28b0/maxresdefault.jpg'
-            },
-            {
-                num: '4',
-                title: 'Migos - Bad and Boujee ft Lil Uzi Vert',
-                desc: '외힙 역사상 최고의 도입부, 트랩을 전세계적으로 유행시킨 곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/S-sJp1FfG7Q?autoplay=1',
-                img: 'https://i.ytimg.com/vi/S-sJp1FfG7Q/hqdefault.jpg'
-            },
-            {
-                num: '5',
-                title: 'Kanye West - Runaway (feat. Pusha T)',
-                desc: '올드 칸예의 정수가 들어간 최고의 곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/EMnQwBTJnMM?autoplay=1',
-                img: 'https://i.ytimg.com/vi/EMnQwBTJnMM/hqdefault.jpg'
-            },
-            {
-                num: '6',
-                title: 'Drake - God’s Plan',
-                desc: '드레이크의 대표곡. 외힙 입문용으로 추천.',
-                youtubeVideo: 'https://www.youtube.com/embed/m1a_GqJf02M?autoplay=1',
-                img: 'https://i.ytimg.com/vi/m1a_GqJf02M/hqdefault.jpg'
-            },
-            {
-                num: '7',
-                title: 'Travis Scott - FE!N ft. Playboi Carti',
-                desc: '라이브에서 지진을 일으킨 전설의 곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/B9synWjqBn8?autoplay=1',
-                img: 'https://i.ytimg.com/vi/B9synWjqBn8/hqdefault.jpg'
-            },
-            {
-                num: '8',
-                title: 'Lil Uzi Vert - 20 Min',
-                desc: '비트가 너무 맛있는 곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/bnFa4Mq5PAM?autoplay=1',
-                img: 'https://i.ytimg.com/vi/bnFa4Mq5PAM/hqdefault.jpg'
-            },
-            {
-                num: '9',
-                title: 'Central Cee - Doja',
-                desc: 'UK Drill 장르를 전세계적으로 알린 곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/_VuJA-VQRcY?autoplay=1',
-                img: 'https://i.ytimg.com/vi/_VuJA-VQRcY/hqdefault.jpg'
-            },
-        ]
-    }
-];
+// 하위 호환 매핑
+window.secret1KhiphopData = window.secret1Data.hobbies;
+window.secret1JpopData = window.secret1Data.jpop;
 
-// J-POP & 애니 OST 플레이리스트 상세 데이터
-window.secret1JpopData = [
-    {
-        title: '건우의 J-POP 플레이리스트',
-        desc: '특유의 감성과 멜로디라인이 돋보이는 힐링 J-POP 추천곡입니다.',
-        tags: 'J-POP, Band',
-        period: '2026',
-        role: '플레이리스트',
-        img: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80',
-        displayTags: ['J-POP', 'Band Sound'],
-        episodes: [
-            {
-                num: '1',
-                title: 'King Gnu - 飛行艇(비행정)',
-                desc: '킹누 특유의 강력한 밴드 사운드가 매력적인 곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/MSv7NbfbtU8?autoplay=1',
-                img: 'https://i.ytimg.com/vi/MSv7NbfbtU8/maxresdefault.jpg'
-            },
-            {
-                num: '2',
-                title: 'ZUTOMAYO – STUDY ME',
-                desc: 'ACAね의 도입부 보컬이 너무 매력적인 곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/Atvsg_zogxo?autoplay=1&enablejsapi=1&rel=0',
-                img: 'https://i.ytimg.com/vi/Atvsg_zogxo/maxresdefault.jpg'
-            },
-            {
-                num: '3',
-                title: 'Official髭男dism - Pretender',
-                desc: '히게단 특유의 감성적이고 애절한 팝 록 명곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/TQ8WlA2GXbk?autoplay=1',
-                img: 'https://i.ytimg.com/vi/TQ8WlA2GXbk/maxresdefault.jpg'
-            },
-            {
-                num: '4',
-                title: 'YOASOBI - 群青(군청)',
-                desc: '청량한 사운드가 돋보이는 요아소비 대표곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/Y4nEEZwckuU?autoplay=1&enablejsapi=1&rel=0',
-                img: 'https://i.ytimg.com/vi/Y4nEEZwckuU/maxresdefault.jpg'
-            }
-        ]
-    },
-    {
-        title: '건우의 애니 OST 플레이리스트',
-        desc: '가슴 벅찬 감성과 벅차오르는 명작 애니메이션 주제가 모음.',
-        tags: 'Anime OST, Classic',
-        period: '2026',
-        role: '플레이리스트',
-        img: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80',
-        displayTags: ['애니 OST', 'Anime'],
-        episodes: [
-            {
-                num: '1',
-                title: 'King Gnu - SPECIALZ',
-                desc: '주술회전 2기 시부야 사변 오프닝.',
-                youtubeVideo: 'https://www.youtube.com/embed/fhzKLBZJC3w?autoplay=1',
-                img: 'https://i.ytimg.com/vi/fhzKLBZJC3w/maxresdefault.jpg'
-            },
-            {
-                num: '2',
-                title: 'KANA-BOON - Silhouette',
-                desc: '그 시절 우리는 모두 닌자였다. 나루토 질풍전 16기 OP.',
-                youtubeVideo: 'https://www.youtube.com/embed/hIwGBOexa5w?autoplay=1',
-                img: 'https://i.ytimg.com/vi/hIwGBOexa5w/maxresdefault.jpg'
-            },
-            {
-                num: '3',
-                title: 'LiSA - 홍련화',
-                desc: '귀멸의 칼날 1기 오프닝. 폭발적인 가창력의 대표 OST.',
-                youtubeVideo: 'https://www.youtube.com/embed/JoUayamxUtI?autoplay=1',
-                img: 'https://i.ytimg.com/vi/JoUayamxUtI/maxresdefault.jpg'
-            },
-            {
-                num: '4',
-                title: 'Ado - 역광',
-                desc: '원피스 필름 레드 삽입곡. 상징적인 가사가 돋보이는 곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/gt-v_YCkaMY?autoplay=1',
-                img: 'https://i.ytimg.com/vi/gt-v_YCkaMY/maxresdefault.jpg'
-            },
-            {
-                num: '5',
-                title: 'Vaundy - 飛ぶ時(날아오를때)',
-                desc: '황천의 츠가이 op. 믿고 듣는 바운디.',
-                youtubeVideo: 'https://www.youtube.com/embed/ARj1adoUoEU?autoplay=1',
-                img: 'https://i.ytimg.com/vi/ARj1adoUoEU/maxresdefault.jpg'
-            },
-            {
-                num: '6',
-                title: 'SPYAIR - 사무라이하트',
-                desc: '씹덕들 척추 기립.',
-                youtubeVideo: 'https://www.youtube.com/embed/2sy3H9rnk9A?autoplay=1',
-                img: 'https://i.ytimg.com/vi/2sy3H9rnk9A/maxresdefault.jpg'
-            },
-            {
-                num: '7',
-                title: 'Mrs. GREEN APPLE - Inferno',
-                desc: '주인장이 미세스 그린에 입문한 곡. 불꽃 소방대 2기 op.',
-                youtubeVideo: 'https://www.youtube.com/embed/wfCcs0vLysk?autoplay=1&enablejsapi=1&rel=0',
-                img: 'https://i.ytimg.com/vi/wfCcs0vLysk/maxresdefault.jpg'
-            },
-            {
-                num: '7',
-                title: '폴카닷 스팅레이 - 역양',
-                desc: '얼음 성벽 보다가 엔딩 나오는 타이밍과 노래가 좋아서 찾아본 곡.',
-                youtubeVideo: 'https://www.youtube.com/embed/qbcqvrV6-2Q?autoplay=1&enablejsapi=1&rel=0',
-                img: 'https://i.ytimg.com/vi/qbcqvrV6-2Q/maxresdefault.jpg'
-            },
-        ]
-    }
-];
-
-// 시크릿 1 전용 커스텀 비디오 모달 오픈 함수
+// 비디오 모달 오픈 지원 함수
 function openSecret1VideoModal(youtubeVideo) {
     const videoModalOverlay = document.getElementById('videoModalOverlay');
     const youtubePlayer = document.getElementById('youtubePlayer');
     const bgIframe = document.getElementById('billboardVideoIframe');
 
-    if (bgIframe && bgIframe.src) {
-        bgIframe.src = '';
-    }
+    if (bgIframe && bgIframe.src) bgIframe.src = '';
 
     let videoId = '';
-    if (youtubeVideo.includes('/embed/')) {
-        videoId = youtubeVideo.split('/embed/')[1].split('?')[0];
-    } else if (youtubeVideo.includes('v=')) {
-        videoId = youtubeVideo.split('v=')[1].split('&')[0];
-    } else if (youtubeVideo.includes('youtu.be/')) {
-        videoId = youtubeVideo.split('youtu.be/')[1].split('?')[0];
-    }
+    if (youtubeVideo.includes('/embed/')) videoId = youtubeVideo.split('/embed/')[1].split('?')[0];
+    else if (youtubeVideo.includes('v=')) videoId = youtubeVideo.split('v=')[1].split('&')[0];
+    else if (youtubeVideo.includes('youtu.be/')) videoId = youtubeVideo.split('youtu.be/')[1].split('?')[0];
 
+    const originParam = window.location.origin ? `&origin=${encodeURIComponent(window.location.origin)}` : '';
     const embedUrl = videoId
-        ? `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&rel=0`
+        ? `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&rel=0${originParam}`
         : youtubeVideo;
 
     if (videoModalOverlay) {
@@ -466,14 +440,13 @@ function openSecret1VideoModal(youtubeVideo) {
     }
     document.body.style.overflow = 'hidden';
 
+    if (youtubePlayer) youtubePlayer.src = '';
     setTimeout(() => {
-        if (youtubePlayer) {
-            youtubePlayer.src = embedUrl;
-        }
+        if (youtubePlayer) youtubePlayer.src = embedUrl;
     }, 50);
 }
 
-// 시크릿 1 전용 커스텀 모달 오픈 지원 함수
+// 상세 정보 모달 오픈 지원 함수
 function openSecret1CustomModal(data) {
     const modalOverlay = document.getElementById('modalOverlay');
     const modalTitle = document.getElementById('modalTitle');
@@ -488,7 +461,7 @@ function openSecret1CustomModal(data) {
     if (modalTitle) modalTitle.textContent = data.title || '';
     if (modalDesc) modalDesc.innerHTML = data.desc || '';
     if (modalPeriod) modalPeriod.textContent = data.period || '2026';
-    if (modalRole) modalRole.textContent = data.role || '시크릿 1 픽';
+    if (modalRole) modalRole.textContent = data.role || '플레이리스트';
 
     if (modalTags) {
         modalTags.innerHTML = '';
@@ -530,9 +503,7 @@ function openSecret1CustomModal(data) {
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const youtubeVideo = item.dataset.youtubeVideo;
-                if (youtubeVideo) {
-                    openSecret1VideoModal(youtubeVideo);
-                }
+                if (youtubeVideo) openSecret1VideoModal(youtubeVideo);
             });
         });
     } else if (modalEpisodesSection) {
@@ -545,9 +516,9 @@ function openSecret1CustomModal(data) {
     }
 }
 
-// 시크릿 1 프로필이 활성화될 때 실행될 커스텀 로직
+// 시크릿 1 프로필 활성화 로직
 window.onSecret1Active = function () {
-    console.log("🔒 [시크릿 1] 프로필 활성화됨: K-POP / 힙합 / J-POP 3개 단락 완전 분리 적용");
+    console.log("🔒 [시크릿 1] 프로필 활성화됨");
     document.documentElement.style.setProperty('--netflix-red', '#00c853');
 
     setTimeout(() => {
@@ -562,25 +533,24 @@ window.onSecret1Active = function () {
 
             const hobbiesCards = rowHobbiesEl.querySelectorAll('.card');
             hobbiesCards.forEach((card, index) => {
-                const khiphopData = window.secret1KhiphopData[index] || window.secret1KhiphopData[0];
-                card.addEventListener('click', (e) => {
+                const hiphopData = window.secret1Data.hobbies[index] || window.secret1Data.hobbies[0];
+                const newCard = card.cloneNode(true);
+                card.parentNode.replaceChild(newCard, card);
+                newCard.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    openSecret1CustomModal(khiphopData);
+                    openSecret1CustomModal(hiphopData);
                 });
             });
         }
 
-        // 2. Row 3 (J-POP & 애니 OST) 동적 생성 및 셋업
+        // 2. Row 3 (J-POP & 애니 OST) 동적 셋업
         let jpopRow = document.getElementById('row-secret1-jpop');
         if (!jpopRow) {
             jpopRow = document.createElement('section');
             jpopRow.className = 'row';
             jpopRow.id = 'row-secret1-jpop';
-
             const mainContent = document.querySelector('.main-content');
-            if (mainContent) {
-                mainContent.appendChild(jpopRow);
-            }
+            if (mainContent) mainContent.appendChild(jpopRow);
         }
 
         jpopRow.style.display = 'block';
@@ -590,7 +560,7 @@ window.onSecret1Active = function () {
             </div>
             <div class="row-container">
                 <div class="row-cards">
-                    ${window.secret1JpopData.map((p, idx) => `
+                    ${window.secret1Data.jpop.map((p, idx) => `
                         <div class="card" data-jpop-index="${idx}">
                             <img src="${p.img}" alt="${p.title}" class="card-img">
                             <div class="card-body">
@@ -607,7 +577,7 @@ window.onSecret1Active = function () {
 
         jpopRow.querySelectorAll('.card').forEach(card => {
             const idx = card.dataset.jpopIndex;
-            const data = window.secret1JpopData[idx] || window.secret1JpopData[0];
+            const data = window.secret1Data.jpop[idx] || window.secret1Data.jpop[0];
             card.addEventListener('click', (e) => {
                 e.stopPropagation();
                 openSecret1CustomModal(data);
@@ -616,12 +586,11 @@ window.onSecret1Active = function () {
     }, 50);
 };
 
-// 타 프로필 클릭 시 시크릿 1 전용 동적 행 정리 및 제목 원복
+// 타 프로필 전환 시 정리
 function cleanupSecret1ExtraRows() {
     const jpopRow = document.getElementById('row-secret1-jpop');
-    if (jpopRow) {
-        jpopRow.style.display = 'none';
-    }
+    if (jpopRow) jpopRow.style.display = 'none';
+
     const rowHobbiesEl = document.getElementById('row-hobbies');
     const hobbiesTitle = rowHobbiesEl ? rowHobbiesEl.querySelector('.row-title') : null;
     if (hobbiesTitle) {
@@ -633,9 +602,7 @@ if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.profile-card').forEach(card => {
             card.addEventListener('click', () => {
-                if (card.dataset.profile !== 'secret1') {
-                    cleanupSecret1ExtraRows();
-                }
+                if (card.dataset.profile !== 'secret1') cleanupSecret1ExtraRows();
             });
         });
     });
