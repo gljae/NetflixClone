@@ -145,11 +145,11 @@ window.secret2Data = {
             img: '/static/img/artist-2ne1.jpeg',
             displayTags: ['음악'],
             episodes: [
-                { num: '1', title: 'You And I', desc: '', img: '/static/img/artist-2ne1.jpeg' },
-                { num: '2', title: 'Ugly', desc: '', img: '/static/img/artist-2ne1.jpeg' },
-                { num: '3', title: "I Don't Care", desc: '', img: '/static/img/artist-2ne1.jpeg' },
-                { num: '4', title: 'Fire', desc: '', img: '/static/img/artist-2ne1.jpeg' },
-                { num: '5', title: 'Come Back Home', desc: '', img: '/static/img/artist-2ne1.jpeg' }
+                { num: '1', title: 'You And I', desc: '', img: '/static/img/2ne1-21.jpeg' },
+                { num: '2', title: 'Ugly', desc: '', img: '/static/img/2ne1-skull.jpeg' },
+                { num: '3', title: "I Don't Care", desc: '', img: '/static/img/2ne1-holo.jpeg' },
+                { num: '4', title: 'Fire', desc: '', img: '/static/img/2ne1-holo.jpeg' },
+                { num: '5', title: 'Come Back Home', desc: '', img: '/static/img/2ne1-crush.png' }
             ]
         },
         {
