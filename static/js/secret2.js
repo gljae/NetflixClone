@@ -126,14 +126,14 @@ window.secret2Data = {
             img: '/static/img/artist-muse.jpeg',
             displayTags: ['음악'],
             episodes: [
-                { num: '1', title: 'Plug in Baby', desc: '', img: '/static/img/artist-muse.jpeg' },
-                { num: '2', title: 'Hysteria', desc: '', img: '/static/img/artist-muse.jpeg' },
-                { num: '3', title: 'Supermassive Black Hole', desc: '', img: '/static/img/artist-muse.jpeg' },
-                { num: '4', title: 'Time is Running Out', desc: '', img: '/static/img/artist-muse.jpeg' },
-                { num: '5', title: 'Madness', desc: '', img: '/static/img/artist-muse.jpeg' },
-                { num: '6', title: 'Starlight', desc: '', img: '/static/img/artist-muse.jpeg' },
-                { num: '7', title: 'Psycho', desc: '', img: '/static/img/artist-muse.jpeg' },
-                { num: '8', title: 'Stockholm Syndrome', desc: '', img: '/static/img/artist-muse.jpeg' }
+                { num: '1', title: 'Plug in Baby', desc: '', img: '/static/img/muse-origin.jpeg' },
+                { num: '2', title: 'Hysteria', desc: '', img: '/static/img/muse-absolution.jpeg' },
+                { num: '3', title: 'Supermassive Black Hole', desc: '', img: '/static/img/muse-blackholes.jpeg' },
+                { num: '4', title: 'Time is Running Out', desc: '', img: '/static/img/muse-absolution.jpeg' },
+                { num: '5', title: 'Madness', desc: '', img: '/static/img/muse-madness.jpeg' },
+                { num: '6', title: 'Starlight', desc: '', img: '/static/img/muse-blackholes.jpeg' },
+                { num: '7', title: 'Psycho', desc: '', img: '/static/img/muse-drones.jpeg' },
+                { num: '8', title: 'Stockholm Syndrome', desc: '', img: '/static/img/muse-absolution.jpeg' }
             ]
         },
         {
