@@ -80,12 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
             projectsContainer.innerHTML = data.projects.map(p => {
                 const episodesAttr = p.episodes ? `data-episodes="${encodeURIComponent(JSON.stringify(p.episodes))}"` : '';
                 return `
-                    <div class="card" 
+                    <div class="card"
                         data-title="${p.title}"
                         data-desc="${p.desc}"
                         data-tags="${p.tags}"
                         data-period="${p.period}"
                         data-role="${p.role}"
+                        data-period-label="${p.periodLabel || ''}"
+                        data-role-label="${p.roleLabel || ''}"
+                        data-tags-label="${p.tagsLabel || ''}"
+                        data-episodes-label="${p.episodesLabel || ''}"
                         data-link="${p.link || ''}"
                         data-instagram="${p.instagram || ''}"
                         ${episodesAttr}>
@@ -126,6 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-tags="${h.tags}"
                         data-period="${h.period}"
                         data-role="${h.role}"
+                        data-period-label="${h.periodLabel || ''}"
+                        data-role-label="${h.roleLabel || ''}"
+                        data-tags-label="${h.tagsLabel || ''}"
                         data-episodes-label="${h.episodesLabel || ''}"
                         ${episodesAttr}>
                         <img src="${h.img}" class="card-img" style="${h.imgStyle || ''}">
