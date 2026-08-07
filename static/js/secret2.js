@@ -108,13 +108,13 @@ window.secret2Data = {
             img: '/static/img/artist-5sos.jpeg',
             displayTags: ['음악'],
             episodes: [
-                { num: '1', title: 'High', desc: '', img: '/static/img/artist-5sos.jpeg' },
-                { num: '2', title: 'Youngblood', desc: '', img: '/static/img/artist-5sos.jpeg' },
-                { num: '3', title: 'Ghost Of You', desc: '', img: '/static/img/artist-5sos.jpeg' },
-                { num: '4', title: 'Valentine', desc: '', img: '/static/img/artist-5sos.jpeg' },
-                { num: '5', title: 'Lie to Me', desc: '', img: '/static/img/artist-5sos.jpeg' },
-                { num: '6', title: '2011', desc: '', img: '/static/img/artist-5sos.jpeg' },
-                { num: '7', title: 'Easier', desc: '', img: '/static/img/artist-5sos.jpeg' }
+                { num: '1', title: 'High', desc: '', img: '/static/img/5sos-calm.jpeg' },
+                { num: '2', title: 'Youngblood', desc: '', img: '/static/img/5sos-youngblood.jpeg' },
+                { num: '3', title: 'Ghost Of You', desc: '', img: '/static/img/5sos-youngblood.jpeg' },
+                { num: '4', title: 'Valentine', desc: '', img: '/static/img/5sos-youngblood.jpeg' },
+                { num: '5', title: 'Lie to Me', desc: '', img: '/static/img/5sos-youngblood.jpeg' },
+                { num: '6', title: '2011', desc: '', img: '/static/img/5sos-2011.jpeg' },
+                { num: '7', title: 'Easier', desc: '', img: '/static/img/5sos-calm.jpeg' }
             ]
         },
         {
