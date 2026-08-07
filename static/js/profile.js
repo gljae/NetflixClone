@@ -142,6 +142,43 @@ document.addEventListener('DOMContentLoaded', () => {
             if (rowHobbiesEl) rowHobbiesEl.style.display = 'none';
         }
 
+        // Render Interests Row (3번째 커스텀 행. data.interests 가 있는 프로필만 노출)
+        const rowInterestsTitleEl = document.getElementById('rowInterestsTitle');
+        if (rowInterestsTitleEl && data.rowInterestsTitle) {
+            rowInterestsTitleEl.innerHTML = data.rowInterestsTitle;
+        }
+
+        const rowInterestsEl = document.getElementById('row-interests');
+        const interestsContainer = document.querySelector('#row-interests .row-cards');
+
+        if (data.interests && data.interests.length > 0) {
+            if (rowInterestsEl) rowInterestsEl.style.display = 'block';
+            if (interestsContainer) {
+                interestsContainer.innerHTML = data.interests.map(it => {
+                    const episodesAttr = it.episodes ? `data-episodes="${encodeURIComponent(JSON.stringify(it.episodes))}"` : '';
+                    return `
+                    <div class="card"
+                        data-title="${it.title}"
+                        data-desc="${it.desc}"
+                        data-tags="${it.tags}"
+                        data-period="${it.period}"
+                        data-role="${it.role}"
+                        ${episodesAttr}>
+                        <img src="${it.img}" class="card-img" style="${it.imgStyle || ''}">
+                        <div class="card-body">
+                            <div class="card-title">${it.title}</div>
+                            <div class="card-tags">
+                                ${it.displayTags.map(t => `<span class="tag">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                }).join('');
+            }
+        } else {
+            if (rowInterestsEl) rowInterestsEl.style.display = 'none';
+        }
+
         // Rebind click events for newly created cards
         bindCardEvents();
     }
