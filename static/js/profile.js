@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.episodes && data.episodes.length > 0 && modalEpisodesSection && episodesList) {
             modalEpisodesSection.style.display = 'block';
             episodesList.innerHTML = data.episodes.map(ep => `
-                <div class="episode-item" data-youtube-video="${ep.youtubeVideo}">
+                <div class="episode-item" data-youtube-video="${ep.youtubeVideo || ''}">
                     <div class="episode-num">${ep.num}</div>
                     <div class="episode-thumb-box">
                         <img src="${ep.img}" class="episode-thumb-img" alt="${ep.title}">

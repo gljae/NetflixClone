@@ -94,52 +94,111 @@ window.secret2Data = {
             displayTags: ['애니', '액션']
         }
     ],
-    // "즐겨듣는 음악" 행 — 지금은 틀만 잡아둔 예시 데이터야.
-    // 카드 하나 = 가수 한 명, episodes 배열 = 그 가수의 노래 목록(눌렀을 때 회차처럼 나열됨).
-    // title/desc/img/episodes 안의 값들을 실제 좋아하는 가수·노래로 바꿔서 채우면 돼.
-    // youtubeVideo 는 뮤직비디오나 라이브 영상의 유튜브 링크를 넣으면 카드 안에서 바로 재생돼.
+    // "즐겨듣는 음악" 행 — 카드 하나 = 가수 한 명, episodes 배열 = 그 가수의 노래 목록
+    // (눌렀을 때 회차처럼 나열됨). 이미지는 static/img/artist-*.jpeg 실제 사진 사용.
     hobbies: [
         {
-            title: '아티스트 이름을 입력하세요 (예시 1)',
-            desc: '이 가수를 좋아하는 이유를 짧게 적어보세요.',
-            tags: 'K-POP',
+            title: '5 Seconds Of Summer',
+            desc: '팝 펑크 감성과 청량한 보컬이 매력적인 밴드.',
+            tags: 'Pop Punk, Rock',
             period: '2026',
             role: '즐겨 듣는 가수',
-            img: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=600&q=80',
+            img: '/static/img/artist-5sos.jpeg',
             displayTags: ['음악'],
             episodes: [
-                {
-                    num: '1',
-                    title: '노래 제목을 입력하세요',
-                    desc: '이 곡을 좋아하는 이유나 소개를 적어보세요.',
-                    youtubeVideo: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1',
-                    img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80'
-                },
-                {
-                    num: '2',
-                    title: '노래 제목을 입력하세요',
-                    desc: '이 곡을 좋아하는 이유나 소개를 적어보세요.',
-                    youtubeVideo: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1',
-                    img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80'
-                }
+                { num: '1', title: 'High', desc: '', img: '/static/img/artist-5sos.jpeg' },
+                { num: '2', title: 'Youngblood', desc: '', img: '/static/img/artist-5sos.jpeg' },
+                { num: '3', title: 'Ghost Of You', desc: '', img: '/static/img/artist-5sos.jpeg' },
+                { num: '4', title: 'Valentine', desc: '', img: '/static/img/artist-5sos.jpeg' },
+                { num: '5', title: 'Lie to Me', desc: '', img: '/static/img/artist-5sos.jpeg' },
+                { num: '6', title: '2011', desc: '', img: '/static/img/artist-5sos.jpeg' },
+                { num: '7', title: 'Easier', desc: '', img: '/static/img/artist-5sos.jpeg' }
             ]
         },
         {
-            title: '아티스트 이름을 입력하세요 (예시 2)',
-            desc: '이 가수를 좋아하는 이유를 짧게 적어보세요.',
+            title: 'MUSE',
+            desc: '웅장한 사운드와 실험적인 프로그레시브 록으로 유명한 밴드.',
+            tags: 'Rock, Alternative',
+            period: '2026',
+            role: '즐겨 듣는 가수',
+            img: '/static/img/artist-muse.jpeg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: 'Plug in Baby', desc: '', img: '/static/img/artist-muse.jpeg' },
+                { num: '2', title: 'Hysteria', desc: '', img: '/static/img/artist-muse.jpeg' },
+                { num: '3', title: 'Supermassive Black Hole', desc: '', img: '/static/img/artist-muse.jpeg' },
+                { num: '4', title: 'Time is Running Out', desc: '', img: '/static/img/artist-muse.jpeg' },
+                { num: '5', title: 'Madness', desc: '', img: '/static/img/artist-muse.jpeg' },
+                { num: '6', title: 'Starlight', desc: '', img: '/static/img/artist-muse.jpeg' },
+                { num: '7', title: 'Psycho', desc: '', img: '/static/img/artist-muse.jpeg' },
+                { num: '8', title: 'Stockholm Syndrome', desc: '', img: '/static/img/artist-muse.jpeg' }
+            ]
+        },
+        {
+            title: '2NE1',
+            desc: '독보적인 카리스마와 파워풀한 퍼포먼스의 걸그룹.',
             tags: 'K-POP',
             period: '2026',
             role: '즐겨 듣는 가수',
-            img: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80',
+            img: '/static/img/artist-2ne1.jpeg',
             displayTags: ['음악'],
             episodes: [
-                {
-                    num: '1',
-                    title: '노래 제목을 입력하세요',
-                    desc: '이 곡을 좋아하는 이유나 소개를 적어보세요.',
-                    youtubeVideo: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1',
-                    img: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80'
-                }
+                { num: '1', title: 'You And I', desc: '', img: '/static/img/artist-2ne1.jpeg' },
+                { num: '2', title: 'Ugly', desc: '', img: '/static/img/artist-2ne1.jpeg' },
+                { num: '3', title: "I Don't Care", desc: '', img: '/static/img/artist-2ne1.jpeg' },
+                { num: '4', title: 'Fire', desc: '', img: '/static/img/artist-2ne1.jpeg' },
+                { num: '5', title: 'Come Back Home', desc: '', img: '/static/img/artist-2ne1.jpeg' }
+            ]
+        },
+        {
+            title: 'M.C The Max',
+            desc: '섬세한 감정 표현과 폭발적인 라이브 실력의 록 발라드 밴드.',
+            tags: 'Rock Ballad',
+            period: '2026',
+            role: '즐겨 듣는 가수',
+            img: '/static/img/artist-mctm.jpeg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: '흩어지지 않게', desc: '', img: '/static/img/artist-mctm.jpeg' },
+                { num: '2', title: '처음처럼', desc: '', img: '/static/img/artist-mctm.jpeg' },
+                { num: '3', title: '넘쳐흘러', desc: '', img: '/static/img/artist-mctm.jpeg' },
+                { num: '4', title: 'One Love', desc: '', img: '/static/img/artist-mctm.jpeg' },
+                { num: '5', title: '안녕을', desc: '', img: '/static/img/artist-mctm.jpeg' }
+            ]
+        },
+        {
+            title: '다비치',
+            desc: '풍부한 감성과 깊은 목소리가 돋보이는 여성 듀오.',
+            tags: 'Ballad',
+            period: '2026',
+            role: '즐겨 듣는 가수',
+            img: '/static/img/artist-davichi.jpeg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: '너에게 못했던 내 마지막 말은', desc: '', img: '/static/img/artist-davichi.jpeg' },
+                { num: '2', title: '나의 오랜 연인에게', desc: '', img: '/static/img/artist-davichi.jpeg' },
+                { num: '3', title: '마치 우린 없었던 사이', desc: '', img: '/static/img/artist-davichi.jpeg' },
+                { num: '4', title: '이 사랑', desc: '', img: '/static/img/artist-davichi.jpeg' },
+                { num: '5', title: '매일 크리스마스', desc: '', img: '/static/img/artist-davichi.jpeg' },
+                { num: '6', title: '팡파레', desc: '', img: '/static/img/artist-davichi.jpeg' },
+                { num: '7', title: '거북이', desc: '', img: '/static/img/artist-davichi.jpeg' }
+            ]
+        },
+        {
+            title: '한로로',
+            desc: '담백한 목소리로 담담한 위로를 건네는 싱어송라이터.',
+            tags: 'Indie, Folk',
+            period: '2026',
+            role: '즐겨 듣는 가수',
+            img: '/static/img/artist-hanroro.jpeg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: '자처', desc: '', img: '/static/img/artist-hanroro.jpeg' },
+                { num: '2', title: '입춘', desc: '', img: '/static/img/artist-hanroro.jpeg' },
+                { num: '3', title: '금붕어', desc: '', img: '/static/img/artist-hanroro.jpeg' },
+                { num: '4', title: '사랑하게 될 거야', desc: '', img: '/static/img/artist-hanroro.jpeg' },
+                { num: '5', title: '0+0', desc: '', img: '/static/img/artist-hanroro.jpeg' },
+                { num: '6', title: '생존법', desc: '', img: '/static/img/artist-hanroro.jpeg' }
             ]
         }
     ]
