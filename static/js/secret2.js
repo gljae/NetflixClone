@@ -13,7 +13,7 @@ window.secret2Data = {
     rowHobbiesTitle: '<i class="fa-solid fa-music" style="color:#ab47bc;"></i> 김시은 님이 즐겨듣는 음악',
     rowShowoffTitle: '<i class="fa-solid fa-heart" style="color:#ab47bc;"></i> 김시은 님이 자랑하고 싶은 콘텐츠',
     hero: {
-        badge: '<i class="fa-solid fa-key" style="color:#ab47bc;"></i> SECRET 2 CINEMATIC SPACE',
+        badge: '<i class="fa-solid fa-key" style="color:#ab47bc;"></i> SIEUN\'S ORIGINAL',
         title: '시크릿 2:<br>시네마틱 라이브러리',
         desc: '감각적인 비주얼과 감성적인 멜로디가 공존하는 시크릿 2 전용 시네마 공간입니다.',
         bgYoutube: 'https://www.youtube.com/embed/z-xfGoabprU?autoplay=1&mute=1&loop=1&playlist=z-xfGoabprU&controls=0&showinfo=0&rel=0',
