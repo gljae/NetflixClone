@@ -29,6 +29,7 @@ window.secret2Data = {
             roleLabel: '직업',
             tagsLabel: '취미',
             link: '',
+            instagram: 'https://instagram.com/rloiw',
             img: '/static/img/secret2-info.jpg'
         }
     },
