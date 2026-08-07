@@ -222,12 +222,22 @@ window.secret2Data = {
     showoff: [
         {
             title: '솜이',
-            desc: '우리집 첫째 반려견 솜이를 소개합니다.',
-            tags: '반려견',
-            period: '2026',
-            role: '우리집 첫째',
+            desc: '우리집 셋째 포메라니안 솜이.',
+            tags: '초예민',
+            period: '9살',
+            role: '두 뼘',
+            periodLabel: '나이',
+            roleLabel: '크기',
+            tagsLabel: '성격',
             img: '/static/img/dog-somi.jpg',
-            displayTags: ['반려견']
+            displayTags: ['초예민'],
+            episodes: [
+                { num: '1', title: '산책하다가 여우냐는 질문을 들어봄', desc: '', img: '/static/img/somi-1.jpg' },
+                { num: '2', title: '차에 타면 꼭 자야함', desc: '', img: '/static/img/somi-2.jpg' },
+                { num: '3', title: '강아지 무서워함 (강아지 주제에)', desc: '', img: '/static/img/somi-3.jpg' },
+                { num: '4', title: '맨바닥 싫어함', desc: '', img: '/static/img/somi-4.jpg' },
+                { num: '5', title: '다 컸는데 2kg', desc: '', img: '/static/img/somi-5.jpg' }
+            ]
         },
         {
             title: '이브',

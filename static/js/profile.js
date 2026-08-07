@@ -200,6 +200,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-tags="${s.tags}"
                         data-period="${s.period}"
                         data-role="${s.role}"
+                        data-period-label="${s.periodLabel || ''}"
+                        data-role-label="${s.roleLabel || ''}"
+                        data-tags-label="${s.tagsLabel || ''}"
                         ${episodesAttr}>
                         <img src="${s.img}" class="card-img" style="${s.imgStyle || ''}">
                         <div class="card-body">
@@ -249,6 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTags = document.getElementById('modalTags');
     const modalPeriod = document.getElementById('modalPeriod');
     const modalRole = document.getElementById('modalRole');
+    const modalPeriodLabel = document.getElementById('modalPeriodLabel');
+    const modalRoleLabel = document.getElementById('modalRoleLabel');
+    const modalTagsLabel = document.getElementById('modalTagsLabel');
     const modalLink = document.getElementById('modalLink');
     const modalInstagramLink = document.getElementById('modalInstagramLink');
     const modalBanner = document.getElementById('modalBanner');
@@ -258,6 +264,12 @@ document.addEventListener('DOMContentLoaded', () => {
         modalDesc.innerHTML = data.desc || '상세 설명이 없습니다.';
         modalPeriod.textContent = data.period || '2026';
         modalRole.textContent = data.role || '개발자';
+
+        // 카드별로 "기간/역할/기술 스택" 라벨을 다른 말(예: 나이/크기/성격)로
+        // 바꿔서 쓰고 싶을 때를 위한 오버라이드. 없으면 원래 라벨 그대로.
+        if (modalPeriodLabel) modalPeriodLabel.textContent = data.periodLabel || '기간';
+        if (modalRoleLabel) modalRoleLabel.textContent = data.roleLabel || '역할';
+        if (modalTagsLabel) modalTagsLabel.textContent = data.tagsLabel || '기술 스택';
 
         // Set tags
         modalTags.innerHTML = '';
@@ -453,6 +465,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     tags: card.dataset.tags,
                     period: card.dataset.period,
                     role: card.dataset.role,
+                    periodLabel: card.dataset.periodLabel,
+                    roleLabel: card.dataset.roleLabel,
+                    tagsLabel: card.dataset.tagsLabel,
                     link: card.dataset.link,
                     instagram: card.dataset.instagram,
                     img: card.querySelector('img')?.src,
