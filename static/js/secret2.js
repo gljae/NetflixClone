@@ -196,11 +196,11 @@ window.secret2Data = {
             displayTags: ['음악'],
             episodes: [
                 { num: '1', title: '자처', desc: '', img: '/static/img/artist-hanroro.jpeg' },
-                { num: '2', title: '입춘', desc: '', img: '/static/img/artist-hanroro.jpeg' },
-                { num: '3', title: '금붕어', desc: '', img: '/static/img/artist-hanroro.jpeg' },
-                { num: '4', title: '사랑하게 될 거야', desc: '', img: '/static/img/artist-hanroro.jpeg' },
-                { num: '5', title: '0+0', desc: '', img: '/static/img/artist-hanroro.jpeg' },
-                { num: '6', title: '생존법', desc: '', img: '/static/img/artist-hanroro.jpeg' }
+                { num: '2', title: '입춘', desc: '', img: '/static/img/hanroro-ipchun.jpeg' },
+                { num: '3', title: '금붕어', desc: '', img: '/static/img/hanroro-1st.jpeg' },
+                { num: '4', title: '사랑하게 될 거야', desc: '', img: '/static/img/hanroro-1st.jpeg' },
+                { num: '5', title: '0+0', desc: '', img: '/static/img/hanroro-3rd.jpeg' },
+                { num: '6', title: '생존법', desc: '', img: '/static/img/hanroro-saengjon.jpeg' }
             ]
         }
     ],
