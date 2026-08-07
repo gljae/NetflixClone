@@ -9,7 +9,7 @@ window.secret1Data = {
     emoji: '',
     rowProjectsTitle: '<i class="fa-solid fa-music" style="color:#00e676;"></i> 건우의 K-POP 플레이리스트',
     hero: {
-        badge: '<i class="fa-solid fa-user-secret" style="color:#00e676;"></i> SECRET 1 SPECIAL ARCHIVE',
+        badge: '<i class="fa-solid fa-user-secret" style="color:#00e676;"></i> 지금 급상승 중인 플레이리스트',
         title: '건우s pick :<br>내 맘대로 플레이리스트',
         desc: '주인장의 취향이 씨게 들어간 플리입니다',
         bgYoutube: 'https://www.youtube.com/embed/oCvA-i9OTyg?autoplay=1&mute=1&loop=1&playlist=oCvA-i9OTyg&controls=0&showinfo=0&rel=0',
@@ -33,7 +33,7 @@ window.secret1Data = {
             tags: 'K-POP, Trending',
             period: '2026',
             role: '플레이리스트',
-            img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80',
+            img: 'https://yt3.googleusercontent.com/p93cL9ZtXzcmiTr_KW-m64b7v5ugAF_a4-EMwPM0m9tXB9zaMqB25-Ygx3JAVjgMyS6dKgLsVA=s900-c-k-c0x00ffffff-no-rj',
             displayTags: ['K-POP', 'girl group'],
             episodes: [
                 {
@@ -86,7 +86,7 @@ window.secret1Data = {
             tags: 'K-POP, Boy Group',
             period: '2026',
             role: '플레이리스트',
-            img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80',
+            img: 'https://photo.jtbc.co.kr/news/jam_photo/202607/15/a6c373a7-015c-4ae1-8b35-dc0ba953bf29.jpg',
             displayTags: ['남돌', 'Boy Group'],
             episodes: [
                 {
@@ -135,27 +135,28 @@ window.secret1Data = {
             tags: 'K-HipHop, Playlist',
             period: '2026',
             role: '플레이리스트',
-            img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80',
+            img: 'https://i.namu.wiki/i/i0lzV5xqCSc2BufVuhXFknC-FQFS1fNSuyV94WXgL4Q4h7xW3jwJlBUkgxvul231JHLrGjsejvpR-w3pU7JmiA.webp',
+            objectPosition: 'center 15%',
             displayTags: ['국힙', 'Beat Pick'],
             episodes: [
                 {
                     num: '1',
                     title: '식케이(Sik-K), Lil Moshpit - LOV3 (Feat. Bryan Chase, Okasian)',
-                    desc: '트렌디하고 파워풀한 레이지 사운드의 정수',
+                    desc: 'ㄸ ㄷㅅ ㅂㅇㅈㅇ ㄷ',
                     youtubeVideo: 'https://www.youtube.com/embed/oCvA-i9OTyg?autoplay=1',
                     img: 'https://i.ytimg.com/vi/oCvA-i9OTyg/maxresdefault.jpg'
                 },
                 {
                     num: '2',
                     title: '창모(CHANGMO) - Hyperstar',
-                    desc: '에너지 넘치는 피아노 리프와 창모 특유의 랩핑',
+                    desc: '창모 그 자체인 노래.',
                     youtubeVideo: 'https://www.youtube.com/embed/bL4KyoQWspM?autoplay=1',
                     img: 'https://i.ytimg.com/vi/bL4KyoQWspM/maxresdefault.jpg'
                 },
                 {
                     num: '3',
                     title: '키드밀리 - 25 (Feat. YANGHONGWON)',
-                    desc: '레이지 장르의 신선함을 보여주는 트랙',
+                    desc: '레이지 장르 입문곡으로 추천.',
                     youtubeVideo: 'https://www.youtube.com/embed/1JS5Td0MeNE?autoplay=1',
                     img: 'https://i.ytimg.com/vi/1JS5Td0MeNE/hqdefault.jpg'
                 },
@@ -230,7 +231,8 @@ window.secret1Data = {
             tags: 'HipHop, Playlist',
             period: '2026',
             role: '플레이리스트',
-            img: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80',
+            img: 'https://i.namu.wiki/i/VnqmNY1hmPkKg43wJ11TTAA-Rgjf67wmHK3L6p-KdM9jwwrfKN6YKTnQL6Mf8vreBWGM44vCrq8s5P52a8-bZg.webp',
+            objectPosition: 'center 60%',
             displayTags: ['외힙', 'US HipHop'],
             episodes: [
                 {
@@ -522,6 +524,15 @@ window.onSecret1Active = function () {
     document.documentElement.style.setProperty('--netflix-red', '#00c853');
 
     setTimeout(() => {
+        // 남돌 카드 이미지 위치 조정 (얼굴이 잘 보이도록 상단 정렬)
+        const rowProjectsEl = document.getElementById('row-projects');
+        if (rowProjectsEl) {
+            const boyCardImg = rowProjectsEl.querySelectorAll('.card')[1]?.querySelector('.card-img');
+            if (boyCardImg) {
+                boyCardImg.style.objectPosition = 'center 50%';
+            }
+        }
+
         // 1. Row 2 (힙합 - 국힙 & 외힙) 셋업
         const rowHobbiesEl = document.getElementById('row-hobbies');
         if (rowHobbiesEl) {
@@ -536,6 +547,14 @@ window.onSecret1Active = function () {
                 const hiphopData = window.secret1Data.hobbies[index] || window.secret1Data.hobbies[0];
                 const newCard = card.cloneNode(true);
                 card.parentNode.replaceChild(newCard, card);
+
+                // 카드 이미지 및 위치 조정 (국힙/외힙 각각 독립 조절)
+                const cardImg = newCard.querySelector('.card-img');
+                if (cardImg) {
+                    cardImg.src = hiphopData.img;
+                    cardImg.style.objectPosition = hiphopData.objectPosition || 'center 15%';
+                }
+
                 newCard.addEventListener('click', (e) => {
                     e.stopPropagation();
                     openSecret1CustomModal(hiphopData);
