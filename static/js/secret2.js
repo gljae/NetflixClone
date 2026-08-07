@@ -21,12 +21,15 @@ window.secret2Data = {
         demoYoutube: 'https://www.youtube.com/embed/z-xfGoabprU?autoplay=1',
         heroInfo: {
             title: '시크릿 2: 시네마틱 라이브러리',
-            desc: '감각적인 비주얼과 감성적인 멜로디가 공존하는 시크릿 2 전용 시네마 공간입니다.',
-            tags: 'K-POP, CINEMA, VISUAL',
-            period: '2026',
-            role: '시크릿 2 디렉터',
-            link: 'https://github.com/',
-            img: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1600&q=80'
+            desc: '이 프로필의 주인장 김시은의 시크릿 공간입니다.',
+            tags: '음주',
+            period: '23세',
+            role: '학생',
+            periodLabel: '나이',
+            roleLabel: '직업',
+            tagsLabel: '취미',
+            link: '',
+            img: '/static/img/secret2-info.jpg'
         }
     },
     // "시청 중인 콘텐츠" 행. 포스터는 static/img/poster-*.png 실제 이미지 사용.
