@@ -101,7 +101,7 @@ window.secret2Data = {
     hobbies: [
         {
             title: '5 Seconds Of Summer',
-            desc: '팝 펑크 감성과 청량한 보컬이 매력적인 밴드.',
+            desc: '팝 펑크 감성과 청량한 보컬이 매력적인 밴드. *11.19 내한 공연',
             tags: 'Pop Punk, Rock',
             period: '2026',
             role: '즐겨 듣는 가수',
@@ -154,7 +154,7 @@ window.secret2Data = {
         },
         {
             title: 'M.C The Max',
-            desc: '섬세한 감정 표현과 폭발적인 라이브 실력의 록 발라드 밴드.',
+            desc: '섬세한 감정 표현과 폭발적인 라이브 실력의 록 발라드 밴드. 노래방 18번',
             tags: 'Rock Ballad',
             period: '2026',
             role: '즐겨 듣는 가수',
@@ -170,7 +170,7 @@ window.secret2Data = {
         },
         {
             title: '다비치',
-            desc: '풍부한 감성과 깊은 목소리가 돋보이는 여성 듀오.',
+            desc: '풍부한 감성과 깊은 목소리가 돋보이는 여성 듀오. 최고.',
             tags: 'Ballad',
             period: '2026',
             role: '즐겨 듣는 가수',
@@ -188,7 +188,7 @@ window.secret2Data = {
         },
         {
             title: '한로로',
-            desc: '담백한 목소리로 담담한 위로를 건네는 싱어송라이터.',
+            desc: '담백한 목소리로 담담한 위로를 건네는 싱어송라이터 할로로.',
             tags: 'Indie, Folk',
             period: '2026',
             role: '즐겨 듣는 가수',
