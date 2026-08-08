@@ -246,6 +246,20 @@ window.secret2Data = {
             ]
         },
         {
+            title: '샤이니 - 방백 (Aside)',
+            desc: '하라 채널의 샤이니 방백(Aside) 영상.',
+            tags: 'Live, K-POP',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/vO8Bd3-4Il8/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: 'SHINee 샤이니 - 방백 (Aside)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/vO8Bd3-4Il8?autoplay=1', img: 'https://i.ytimg.com/vi/vO8Bd3-4Il8/hqdefault.jpg' }
+            ]
+        },
+        {
             title: 'IVE 리즈 X 권진아 - HOOK',
             desc: '뮤플리 HOOK 시리즈. 아이브 리즈와 권진아가 서로의 대표곡을 체인지해서 부르는 영상.',
             tags: 'Cover, Music',
@@ -291,6 +305,20 @@ window.secret2Data = {
             displayTags: ['음악'],
             episodes: [
                 { num: '1', title: '백예린 커버 (Feat. 침착맨) - DF LIVE', desc: '', youtubeVideo: 'https://www.youtube.com/embed/xGevsZco2EM?autoplay=1', img: 'https://i.ytimg.com/vi/xGevsZco2EM/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '샤이니 커버 - Dear Name (IU)',
+            desc: 'shinincity 채널의 샤이니 아이유 커버 영상.',
+            tags: 'Cover, Music',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/F5YmLkh8nV4/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: "SHinee (샤이니) COVER | IU (아이유) - 'Dear Name' (이름에게)", desc: '', youtubeVideo: 'https://www.youtube.com/embed/F5YmLkh8nV4?autoplay=1', img: 'https://i.ytimg.com/vi/F5YmLkh8nV4/hqdefault.jpg' }
             ]
         },
         {
@@ -378,20 +406,6 @@ window.secret2Data = {
             ]
         },
         {
-            title: '샤이니 커버 - Dear Name (IU)',
-            desc: 'shinincity 채널의 샤이니 아이유 커버 영상.',
-            tags: 'Cover, Music',
-            tagsLabel: '장르',
-            period: '2026',
-            role: '추천',
-            episodesLabel: '영상',
-            img: 'https://i.ytimg.com/vi/F5YmLkh8nV4/hqdefault.jpg',
-            displayTags: ['음악'],
-            episodes: [
-                { num: '1', title: "SHinee (샤이니) COVER | IU (아이유) - 'Dear Name' (이름에게)", desc: '', youtubeVideo: 'https://www.youtube.com/embed/F5YmLkh8nV4?autoplay=1', img: 'https://i.ytimg.com/vi/F5YmLkh8nV4/hqdefault.jpg' }
-            ]
-        },
-        {
             title: '샤이니 - View (뮤직뱅크)',
             desc: 'KBS WORLD TV 채널의 샤이니 뮤직뱅크 무대 영상.',
             tags: 'Live, K-POP',
@@ -403,20 +417,6 @@ window.secret2Data = {
             displayTags: ['음악'],
             episodes: [
                 { num: '1', title: 'SHINee (샤이니) - View [Music Bank K-Chart #1 / 2015.05.29]', desc: '', youtubeVideo: 'https://www.youtube.com/embed/QwPWb_saReE?autoplay=1', img: 'https://i.ytimg.com/vi/QwPWb_saReE/hqdefault.jpg' }
-            ]
-        },
-        {
-            title: '샤이니 - 방백 (Aside)',
-            desc: '하라 채널의 샤이니 방백(Aside) 영상.',
-            tags: 'Live, K-POP',
-            tagsLabel: '장르',
-            period: '2026',
-            role: '추천',
-            episodesLabel: '영상',
-            img: 'https://i.ytimg.com/vi/vO8Bd3-4Il8/hqdefault.jpg',
-            displayTags: ['음악'],
-            episodes: [
-                { num: '1', title: 'SHINee 샤이니 - 방백 (Aside)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/vO8Bd3-4Il8?autoplay=1', img: 'https://i.ytimg.com/vi/vO8Bd3-4Il8/hqdefault.jpg' }
             ]
         }
     ],
