@@ -407,6 +407,48 @@ window.secret2Data = {
             episodes: [
                 { num: '1', title: '내가 아는 건 상식, 모르는 건 과잉 지식', desc: '', youtubeVideo: 'https://www.youtube.com/embed/sOL5Kx351d4?autoplay=1', img: 'https://i.ytimg.com/vi/sOL5Kx351d4/hqdefault.jpg' }
             ]
+        },
+        {
+            title: '김단군 - 영화 《호프》 망상회',
+            desc: '김단군 채널의 영화 《호프》 3차 망상회 영상 (스포일러 있음).',
+            tags: 'Entertainment, Talk',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/RtefBibamIo/hqdefault.jpg',
+            displayTags: ['재밌는 영상'],
+            episodes: [
+                { num: '1', title: '영화 《호프》 3차 망상회 | 스포일러 있음', desc: '', youtubeVideo: 'https://www.youtube.com/embed/RtefBibamIo?autoplay=1', img: 'https://i.ytimg.com/vi/RtefBibamIo/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '유병재 - 창조의 밤 "표절제로"',
+            desc: '유병재 채널의 창조의 밤 "표절제로" (with 카피추) 1부.',
+            tags: 'Entertainment, Comedy',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/7BVvC8lIMzI/hqdefault.jpg',
+            displayTags: ['재밌는 영상'],
+            episodes: [
+                { num: '1', title: '(꿀잼) 창조의 밤 "표절제로" (with 카피추) 1부', desc: '', youtubeVideo: 'https://www.youtube.com/embed/7BVvC8lIMzI?autoplay=1', img: 'https://i.ytimg.com/vi/7BVvC8lIMzI/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '추성훈 - 스타견 콰로의 하루',
+            desc: '추성훈 채널의 스타견 콰로와 매니저 추성훈의 하루 영상.',
+            tags: 'Entertainment, Vlog',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/Dns3PF-8jSI/hqdefault.jpg',
+            displayTags: ['재밌는 영상'],
+            episodes: [
+                { num: '1', title: '스타견 콰로와 매니저 추성훈의 하루 (ft.콰로 가족 총출동)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/Dns3PF-8jSI?autoplay=1', img: 'https://i.ytimg.com/vi/Dns3PF-8jSI/hqdefault.jpg' }
+            ]
         }
     ],
     // "자랑하고 싶은 콘텐츠" 행 — 반려견 소개 카드. 사진은 static/img/dog-*.jpg 실제 이미지 사용.
