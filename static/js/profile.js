@@ -150,6 +150,47 @@ document.addEventListener('DOMContentLoaded', () => {
             if (rowHobbiesEl) rowHobbiesEl.style.display = 'none';
         }
 
+        // Render Music Videos Row (음악 영상 전용 행. data.musicVideos 가 있는 프로필만 노출)
+        const rowMusicVideosTitleEl = document.getElementById('rowMusicVideosTitle');
+        if (rowMusicVideosTitleEl && data.rowMusicVideosTitle) {
+            rowMusicVideosTitleEl.innerHTML = data.rowMusicVideosTitle;
+        }
+
+        const rowMusicVideosEl = document.getElementById('row-musicvideos');
+        const musicVideosContainer = document.querySelector('#row-musicvideos .row-cards');
+
+        if (data.musicVideos && data.musicVideos.length > 0) {
+            if (rowMusicVideosEl) rowMusicVideosEl.style.display = 'block';
+            if (musicVideosContainer) {
+                musicVideosContainer.innerHTML = data.musicVideos.map(mv => {
+                    const episodesAttr = mv.episodes ? `data-episodes="${encodeURIComponent(JSON.stringify(mv.episodes))}"` : '';
+                    return `
+                    <div class="card"
+                        data-title="${mv.title}"
+                        data-desc="${mv.desc}"
+                        data-tags="${mv.tags}"
+                        data-period="${mv.period}"
+                        data-role="${mv.role}"
+                        data-period-label="${mv.periodLabel || ''}"
+                        data-role-label="${mv.roleLabel || ''}"
+                        data-tags-label="${mv.tagsLabel || ''}"
+                        data-episodes-label="${mv.episodesLabel || ''}"
+                        ${episodesAttr}>
+                        <img src="${mv.img}" class="card-img" style="${mv.imgStyle || ''}">
+                        <div class="card-body">
+                            <div class="card-title">${mv.title}</div>
+                            <div class="card-tags">
+                                ${mv.displayTags.map(t => `<span class="tag">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                }).join('');
+            }
+        } else {
+            if (rowMusicVideosEl) rowMusicVideosEl.style.display = 'none';
+        }
+
         // Render Interests Row (3번째 커스텀 행. data.interests 가 있는 프로필만 노출)
         const rowInterestsTitleEl = document.getElementById('rowInterestsTitle');
         if (rowInterestsTitleEl && data.rowInterestsTitle) {

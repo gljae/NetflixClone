@@ -11,7 +11,8 @@ window.secret2Data = {
     emoji: '',
     rowProjectsTitle: '김시은 님이 시청 중인 콘텐츠',
     rowHobbiesTitle: '김시은 님이 즐겨듣는 음악',
-    rowInterestsTitle: '김시은 님이 추천하는 콘텐츠',
+    rowMusicVideosTitle: '김시은 님이 추천하는 음악 영상',
+    rowInterestsTitle: '김시은 님이 추천하는 재밌는 영상',
     rowShowoffTitle: '김시은 님이 자랑하고 싶은 콘텐츠',
     hero: {
         badge: '<i class="fa-solid fa-key" style="color:#ab47bc;"></i> SIEUN\'S ORIGINAL',
@@ -227,9 +228,9 @@ window.secret2Data = {
             ]
         }
     ],
-    // "추천하는 콘텐츠" 행 — 카드 하나 = 추천 유튜브 영상 하나.
+    // "음악 영상" 행 — 카드 하나 = 추천 음악 관련 유튜브 영상 하나.
     // 카드를 누르면 모달이 뜨고, 그 안의 영상 항목을 누르면 바로 재생된다.
-    interests: [
+    musicVideos: [
         {
             title: 'IVE 리즈 X 권진아 - HOOK',
             desc: '뮤플리 HOOK 시리즈. 아이브 리즈와 권진아가 서로의 대표곡을 체인지해서 부르는 영상.',
@@ -239,7 +240,7 @@ window.secret2Data = {
             role: '추천',
             episodesLabel: '영상',
             img: 'https://i.ytimg.com/vi/XFxxhYEIGEU/hqdefault.jpg',
-            displayTags: ['추천'],
+            displayTags: ['음악'],
             episodes: [
                 {
                     num: '1',
@@ -251,20 +252,6 @@ window.secret2Data = {
             ]
         },
         {
-            title: '침착맨 - 테라리아',
-            desc: '침착맨 플러스 채널의 테라리아 관련 영상.',
-            tags: 'Game, Entertainment',
-            tagsLabel: '장르',
-            period: '2026',
-            role: '추천',
-            episodesLabel: '영상',
-            img: 'https://i.ytimg.com/vi/yBuJKZiTgDQ/hqdefault.jpg',
-            displayTags: ['추천'],
-            episodes: [
-                { num: '1', title: '아 내가 테라리아를 일찍 알았더라면', desc: '', youtubeVideo: 'https://www.youtube.com/embed/yBuJKZiTgDQ?autoplay=1', img: 'https://i.ytimg.com/vi/yBuJKZiTgDQ/hqdefault.jpg' }
-            ]
-        },
-        {
             title: 'IVE 장원영 직캠',
             desc: '아이브 월드투어 앵콜 무대 장원영 직캠 영상.',
             tags: 'K-POP, Fancam',
@@ -273,7 +260,7 @@ window.secret2Data = {
             role: '추천',
             episodesLabel: '영상',
             img: 'https://i.ytimg.com/vi/XiqXW8kQoEM/hqdefault.jpg',
-            displayTags: ['추천'],
+            displayTags: ['음악'],
             episodes: [
                 { num: '1', title: "IVE Wonyoung 'Off The Record' 직캠 - WORLD TOUR ENCORE", desc: '', youtubeVideo: 'https://www.youtube.com/embed/XiqXW8kQoEM?autoplay=1', img: 'https://i.ytimg.com/vi/XiqXW8kQoEM/hqdefault.jpg' }
             ]
@@ -287,23 +274,9 @@ window.secret2Data = {
             role: '추천',
             episodesLabel: '영상',
             img: 'https://i.ytimg.com/vi/xGevsZco2EM/hqdefault.jpg',
-            displayTags: ['추천'],
+            displayTags: ['음악'],
             episodes: [
                 { num: '1', title: '백예린 커버 (Feat. 침착맨) - DF LIVE', desc: '', youtubeVideo: 'https://www.youtube.com/embed/xGevsZco2EM?autoplay=1', img: 'https://i.ytimg.com/vi/xGevsZco2EM/hqdefault.jpg' }
-            ]
-        },
-        {
-            title: '침착맨 킬링벌스 모음',
-            desc: 'DF 채널의 침착맨(이말년) 킬링벌스 편집 영상.',
-            tags: 'Entertainment, Comedy',
-            tagsLabel: '장르',
-            period: '2026',
-            role: '추천',
-            episodesLabel: '영상',
-            img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg',
-            displayTags: ['추천'],
-            episodes: [
-                { num: '1', title: '침착맨 킬링벌스 완전 편집 모음 - DF ChimlingPerse', desc: '', youtubeVideo: 'https://www.youtube.com/embed/1Ckc0fD5jHg?autoplay=1', img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg' }
             ]
         },
         {
@@ -315,7 +288,7 @@ window.secret2Data = {
             role: '추천',
             episodesLabel: '영상',
             img: 'https://i.ytimg.com/vi/HHLL9qiE2L4/hqdefault.jpg',
-            displayTags: ['추천'],
+            displayTags: ['음악'],
             episodes: [
                 { num: '1', title: 'KANG MIN KYUNG X CHOI JUNG HOON - Because we loved MV', desc: '', youtubeVideo: 'https://www.youtube.com/embed/HHLL9qiE2L4?autoplay=1', img: 'https://i.ytimg.com/vi/HHLL9qiE2L4/hqdefault.jpg' }
             ]
@@ -329,23 +302,9 @@ window.secret2Data = {
             role: '추천',
             episodesLabel: '영상',
             img: 'https://i.ytimg.com/vi/iWTB6YgZUDc/hqdefault.jpg',
-            displayTags: ['추천'],
+            displayTags: ['음악'],
             episodes: [
                 { num: '1', title: '선우정아 X 온유 - 너와 나의 거리 (바라던 바다 7회)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/iWTB6YgZUDc?autoplay=1', img: 'https://i.ytimg.com/vi/iWTB6YgZUDc/hqdefault.jpg' }
-            ]
-        },
-        {
-            title: '빠니보틀 - 멕시코 온천',
-            desc: '빠니보틀 아메리카 여행기 16편, 멕시코 온천 가보기.',
-            tags: 'Travel, Vlog',
-            tagsLabel: '장르',
-            period: '2026',
-            role: '추천',
-            episodesLabel: '영상',
-            img: 'https://i.ytimg.com/vi/VDiFELzovT0/hqdefault.jpg',
-            displayTags: ['추천'],
-            episodes: [
-                { num: '1', title: '멕시코 온천 가보기 [아메리카16] - 빠니보틀', desc: '', youtubeVideo: 'https://www.youtube.com/embed/VDiFELzovT0?autoplay=1', img: 'https://i.ytimg.com/vi/VDiFELzovT0/hqdefault.jpg' }
             ]
         },
         {
@@ -357,9 +316,54 @@ window.secret2Data = {
             role: '추천',
             episodesLabel: '영상',
             img: 'https://i.ytimg.com/vi/Pce6tezuYKw/hqdefault.jpg',
-            displayTags: ['추천'],
+            displayTags: ['음악'],
             episodes: [
                 { num: '1', title: '뮤즈 레전드 콘서트 & 라이브 영상 모음 (전곡 가사자막)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/Pce6tezuYKw?autoplay=1', img: 'https://i.ytimg.com/vi/Pce6tezuYKw/hqdefault.jpg' }
+            ]
+        }
+    ],
+    // "재밌는 영상" 행 — 카드 하나 = 추천 예능/코미디 유튜브 영상 하나.
+    interests: [
+        {
+            title: '침착맨 - 테라리아',
+            desc: '침착맨 플러스 채널의 테라리아 관련 영상.',
+            tags: 'Game, Entertainment',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/yBuJKZiTgDQ/hqdefault.jpg',
+            displayTags: ['재밌는 영상'],
+            episodes: [
+                { num: '1', title: '아 내가 테라리아를 일찍 알았더라면', desc: '', youtubeVideo: 'https://www.youtube.com/embed/yBuJKZiTgDQ?autoplay=1', img: 'https://i.ytimg.com/vi/yBuJKZiTgDQ/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '침착맨 킬링벌스 모음',
+            desc: 'DF 채널의 침착맨(이말년) 킬링벌스 편집 영상.',
+            tags: 'Entertainment, Comedy',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg',
+            displayTags: ['재밌는 영상'],
+            episodes: [
+                { num: '1', title: '침착맨 킬링벌스 완전 편집 모음 - DF ChimlingPerse', desc: '', youtubeVideo: 'https://www.youtube.com/embed/1Ckc0fD5jHg?autoplay=1', img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '빠니보틀 - 멕시코 온천',
+            desc: '빠니보틀 아메리카 여행기 16편, 멕시코 온천 가보기.',
+            tags: 'Travel, Vlog',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/VDiFELzovT0/hqdefault.jpg',
+            displayTags: ['재밌는 영상'],
+            episodes: [
+                { num: '1', title: '멕시코 온천 가보기 [아메리카16] - 빠니보틀', desc: '', youtubeVideo: 'https://www.youtube.com/embed/VDiFELzovT0?autoplay=1', img: 'https://i.ytimg.com/vi/VDiFELzovT0/hqdefault.jpg' }
             ]
         },
         {
@@ -371,7 +375,7 @@ window.secret2Data = {
             role: '추천',
             episodesLabel: '영상',
             img: 'https://i.ytimg.com/vi/EONlXsPEoJA/hqdefault.jpg',
-            displayTags: ['추천'],
+            displayTags: ['재밌는 영상'],
             episodes: [
                 { num: '1', title: '침철단 나무위키 스피드런 대결', desc: '', youtubeVideo: 'https://www.youtube.com/embed/EONlXsPEoJA?autoplay=1', img: 'https://i.ytimg.com/vi/EONlXsPEoJA/hqdefault.jpg' }
             ]
@@ -385,7 +389,7 @@ window.secret2Data = {
             role: '추천',
             episodesLabel: '영상',
             img: 'https://i.ytimg.com/vi/sOL5Kx351d4/hqdefault.jpg',
-            displayTags: ['추천'],
+            displayTags: ['재밌는 영상'],
             episodes: [
                 { num: '1', title: '내가 아는 건 상식, 모르는 건 과잉 지식', desc: '', youtubeVideo: 'https://www.youtube.com/embed/sOL5Kx351d4?autoplay=1', img: 'https://i.ytimg.com/vi/sOL5Kx351d4/hqdefault.jpg' }
             ]
@@ -399,7 +403,7 @@ window.secret2Data = {
             role: '추천',
             episodesLabel: '영상',
             img: 'https://i.ytimg.com/vi/9BF_ZhmCY-U/hqdefault.jpg',
-            displayTags: ['추천'],
+            displayTags: ['재밌는 영상'],
             episodes: [
                 { num: '1', title: 'MT의 꽃 마피아', desc: '', youtubeVideo: 'https://www.youtube.com/embed/9BF_ZhmCY-U?autoplay=1', img: 'https://i.ytimg.com/vi/9BF_ZhmCY-U/hqdefault.jpg' }
             ]
