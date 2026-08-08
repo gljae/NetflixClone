@@ -11,6 +11,7 @@ window.secret2Data = {
     emoji: '',
     rowProjectsTitle: '김시은 님이 시청 중인 콘텐츠',
     rowHobbiesTitle: '김시은 님이 즐겨듣는 음악',
+    rowInterestsTitle: '김시은 님이 추천하는 콘텐츠',
     rowShowoffTitle: '김시은 님이 자랑하고 싶은 콘텐츠',
     hero: {
         badge: '<i class="fa-solid fa-key" style="color:#ab47bc;"></i> SIEUN\'S ORIGINAL',
@@ -224,6 +225,21 @@ window.secret2Data = {
                 { num: '5', title: '0+0', desc: '', img: '/static/img/hanroro-3rd.jpeg' },
                 { num: '6', title: '생존법', desc: '', img: '/static/img/hanroro-saengjon.jpeg' }
             ]
+        }
+    ],
+    // "추천하는 콘텐츠" 행 — 지금은 틀만 잡아둔 예시 데이터야.
+    // 카드 하나 = 추천작 하나. title/desc/tags/period/role/img/displayTags 를
+    // 실제 추천하고 싶은 작품으로 바꿔서 채우면 돼 (구조는 시청 중인 콘텐츠와 동일).
+    interests: [
+        {
+            title: '추천 작품 이름을 입력하세요 (예시)',
+            desc: '이 작품을 추천하는 이유를 짧게 적어보세요.',
+            tags: '',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            img: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80',
+            displayTags: ['추천']
         }
     ],
     // "자랑하고 싶은 콘텐츠" 행 — 반려견 소개 카드. 사진은 static/img/dog-*.jpg 실제 이미지 사용.
