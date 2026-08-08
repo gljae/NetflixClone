@@ -232,6 +232,20 @@ window.secret2Data = {
     // 카드를 누르면 모달이 뜨고, 그 안의 영상 항목을 누르면 바로 재생된다.
     musicVideos: [
         {
+            title: '샤이니 재연 콘서트 MIX',
+            desc: '빛돌이들 채널의 샤이니(SHINee) 재연 콘서트 MIX 영상 (가사자막).',
+            tags: 'Live, K-POP',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/KyEMS4RvGgQ/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: "'되물어봐도 늘 같은 해답' SHINee 샤이니 재연 (An Encore) | 콘서트 MIX | 가사자막", desc: '', youtubeVideo: 'https://www.youtube.com/embed/KyEMS4RvGgQ?autoplay=1', img: 'https://i.ytimg.com/vi/KyEMS4RvGgQ/hqdefault.jpg' }
+            ]
+        },
+        {
             title: 'IVE 리즈 X 권진아 - HOOK',
             desc: '뮤플리 HOOK 시리즈. 아이브 리즈와 권진아가 서로의 대표곡을 체인지해서 부르는 영상.',
             tags: 'Cover, Music',
@@ -333,6 +347,76 @@ window.secret2Data = {
             displayTags: ['음악'],
             episodes: [
                 { num: '1', title: '침착맨 킬링벌스 완전 편집 모음 - DF ChimlingPerse', desc: '', youtubeVideo: 'https://www.youtube.com/embed/1Ckc0fD5jHg?autoplay=1', img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '김세정 - 아이와 나의 바다 (IU 커버)',
+            desc: 'OFFICIAL KIMSEJEONG 채널의 아이유 커버 영상.',
+            tags: 'Cover, Music',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/nstKzbzRwY0/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: '[CLEAN_ver.] 김세정(KIM SEJEONG) - 아이와 나의 바다 (IU)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/nstKzbzRwY0?autoplay=1', img: 'https://i.ytimg.com/vi/nstKzbzRwY0/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '(여자)아이들 - I Want That',
+            desc: '(여자)아이들 공식 채널 뮤직비디오.',
+            tags: 'MV, K-POP',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/Iewisp9KYRw/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: "(여자)아이들((G)I-DLE) - 'I Want That' Official Music Video", desc: '', youtubeVideo: 'https://www.youtube.com/embed/Iewisp9KYRw?autoplay=1', img: 'https://i.ytimg.com/vi/Iewisp9KYRw/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '샤이니 커버 - Dear Name (IU)',
+            desc: 'shinincity 채널의 샤이니 아이유 커버 영상.',
+            tags: 'Cover, Music',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/F5YmLkh8nV4/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: "SHinee (샤이니) COVER | IU (아이유) - 'Dear Name' (이름에게)", desc: '', youtubeVideo: 'https://www.youtube.com/embed/F5YmLkh8nV4?autoplay=1', img: 'https://i.ytimg.com/vi/F5YmLkh8nV4/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '샤이니 - View (뮤직뱅크)',
+            desc: 'KBS WORLD TV 채널의 샤이니 뮤직뱅크 무대 영상.',
+            tags: 'Live, K-POP',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/QwPWb_saReE/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: 'SHINee (샤이니) - View [Music Bank K-Chart #1 / 2015.05.29]', desc: '', youtubeVideo: 'https://www.youtube.com/embed/QwPWb_saReE?autoplay=1', img: 'https://i.ytimg.com/vi/QwPWb_saReE/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '샤이니 - 방백 (Aside)',
+            desc: '하라 채널의 샤이니 방백(Aside) 영상.',
+            tags: 'Live, K-POP',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/vO8Bd3-4Il8/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: 'SHINee 샤이니 - 방백 (Aside)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/vO8Bd3-4Il8?autoplay=1', img: 'https://i.ytimg.com/vi/vO8Bd3-4Il8/hqdefault.jpg' }
             ]
         }
     ],
