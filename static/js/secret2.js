@@ -249,6 +249,118 @@ window.secret2Data = {
                     img: 'https://i.ytimg.com/vi/XFxxhYEIGEU/hqdefault.jpg'
                 }
             ]
+        },
+        {
+            title: '침착맨 - 테라리아',
+            desc: '침착맨 플러스 채널의 테라리아 관련 영상.',
+            tags: 'Game, Entertainment',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/yBuJKZiTgDQ/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: '아 내가 테라리아를 일찍 알았더라면', desc: '', youtubeVideo: 'https://www.youtube.com/embed/yBuJKZiTgDQ?autoplay=1', img: 'https://i.ytimg.com/vi/yBuJKZiTgDQ/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: 'IVE 장원영 직캠',
+            desc: '아이브 월드투어 앵콜 무대 장원영 직캠 영상.',
+            tags: 'K-POP, Fancam',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/XiqXW8kQoEM/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: "IVE Wonyoung 'Off The Record' 직캠 - WORLD TOUR ENCORE", desc: '', youtubeVideo: 'https://www.youtube.com/embed/XiqXW8kQoEM?autoplay=1', img: 'https://i.ytimg.com/vi/XiqXW8kQoEM/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '백예린 커버 - 주호민 X 침착맨',
+            desc: 'DF LIVE. 주호민이 부르고 침착맨이 피처링한 백예린 커버 영상.',
+            tags: 'Cover, Music',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/xGevsZco2EM/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: '백예린 커버 (Feat. 침착맨) - DF LIVE', desc: '', youtubeVideo: 'https://www.youtube.com/embed/xGevsZco2EM?autoplay=1', img: 'https://i.ytimg.com/vi/xGevsZco2EM/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '침착맨 킬링벌스 모음',
+            desc: 'DF 채널의 침착맨(이말년) 킬링벌스 편집 영상.',
+            tags: 'Entertainment, Comedy',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: '침착맨 킬링벌스 완전 편집 모음 - DF ChimlingPerse', desc: '', youtubeVideo: 'https://www.youtube.com/embed/1Ckc0fD5jHg?autoplay=1', img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '강민경 X 최정훈 - Because we loved',
+            desc: 'STONE MUSIC 공식 뮤직비디오.',
+            tags: 'MV, Ballad',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/HHLL9qiE2L4/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: 'KANG MIN KYUNG X CHOI JUNG HOON - Because we loved MV', desc: '', youtubeVideo: 'https://www.youtube.com/embed/HHLL9qiE2L4?autoplay=1', img: 'https://i.ytimg.com/vi/HHLL9qiE2L4/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '선우정아 X 온유 - 너와 나의 거리',
+            desc: 'JTBC 바라던 바다 7회 방송 영상.',
+            tags: 'Music, Entertainment',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/iWTB6YgZUDc/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: '선우정아 X 온유 - 너와 나의 거리 (바라던 바다 7회)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/iWTB6YgZUDc?autoplay=1', img: 'https://i.ytimg.com/vi/iWTB6YgZUDc/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '빠니보틀 - 멕시코 온천',
+            desc: '빠니보틀 아메리카 여행기 16편, 멕시코 온천 가보기.',
+            tags: 'Travel, Vlog',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/VDiFELzovT0/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: '멕시코 온천 가보기 [아메리카16] - 빠니보틀', desc: '', youtubeVideo: 'https://www.youtube.com/embed/VDiFELzovT0?autoplay=1', img: 'https://i.ytimg.com/vi/VDiFELzovT0/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: 'MUSE 레전드 콘서트 플레이리스트',
+            desc: '온에잇 채널의 뮤즈 레전드 콘서트 & 라이브 영상 모음 (전곡 가사자막).',
+            tags: 'Live, Rock',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/Pce6tezuYKw/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: '뮤즈 레전드 콘서트 & 라이브 영상 모음 (전곡 가사자막)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/Pce6tezuYKw?autoplay=1', img: 'https://i.ytimg.com/vi/Pce6tezuYKw/hqdefault.jpg' }
+            ]
         }
     ],
     // "자랑하고 싶은 콘텐츠" 행 — 반려견 소개 카드. 사진은 static/img/dog-*.jpg 실제 이미지 사용.
