@@ -361,6 +361,48 @@ window.secret2Data = {
             episodes: [
                 { num: '1', title: '뮤즈 레전드 콘서트 & 라이브 영상 모음 (전곡 가사자막)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/Pce6tezuYKw?autoplay=1', img: 'https://i.ytimg.com/vi/Pce6tezuYKw/hqdefault.jpg' }
             ]
+        },
+        {
+            title: '침착맨 - 나무위키 스피드런 대결',
+            desc: '침착맨 공식 채널 영상. 나무위키 스피드런 대결.',
+            tags: 'Entertainment, Game',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/EONlXsPEoJA/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: '침철단 나무위키 스피드런 대결', desc: '', youtubeVideo: 'https://www.youtube.com/embed/EONlXsPEoJA?autoplay=1', img: 'https://i.ytimg.com/vi/EONlXsPEoJA/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '침착맨 - 상식과 과잉 지식',
+            desc: '침착맨 공식 채널 영상.',
+            tags: 'Entertainment, Talk',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/sOL5Kx351d4/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: '내가 아는 건 상식, 모르는 건 과잉 지식', desc: '', youtubeVideo: 'https://www.youtube.com/embed/sOL5Kx351d4?autoplay=1', img: 'https://i.ytimg.com/vi/sOL5Kx351d4/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '침착맨 - MT의 꽃 마피아',
+            desc: '침착맨 공식 채널 영상.',
+            tags: 'Entertainment, Game',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/9BF_ZhmCY-U/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                { num: '1', title: 'MT의 꽃 마피아', desc: '', youtubeVideo: 'https://www.youtube.com/embed/9BF_ZhmCY-U?autoplay=1', img: 'https://i.ytimg.com/vi/9BF_ZhmCY-U/hqdefault.jpg' }
+            ]
         }
     ],
     // "자랑하고 싶은 콘텐츠" 행 — 반려견 소개 카드. 사진은 static/img/dog-*.jpg 실제 이미지 사용.
