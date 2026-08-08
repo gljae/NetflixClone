@@ -29,12 +29,14 @@
 
 import os
 import re
+import time
 from datetime import timedelta
 
 import click
 from dotenv import load_dotenv
 from flask import (
     Flask,
+    jsonify,
     redirect,
     render_template,
     request,
@@ -49,6 +51,7 @@ from flask_login import (
     logout_user,
 )
 
+import tmdb
 from mailer import effective_backend, send_login_code, send_magic_link
 from models import (
     TOKEN_RETENTION,
@@ -99,6 +102,9 @@ def create_app():
             "pool_pre_ping": True,
             "pool_recycle": 280,
         },
+        # TMDB: 키는 서버에만 둔다. 브라우저로 내려보내지 않는다.
+        TMDB_API_KEY=os.environ.get("TMDB_API_KEY", ""),
+        TMDB_ACCESS_TOKEN=os.environ.get("TMDB_ACCESS_TOKEN", ""),
         # 메일: console = 터미널에 링크 출력(기본), smtp = 실제 발송
         MAIL_BACKEND=os.environ.get("MAIL_BACKEND", "console"),
         MAIL_SENDER=os.environ.get("MAIL_SENDER", "no-reply@netflix.local"),
@@ -433,6 +439,28 @@ def register_routes(app):
         DB 와 연결하려면 profiles 테이블과 user 관계를 새로 만들어야 한다.
         """
         return render_template("profile.html")
+
+    @app.get("/api/tmdb/trending")
+    @login_required
+    def api_tmdb_trending():
+        """이번 주 인기 영화. 프로필 화면이 fetch 로 가져다 쓴다.
+
+        키를 브라우저에 노출하지 않으려고 서버가 대신 부른다. 로그인한
+        사용자만 쓸 수 있게 막아둬서, 아무나 우리 키로 TMDB 를 긁어가는
+        중계기가 되지 않는다.
+
+        키가 없거나 TMDB 가 죽어도 프로필 화면은 그대로 떠야 한다. 그래서
+        에러를 502/503 으로 돌려주고, 프론트는 조용히 무시한다.
+        """
+        try:
+            data = tmdb.trending(app.config, time.monotonic())
+        except tmdb.TmdbNotConfigured:
+            return jsonify(error="TMDB_API_KEY 가 .env 에 없습니다."), 503
+        except tmdb.TmdbError as exc:
+            app.logger.warning("TMDB 조회 실패: %s", exc)
+            return jsonify(error=str(exc)), 502
+
+        return jsonify(data)
 
     # -------------------------------------------------- 1단계: 이메일 확인
 
