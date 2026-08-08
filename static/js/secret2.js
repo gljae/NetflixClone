@@ -449,6 +449,20 @@ window.secret2Data = {
             episodes: [
                 { num: '1', title: '스타견 콰로와 매니저 추성훈의 하루 (ft.콰로 가족 총출동)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/Dns3PF-8jSI?autoplay=1', img: 'https://i.ytimg.com/vi/Dns3PF-8jSI/hqdefault.jpg' }
             ]
+        },
+        {
+            title: '뜬뜬 - 제3회 흥계고 시상식',
+            desc: '뜬뜬(DdeunDdeun) 채널 영상.',
+            tags: 'Entertainment, Talk',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/mWibz_ZFo3E/hqdefault.jpg',
+            displayTags: ['재밌는 영상'],
+            episodes: [
+                { num: '1', title: '[EN] 제3회 흥계고 시상식 | EP.95', desc: '', youtubeVideo: 'https://www.youtube.com/embed/mWibz_ZFo3E?autoplay=1', img: 'https://i.ytimg.com/vi/mWibz_ZFo3E/hqdefault.jpg' }
+            ]
         }
     ],
     // "자랑하고 싶은 콘텐츠" 행 — 반려견 소개 카드. 사진은 static/img/dog-*.jpg 실제 이미지 사용.
