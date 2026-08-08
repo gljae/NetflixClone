@@ -227,19 +227,28 @@ window.secret2Data = {
             ]
         }
     ],
-    // "추천하는 콘텐츠" 행 — 지금은 틀만 잡아둔 예시 데이터야.
-    // 카드 하나 = 추천작 하나. title/desc/tags/period/role/img/displayTags 를
-    // 실제 추천하고 싶은 작품으로 바꿔서 채우면 돼 (구조는 시청 중인 콘텐츠와 동일).
+    // "추천하는 콘텐츠" 행 — 카드 하나 = 추천 유튜브 영상 하나.
+    // 카드를 누르면 모달이 뜨고, 그 안의 영상 항목을 누르면 바로 재생된다.
     interests: [
         {
-            title: '추천 작품 이름을 입력하세요 (예시)',
-            desc: '이 작품을 추천하는 이유를 짧게 적어보세요.',
-            tags: '',
+            title: 'IVE 리즈 X 권진아 - HOOK',
+            desc: '뮤플리 HOOK 시리즈. 아이브 리즈와 권진아가 서로의 대표곡을 체인지해서 부르는 영상.',
+            tags: 'Cover, Music',
             tagsLabel: '장르',
             period: '2026',
             role: '추천',
-            img: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80',
-            displayTags: ['추천']
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/XFxxhYEIGEU/hqdefault.jpg',
+            displayTags: ['추천'],
+            episodes: [
+                {
+                    num: '1',
+                    title: 'IVE 리즈 X 권진아 - HOOK (대표곡 체인지)',
+                    desc: '',
+                    youtubeVideo: 'https://www.youtube.com/embed/XFxxhYEIGEU?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/XFxxhYEIGEU/hqdefault.jpg'
+                }
+            ]
         }
     ],
     // "자랑하고 싶은 콘텐츠" 행 — 반려견 소개 카드. 사진은 static/img/dog-*.jpg 실제 이미지 사용.

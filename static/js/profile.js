@@ -171,6 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-tags="${it.tags}"
                         data-period="${it.period}"
                         data-role="${it.role}"
+                        data-period-label="${it.periodLabel || ''}"
+                        data-role-label="${it.roleLabel || ''}"
+                        data-tags-label="${it.tagsLabel || ''}"
+                        data-episodes-label="${it.episodesLabel || ''}"
                         ${episodesAttr}>
                         <img src="${it.img}" class="card-img" style="${it.imgStyle || ''}">
                         <div class="card-body">
