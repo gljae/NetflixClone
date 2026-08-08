@@ -320,10 +320,38 @@ window.secret2Data = {
             episodes: [
                 { num: '1', title: '뮤즈 레전드 콘서트 & 라이브 영상 모음 (전곡 가사자막)', desc: '', youtubeVideo: 'https://www.youtube.com/embed/Pce6tezuYKw?autoplay=1', img: 'https://i.ytimg.com/vi/Pce6tezuYKw/hqdefault.jpg' }
             ]
+        },
+        {
+            title: '침착맨 킬링벌스 모음',
+            desc: 'DF 채널의 침착맨(이말년) 킬링벌스 편집 영상.',
+            tags: 'Entertainment, Comedy',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: '침착맨 킬링벌스 완전 편집 모음 - DF ChimlingPerse', desc: '', youtubeVideo: 'https://www.youtube.com/embed/1Ckc0fD5jHg?autoplay=1', img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg' }
+            ]
         }
     ],
     // "재밌는 영상" 행 — 카드 하나 = 추천 예능/코미디 유튜브 영상 하나.
     interests: [
+        {
+            title: '침착맨 - MT의 꽃 마피아',
+            desc: '침착맨 공식 채널 영상.',
+            tags: 'Entertainment, Game',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/9BF_ZhmCY-U/hqdefault.jpg',
+            displayTags: ['재밌는 영상'],
+            episodes: [
+                { num: '1', title: 'MT의 꽃 마피아', desc: '', youtubeVideo: 'https://www.youtube.com/embed/9BF_ZhmCY-U?autoplay=1', img: 'https://i.ytimg.com/vi/9BF_ZhmCY-U/hqdefault.jpg' }
+            ]
+        },
         {
             title: '침착맨 - 테라리아',
             desc: '침착맨 플러스 채널의 테라리아 관련 영상.',
@@ -336,20 +364,6 @@ window.secret2Data = {
             displayTags: ['재밌는 영상'],
             episodes: [
                 { num: '1', title: '아 내가 테라리아를 일찍 알았더라면', desc: '', youtubeVideo: 'https://www.youtube.com/embed/yBuJKZiTgDQ?autoplay=1', img: 'https://i.ytimg.com/vi/yBuJKZiTgDQ/hqdefault.jpg' }
-            ]
-        },
-        {
-            title: '침착맨 킬링벌스 모음',
-            desc: 'DF 채널의 침착맨(이말년) 킬링벌스 편집 영상.',
-            tags: 'Entertainment, Comedy',
-            tagsLabel: '장르',
-            period: '2026',
-            role: '추천',
-            episodesLabel: '영상',
-            img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg',
-            displayTags: ['재밌는 영상'],
-            episodes: [
-                { num: '1', title: '침착맨 킬링벌스 완전 편집 모음 - DF ChimlingPerse', desc: '', youtubeVideo: 'https://www.youtube.com/embed/1Ckc0fD5jHg?autoplay=1', img: 'https://i.ytimg.com/vi/1Ckc0fD5jHg/hqdefault.jpg' }
             ]
         },
         {
@@ -392,20 +406,6 @@ window.secret2Data = {
             displayTags: ['재밌는 영상'],
             episodes: [
                 { num: '1', title: '내가 아는 건 상식, 모르는 건 과잉 지식', desc: '', youtubeVideo: 'https://www.youtube.com/embed/sOL5Kx351d4?autoplay=1', img: 'https://i.ytimg.com/vi/sOL5Kx351d4/hqdefault.jpg' }
-            ]
-        },
-        {
-            title: '침착맨 - MT의 꽃 마피아',
-            desc: '침착맨 공식 채널 영상.',
-            tags: 'Entertainment, Game',
-            tagsLabel: '장르',
-            period: '2026',
-            role: '추천',
-            episodesLabel: '영상',
-            img: 'https://i.ytimg.com/vi/9BF_ZhmCY-U/hqdefault.jpg',
-            displayTags: ['재밌는 영상'],
-            episodes: [
-                { num: '1', title: 'MT의 꽃 마피아', desc: '', youtubeVideo: 'https://www.youtube.com/embed/9BF_ZhmCY-U?autoplay=1', img: 'https://i.ytimg.com/vi/9BF_ZhmCY-U/hqdefault.jpg' }
             ]
         }
     ],
