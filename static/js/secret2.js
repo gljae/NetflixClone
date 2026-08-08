@@ -280,34 +280,6 @@ window.secret2Data = {
             ]
         },
         {
-            title: 'IVE 장원영 직캠',
-            desc: '아이브 월드투어 앵콜 무대 장원영 직캠 영상.',
-            tags: 'K-POP, Fancam',
-            tagsLabel: '장르',
-            period: '2026',
-            role: '추천',
-            episodesLabel: '영상',
-            img: 'https://i.ytimg.com/vi/XiqXW8kQoEM/hqdefault.jpg',
-            displayTags: ['음악'],
-            episodes: [
-                { num: '1', title: "IVE Wonyoung 'Off The Record' 직캠 - WORLD TOUR ENCORE", desc: '', youtubeVideo: 'https://www.youtube.com/embed/XiqXW8kQoEM?autoplay=1', img: 'https://i.ytimg.com/vi/XiqXW8kQoEM/hqdefault.jpg' }
-            ]
-        },
-        {
-            title: '백예린 커버 - 주호민 X 침착맨',
-            desc: 'DF LIVE. 주호민이 부르고 침착맨이 피처링한 백예린 커버 영상.',
-            tags: 'Cover, Music',
-            tagsLabel: '장르',
-            period: '2026',
-            role: '추천',
-            episodesLabel: '영상',
-            img: 'https://i.ytimg.com/vi/xGevsZco2EM/hqdefault.jpg',
-            displayTags: ['음악'],
-            episodes: [
-                { num: '1', title: '백예린 커버 (Feat. 침착맨) - DF LIVE', desc: '', youtubeVideo: 'https://www.youtube.com/embed/xGevsZco2EM?autoplay=1', img: 'https://i.ytimg.com/vi/xGevsZco2EM/hqdefault.jpg' }
-            ]
-        },
-        {
             title: '샤이니 커버 - Dear Name (IU)',
             desc: 'shinincity 채널의 샤이니 아이유 커버 영상.',
             tags: 'Cover, Music',
@@ -417,6 +389,34 @@ window.secret2Data = {
             displayTags: ['음악'],
             episodes: [
                 { num: '1', title: 'SHINee (샤이니) - View [Music Bank K-Chart #1 / 2015.05.29]', desc: '', youtubeVideo: 'https://www.youtube.com/embed/QwPWb_saReE?autoplay=1', img: 'https://i.ytimg.com/vi/QwPWb_saReE/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: 'IVE 장원영 직캠',
+            desc: '아이브 월드투어 앵콜 무대 장원영 직캠 영상.',
+            tags: 'K-POP, Fancam',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/XiqXW8kQoEM/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: "IVE Wonyoung 'Off The Record' 직캠 - WORLD TOUR ENCORE", desc: '', youtubeVideo: 'https://www.youtube.com/embed/XiqXW8kQoEM?autoplay=1', img: 'https://i.ytimg.com/vi/XiqXW8kQoEM/hqdefault.jpg' }
+            ]
+        },
+        {
+            title: '백예린 커버 - 주호민 X 침착맨',
+            desc: 'DF LIVE. 주호민이 부르고 침착맨이 피처링한 백예린 커버 영상.',
+            tags: 'Cover, Music',
+            tagsLabel: '장르',
+            period: '2026',
+            role: '추천',
+            episodesLabel: '영상',
+            img: 'https://i.ytimg.com/vi/xGevsZco2EM/hqdefault.jpg',
+            displayTags: ['음악'],
+            episodes: [
+                { num: '1', title: '백예린 커버 (Feat. 침착맨) - DF LIVE', desc: '', youtubeVideo: 'https://www.youtube.com/embed/xGevsZco2EM?autoplay=1', img: 'https://i.ytimg.com/vi/xGevsZco2EM/hqdefault.jpg' }
             ]
         }
     ],
