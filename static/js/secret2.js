@@ -14,8 +14,8 @@ window.secret2Data = {
     rowShowoffTitle: '김시은 님이 자랑하고 싶은 콘텐츠',
     hero: {
         badge: '<i class="fa-solid fa-key" style="color:#ab47bc;"></i> SIEUN\'S ORIGINAL',
-        title: '시크릿 2:<br>시네마틱 라이브러리',
-        desc: '감각적인 비주얼과 감성적인 멜로디가 공존하는 시크릿 2 전용 시네마 공간입니다.',
+        title: '시은 오리지널 시리즈',
+        desc: '김시은 님의 전용 콘텐츠 공간입니다.',
         bgYoutube: 'https://www.youtube.com/embed/22-ev5iBebo?autoplay=1&mute=1&loop=1&playlist=22-ev5iBebo&controls=0&showinfo=0&rel=0',
         bgImage: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1600&q=80',
         demoYoutube: 'https://www.youtube.com/embed/22-ev5iBebo?autoplay=1',
