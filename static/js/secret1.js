@@ -61,15 +61,15 @@ window.secret1Data = {
                     num: '4',
                     title: 'BABYMONSTER - DRIP',
                     desc: 'BRRR A-SA~~',
-                    youtubeVideo: 'https://www.youtube.com/embed/Zp-Jhuhq0bQ?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/Zp-Jhuhq0bQ/maxresdefault.jpg'
+                    youtubeVideo: 'https://www.youtube.com/embed/n_2oVnjL1y4?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/n_2oVnjL1y4/maxresdefault.jpg'
                 },
                 {
                     num: '5',
                     title: 'ITZY(있지) - 달라달라',
                     desc: '데뷔곡 GOAT.',
                     youtubeVideo: 'https://www.youtube.com/embed/pNfTK39k55U?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/pNfTK39k55U/maxresdefault.jpg'
+                    img: 'https://i.namu.wiki/i/h5A_joPqCJ2nH7heSDvPapSzhPiH_zcDgi3VELd_lfw1Sdj9eCSUXyPLDTjZVgdKNMFMLyDT21Vcfp_YT-ilpQ.webp'
                 },
                 {
                     num: '6',
@@ -77,6 +77,13 @@ window.secret1Data = {
                     desc: '처음 들었을때 그 충격을 잊을 수가 없다. 지금도 이 감성과 사운드는 뉴진스를 따라올 수 없음.',
                     youtubeVideo: 'https://www.youtube.com/embed/js1CtxSY38I?autoplay=1',
                     img: 'https://i.ytimg.com/vi/js1CtxSY38I/maxresdefault.jpg'
+                },
+                {
+                    num: '7',
+                    title: 'IVE (아이브) - Accendio',
+                    desc: '몽환적인 도입부가 매력적인 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/J6qEYwwCgoE?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/J6qEYwwCgoE/maxresdefault.jpg'
                 }
             ]
         },
@@ -105,17 +112,17 @@ window.secret1Data = {
                 },
                 {
                     num: '3',
-                    title: 'SEVENTEEN(세븐틴) - 손오공 (Super)',
-                    desc: '웅장한 비트와 독보적인 메가 크루 퍼포먼스.',
-                    youtubeVideo: 'https://www.youtube.com/embed/-GQg25oP0S4?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/-GQg25oP0S4/maxresdefault.jpg'
+                    title: 'DAY6 - Love me or Leave me',
+                    desc: "숨을 죽이고 너의 대답을 기다릴게.",
+                    youtubeVideo: 'https://www.youtube.com/embed/LlFcvjDBSCU?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/LlFcvjDBSCU/maxresdefault.jpg'
                 },
                 {
                     num: '4',
                     title: 'Stray Kids(스트레이 키즈) - MANIAC',
                     desc: '매우 중독적인 훅.',
                     youtubeVideo: 'https://www.youtube.com/embed/OvioeS1ZZ7o?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/OvioeS1ZZ7o/maxresdefault.jpg'
+                    img: 'https://i.namu.wiki/i/7n1YQRgoob-7bcFTtgKPj41kxzdRQzS5R-Qm6na7T9sVeHB_doiyxRJcUivNyteD3KgNQwgAKK5VSv_jc_rKO80EsAD5FM_r53i4Sb3SUuwfyvmuJO9I653-WvNVrIPvtJGZ_AV6Jp9De2kliYdJvQ.webp'
                 },
                 {
                     num: '5',
@@ -176,10 +183,10 @@ window.secret1Data = {
                 },
                 {
                     num: '6',
-                    title: 'JUSTHIS - Welcome to My HOME ',
-                    desc: '주인장이 젤 좋아하는 래퍼. 1집 겁나 명반이니 들어보세요.',
-                    youtubeVideo: 'https://www.youtube.com/embed/KEDYtwOmdtU?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/KEDYtwOmdtU/hqdefault.jpg'
+                    title: 'JUSTHIS(저스디스) - LIT ',
+                    desc: '이거까지가 lit.',
+                    youtubeVideo: 'https://www.youtube.com/embed/mZ1IMxgzzPY?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/mZ1IMxgzzPY/maxresdefault.jpg'
                 },
                 {
                     num: '7',
@@ -204,16 +211,16 @@ window.secret1Data = {
                 },
                 {
                     num: '10',
-                    title: "DEAN - I'm Not Sorry (feat. Eric Bellinger)",
-                    desc: '앨 범 쳐 내 라 고',
-                    youtubeVideo: 'https://www.youtube.com/embed/wzvRxguTPa4?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/wzvRxguTPa4/hqdefault.jpg'
+                    title: "JUSTHIS(저스디스) _ Gone",
+                    desc: '은퇴를 생각할 만큼 당시 저스디스의 불안한 심리를 엿볼 수 있는 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/2B7GHO7sws4?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/2B7GHO7sws4/maxresdefault.jpg'
                 },
                 {
                     num: '11',
-                    title: '키드밀리 - PUMPS (feat. OKASHII) ',
+                    title: 'Kid Milli - SAVAGE RMX (feat. k4ton, toni rei)',
                     desc: '키드밀리의 따끈따끈한 신보. 사운드가 너무 내 스타일.',
-                    youtubeVideo: 'https://www.youtube.com/embed/ZnwMsjGPYL4?autoplay=1',
+                    youtubeVideo: 'https://www.youtube.com/embed/qv4qcTHEuto?autoplay=1',
                     img: 'https://i.ytimg.com/vi/ZnwMsjGPYL4/hqdefault.jpg'
                 },
                 {
@@ -245,14 +252,14 @@ window.secret1Data = {
                 {
                     num: '2',
                     title: 'Kendrick Lamar - HUMBLE.',
-                    desc: '묵직한 피아노 훅과 켄드릭 라마의 날카로운 래핑.',
-                    youtubeVideo: 'https://www.youtube.com/embed/tvTRZJ-4EyI?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/tvTRZJ-4EyI/maxresdefault.jpg'
+                    desc: '켄드릭은 트랩도 맛있다.',
+                    youtubeVideo: 'https://www.youtube.com/embed/FEinKkkEvSw?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/FEinKkkEvSw/hqdefault.jpg'
                 },
                 {
                     num: '3',
                     title: 'Playboi Carti - ILoveUIHateU',
-                    desc: '원조가 말아주는 레이지는 다르다.',
+                    desc: '원조가 말아주는 레이지.',
                     youtubeVideo: 'https://www.youtube.com/embed/pZ6oeHV28b0?autoplay=1',
                     img: 'https://i.ytimg.com/vi/pZ6oeHV28b0/maxresdefault.jpg'
                 },
@@ -266,7 +273,7 @@ window.secret1Data = {
                 {
                     num: '5',
                     title: 'Kanye West - Runaway (feat. Pusha T)',
-                    desc: '올드 칸예의 정수가 들어간 최고의 곡.',
+                    desc: '올드 칸예의 정수가 들어간 최고의 곡. 요즘은 숏츠 브금으로 많이 불려다닌다.',
                     youtubeVideo: 'https://www.youtube.com/embed/EMnQwBTJnMM?autoplay=1',
                     img: 'https://i.ytimg.com/vi/EMnQwBTJnMM/hqdefault.jpg'
                 },
@@ -321,24 +328,24 @@ window.secret1Data = {
                 },
                 {
                     num: '2',
-                    title: 'ZUTOMAYO – STUDY ME',
+                    title: '계속 한밤중이면 좋을 텐데 – 공부해놔',
                     desc: 'ACAね의 도입부 보컬이 너무 매력적인 곡.',
-                    youtubeVideo: 'https://www.youtube.com/embed/Atvsg_zogxo?autoplay=1&enablejsapi=1&rel=0',
+                    youtubeVideo: 'https://www.youtube.com/embed/Atvsg_zogxo?autoplay=1',
                     img: 'https://i.ytimg.com/vi/Atvsg_zogxo/maxresdefault.jpg'
                 },
                 {
                     num: '3',
-                    title: 'Official髭男dism - Pretender',
-                    desc: '히게단 특유의 감성적이고 애절한 팝 록 명곡.',
-                    youtubeVideo: 'https://www.youtube.com/embed/TQ8WlA2GXbk?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/TQ8WlA2GXbk/maxresdefault.jpg'
+                    title: 'Official髭男dism - イエスタデイ(Yesterday)',
+                    desc: '히게단 특유의 절절함이 느껴지는 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/DuMqFknYHBs?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/DuMqFknYHBs/maxresdefault.jpg'
                 },
                 {
                     num: '4',
                     title: 'YOASOBI - 群青(군청)',
                     desc: '청량한 사운드가 돋보이는 요아소비 대표곡.',
-                    youtubeVideo: 'https://www.youtube.com/embed/Y4nEEZwckuU?autoplay=1&enablejsapi=1&rel=0',
-                    img: 'https://i.ytimg.com/vi/Y4nEEZwckuU/maxresdefault.jpg'
+                    youtubeVideo: 'https://www.youtube.com/embed/qd1OyC3OMEI?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/qd1OyC3OMEI/maxresdefault.jpg'
                 }
             ]
         },
@@ -361,23 +368,23 @@ window.secret1Data = {
                 {
                     num: '2',
                     title: 'KANA-BOON - Silhouette',
-                    desc: '그 시절 우리는 모두 닌자였다. 나루토 질풍전 16기 OP.',
+                    desc: '그 시절 우리는 모두 닌자였다. 나루토 질풍전 16기 op.',
                     youtubeVideo: 'https://www.youtube.com/embed/dlFA0Zq1k2A?autoplay=1',
                     img: 'https://i.ytimg.com/vi/dlFA0Zq1k2A/maxresdefault.jpg'
                 },
                 {
                     num: '3',
                     title: 'LiSA - 홍련화',
-                    desc: '귀멸의 칼날 1기 오프닝. 폭발적인 가창력의 대표 OST.',
-                    youtubeVideo: 'https://www.youtube.com/embed/JoUayamxUtI?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/JoUayamxUtI/maxresdefault.jpg'
+                    desc: '귀멸의 칼날 1기 op. LiSA의 폭발적인 가창력이 돋보이는 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/x1FV6IrjZCY?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/x1FV6IrjZCY/maxresdefault.jpg'
                 },
                 {
                     num: '4',
-                    title: 'Ado - 역광',
-                    desc: '원피스 필름 레드 삽입곡. 상징적인 가사가 돋보이는 곡.',
-                    youtubeVideo: 'https://www.youtube.com/embed/gt-v_YCkaMY?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/gt-v_YCkaMY/maxresdefault.jpg'
+                    title: 'Vaundy - 역광',
+                    desc: '원피스 필름 레드 ost. ado 버전도 있으니 참고.',
+                    youtubeVideo: 'https://www.youtube.com/embed/RhDxXvn6YaQ?autoplay=1',
+                    img: 'https://i.ytimg.com/vi/RhDxXvn6YaQ/maxresdefault.jpg'
                 },
                 {
                     num: '5',
@@ -388,15 +395,15 @@ window.secret1Data = {
                 },
                 {
                     num: '6',
-                    title: 'SPYAIR - 사무라이하트',
-                    desc: '씹덕들 척추 기립.',
-                    youtubeVideo: 'https://www.youtube.com/embed/2sy3H9rnk9A?autoplay=1',
-                    img: 'https://i.ytimg.com/vi/2sy3H9rnk9A/maxresdefault.jpg'
+                    title: 'SPYAIR - 사무라이 하트(Some Like It Hot!!)',
+                    desc: '이거 모르면 어디가서 애니 봤다고 하지 마라.',
+                    youtubeVideo: 'https://www.youtube.com/embed/KpM6xNAgRoI?autoplay=1',
+                    img: 'https://i.namu.wiki/i/hLdTl6NJuKlQE0WFezYf_-dmlwwFhVuLd1Cia5R0Do_XSoYXlhTwtUv1vYr17tfRevNn0X-zdBtzB2Jx5UfFXg.webp'
                 },
                 {
                     num: '7',
                     title: 'Mrs. GREEN APPLE - Inferno',
-                    desc: '주인장이 미세스 그린에 입문한 곡. 불꽃 소방대 2기 op.',
+                    desc: '주인장이 미세스 그린에 입문한 곡.',
                     youtubeVideo: 'https://www.youtube.com/embed/wfCcs0vLysk?autoplay=1&enablejsapi=1&rel=0',
                     img: 'https://i.ytimg.com/vi/wfCcs0vLysk/maxresdefault.jpg'
                 },
@@ -404,8 +411,22 @@ window.secret1Data = {
                     num: '8',
                     title: '폴카닷 스팅레이 - 역양',
                     desc: '얼음 성벽 보다가 엔딩 나오는 타이밍과 노래가 좋아서 찾아본 곡.',
-                    youtubeVideo: 'https://www.youtube.com/embed/qbcqvrV6-2Q?autoplay=1&enablejsapi=1&rel=0',
-                    img: 'https://i.ytimg.com/vi/qbcqvrV6-2Q/maxresdefault.jpg'
+                    youtubeVideo: 'https://www.youtube.com/embed/5ggfKnnQ-0Q?autoplay=1&enablejsapi=1&rel=0',
+                    img: 'https://i.ytimg.com/vi/5ggfKnnQ-0Q/maxresdefault.jpg'
+                },
+                {
+                    num: '9',
+                    title: 'Rosa Walton - I Really Want to Stay At Your House',
+                    desc: '미안해, 달에는 같이 못 가줄 것 같아.',
+                    youtubeVideo: 'https://www.youtube.com/embed/KvMY1uzSC1E?autoplay=1&enablejsapi=1&rel=0',
+                    img: 'https://i.ytimg.com/vi/KvMY1uzSC1E/maxresdefault.jpg'
+                },
+                {
+                    num: '10',
+                    title: 'SiM - The Rumbling',
+                    desc: '강렬한 메탈 사운드에 비해 가사 내용은 땅울림을 코앞에 앞둔 엘런의 속마음을 표현하고 있다. 진격거 세계관 특유의 암울함이 잘 담겨져 있는 곡.',
+                    youtubeVideo: 'https://www.youtube.com/embed/2S4qGKmzBJE?autoplay=1&enablejsapi=1&rel=0',
+                    img: 'https://i.ytimg.com/vi/2S4qGKmzBJE/maxresdefault.jpg'
                 }
             ]
         }
